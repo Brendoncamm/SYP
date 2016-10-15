@@ -1,0 +1,3 @@
+PiBakery is a program for setting up a Raspbian image on an SD card.  It allows for specifying first boot operations and every boot operations.  It may be downloaded at the following URL
+
+http://www.pibakery.org/docs/install-win.html
