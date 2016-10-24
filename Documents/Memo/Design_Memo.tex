@@ -1,5 +1,5 @@
 \documentclass[draft]{article}
-\usepackage[margins=1.25in]{geometry}
+%\usepackage[margins = 1.25in]{geometry}
 
 %opening
 \title{Programmable Flight Controller for Quad-Rotor Drone \\ Design Requirements Memo \\ DRAFT COPY}
@@ -33,15 +33,17 @@ We have been tasked to design a programmable flight controller for a quad-rotor 
 \subsection{Design Criteria}
 %Desired specifications.
 \begin{itemize}
-	\item Able to respond to control inputs appropriately and instantaneously 
+	\item Able to respond to control inputs in a correct and timely manner
 	\item Able to hover steadily 
 	\item Able to fly for 15-20 minutes continuously
+	\item Able to land safely when experiencing a loss of communication
 \end{itemize}
 \subsection{Constraints}
 %Limitations to the design process.
 \begin{itemize}
 	\item Must be controlled over Wi-Fi
 	\item Must control the drone provided by Reiland Systems
+	\item Must have a Global Positioning System that continually reports the drones position to ensure it is flying within the allowed limits
 \end{itemize}
 \section{Performance Goals}
 \include{performancegoals}
