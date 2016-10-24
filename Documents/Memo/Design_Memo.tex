@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 \documentclass[draft]{article}
 %\usepackage[margins = 1.25in]{geometry}
 
@@ -42,7 +43,7 @@ We have been tasked to design a programmable flight controller for a quad-rotor 
 %Limitations to the design process.
 \begin{itemize}
 	\item Must be controlled over Wi-Fi
-	\item Must control the drone provided by Reiland Systems
+	\item Must control the drone provided by Reiland Systems Limited
 	\item Must have a Global Positioning System that continually reports the drones position to ensure it is flying within the allowed limits
 \end{itemize}
 \section{Performance Goals}
@@ -61,3 +62,68 @@ Software, controller, and documentations and any accompanying rights will belong
 
 %Signatures for group, Dr Gu, Dr El-Sankary, Dr Rhinelander
 \end{document}
+=======
+\documentclass[draft]{article}
+%\usepackage[margins = 1.25in]{geometry}
+
+%opening
+\title{Programmable Flight Controller for Quad-Rotor Drone \\ Design Requirements Memo \\ DRAFT COPY}
+\author{Brendon Camm \\ B00649176 \and Dylan Humber \\ B00695554	\and Lucas Doucette \\ B00685962}
+\date{Date of Draft: \today}
+\begin{document}
+
+\maketitle
+
+\section{Background}
+%Dr Rhinelander, Reiland Systems.  Open controller platform. End goal for Dr R to use for machine learning.
+We have been tasked to design a programmable flight controller for a quad-rotor drone (here-in referred to as the drone) by Dr. Jason Rhinelander of Reiland Systems Limited. Most commercial off the shelf drones currently available do not have the ability to customize the firmware on the device which limits the ability to carry out any type of research. Dr. Rhinelander’s research is highly focused on machine learning algorithms and to further his research he requires the drone to have the ability to program or tweak different algorithms on the fly. 
+\section{Objectives}
+%End goals, leave intermediate objectives to deliverables/timing.
+\subsection{Short Term Objectives (Oct. 2016 - Dec. 2016)}
+\begin{itemize}
+	\item Simulations of the controller and flight dynamics 
+	\item Construction of the quad-rotor drone
+	\item Initial design of the controller (physical and software)
+	\item Initial testing
+	\item First term report
+\end{itemize}
+\subsection{Long Term Objectives (Jan. 2017 - Apr. 2017)}
+\begin{itemize}
+	\item Final design of controller (physical and software)
+	\item Graphical User Interface design
+	\item Final testing 
+	\item Final report
+\end{itemize}
+\section{Specifications}
+\subsection{Design Criteria}
+%Desired specifications.
+\begin{itemize}
+	\item Able to respond to control inputs in a correct and timely manner
+	\item Able to hover steadily 
+	\item Able to fly for 15-20 minutes continuously
+	\item Able to land safely when experiencing a loss of communication
+\end{itemize}
+\subsection{Constraints}
+%Limitations to the design process.
+\begin{itemize}
+	\item Must be controlled over Wi-Fi
+	\item Must control the drone provided by Reiland Systems Limited
+	\item Must have a Global Positioning System that continually reports the drones position to ensure it is flying within the allowed limits
+\end{itemize}
+\section{Performance Goals}
+\include{performancegoals}
+\section{Deliverables}
+%What will be provided to the client.
+\include{deliverables}
+\section{Timing and Deadlines}
+%Gantt Chart.
+Please find attached Gantt Chart in Appendix A.
+\section{Safety Features}
+%Control range, communication failure protocal.
+Given that the drone will be controlled over Wi-Fi, the drone will be unable to fly so far as to be out of sight.  Should communications with the drone be lost, it will either retrace it's path or land.  Should the drone detect that a motor-fault has occurred in flight it will attempt to land.
+\section{Intellectual Property}
+Software, controller, and documentations and any accompanying rights will belong to Reiland Systems.  Ownership of any prototype hardware supplied by Reiland systems will be retained by Reiland Systems.  The project group will retain ownership of any physical hardware supplied by them in the process of testing.
+
+%Signatures for group, Dr Gu, Dr El-Sankary, Dr Rhinelander
+\end{document}
+>>>>>>> origin/master
