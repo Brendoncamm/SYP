@@ -20,6 +20,9 @@
 \def\@memoto{\relax}
 \newcommand{\memoto}[1]{\gdef\@memoto{#1}}
 
+\def\@memocc{\relax}
+\newcommand{\memocc}[1]{\gdef\@memocc{#1}}
+
 \def\@memofrom{\relax}
 \newcommand{\memofrom}[1]{\gdef\@memofrom{#1}}
 
@@ -63,6 +66,7 @@
 	% To, From, Subject Block
 	\begin{description}
 		\ifthenelse{\equal{\@memoto}{\relax}}{}{\item [{To:}] \@memoto}
+		\ifthenelse{\equal{\@memocc}{\relax}}{}{\item [{CC:}] \@memocc}
 		\ifthenelse{\equal{\@memofrom}{\relax}}{}{\item [{From:}] \@memofrom}
 		\ifthenelse{\equal{\@memosubject}{\relax}}{}{\item [{Subject:}] \@memosubject}
 		\ifthenelse{\equal{\@memodate}{\relax}}{}{\item [{Date:}] \@memodate}
