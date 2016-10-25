@@ -1,6 +1,19 @@
 \documentclass{texMemo}
 \usepackage{graphicx}
-
+\newcommand{\SignatureAndDate}[2]{%
+	\begin{minipage}[c]{\textwidth}
+		\makebox[12cm][c]{
+			 \makebox[5cm][c] {\hrulefill} \hfill \makebox[5cm][c] {\hrulefill} \hfill
+		}
+		\makebox[12cm][l]{
+			 #1 \hfill Date \hfill \hfill
+		}
+		\makebox[12cm][l]{
+			 #2  \hfill \hfill
+		}
+		\vspace{1cm}
+	\end{minipage}	
+}%
 \memoto{Dr. Kamal El-Sankary}
 \memocc{Dr. Jason Gu and Dr. Jason Rhinelander}
 \memofrom{Brendon Camm, Dylan Humber, Lucas Doucette}
@@ -63,5 +76,17 @@ Given that the drone will be controlled over Wi-Fi, the drone will be unable to 
 Software, controller, and documentations and any accompanying rights will belong to Reiland Systems.  Ownership of any prototype hardware supplied by Reiland systems will be retained by Reiland Systems.  The project group will retain ownership of any physical hardware supplied by them in the process of testing.
 
 %Signatures for group, Dr Gu, Dr El-Sankary, Dr Rhinelander
+\vspace{.5in}
+\noindent\SignatureAndDate{Brendon Camm\hspace{1cm}}{Group Member}
+\vspace{.2in}
+\SignatureAndDate{Dylan Humber\hspace{1cm}}{Group Member}
+\vspace{.2in}
+\SignatureAndDate{Lucas Doucette\hspace{1cm}}{Group Member}
+\vspace{.2in}
+\SignatureAndDate{Dr Jason Gu\hspace{1.5cm}}{Internal Supervisor}
+\vspace{.2in}
+\SignatureAndDate{Dr Jason Rhinelander}{External Supervisor}
+\vspace{.2in}
+\SignatureAndDate{Dr Kamal El-Sankary}{Course Coordinator}
 \end{document}
 
