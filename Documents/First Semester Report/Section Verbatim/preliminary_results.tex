@@ -29,6 +29,10 @@
   
   \subsubsection{PWM}
   
+	  Using an arduino microcontroller, a potentiometer and a simple DC motor, a circuit was devised to test a PWM output of the arduino to drive a motor circuit. The motor circuit was isolated using a mosfet as the switching operator and a diode to ensure there would be no damaging back emf in the system. A 9V battery powered the isolated circuit.
+  
+  Through programming, the voltage across the potentiometer was taken into the arduino as an analog input and mapped to a digital output as a PWM duty cycle. The script was successful in providing an input controlled PWM value to the motor. The code was modified to suit the needs of the electronic speed controllers by applying an input controlled pulse width as a function of time in replacement of a duty cycle as the ESC's require a pulse range of 1060 $\mu$s and 1860 $\mu$s.
+  
   \subsubsection{Electronic Speed Controller}
   
   \subsubsection{Wi-Fi Range}
