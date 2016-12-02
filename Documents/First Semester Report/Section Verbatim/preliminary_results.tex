@@ -29,23 +29,26 @@
   
   \subsubsection{PWM}
   
-Using an arduino microcontroller, a potentiometer and a simple DC motor, a circuit was devised to test a PWM output of the arduino to drive a motor circuit. The motor circuit was isolated using a mosfet as the switching operator and a diode to ensure there would be no damaging back emf in the system. A 9V battery powered the isolated circuit.
+Using an Arduino micro controller, a potentiometer and a simple DC motor, a circuit was devised to test a PWM output of the Arduino to drive a motor circuit. The motor circuit was isolated using a mosfet as the switching operator and a diode to ensure there would be no damaging back emf in the system. A 9V battery powered the isolated circuit.
   
-Through programming, the voltage across the potentiometer was taken into the arduino as an analog input and mapped to a digital output as a PWM duty cycle. The script was successful in providing an input controlled PWM value to the motor. The code was modified to suit the needs of the electronic speed controllers by applying an input controlled pulse width as a function of time in replacement of a duty cycle as the ESC's require a pulse width range of 1060 $\mu$s and 1860 $\mu$s.
+Through programming, the voltage across the potentiometer was taken into the Arduino as an analog input and mapped to a digital output as a PWM duty cycle. The script was successful in providing an input controlled PWM value to the motor. The code was modified to suit the needs of the electronic speed controllers by applying an input controlled pulse width as a function of time in replacement of a duty cycle as the ESC's require a pulse width range of 1060 $\mu$s and 1860 $\mu$s.
   
   \subsubsection{Electronic Speed Controller}
   
-The Afro ESC 12Amp BEC UltraLite Multirotor ESC V3 was tested at St. Mary's University with the assistance of Dr. Rhinelander. An arduino running a script to map a potentiometer to a PWM duty cycle was used as an attempt to control the motor through the ESC. A 12V power supply fed the ESC while the arduino controlled the duty cycle of the speed controller producing a voltage output to control the motor speed. 
+The Afro ESC 12Amp BEC UltraLite Multirotor ESC V3 was tested at St. Mary's University with the assistance of Dr. Rhinelander. An Arduino running a script to map a potentiometer to a PWM duty cycle was used as an attempt to control the motor through the ESC. A 12V power supply fed the ESC while the Arduino controlled the duty cycle of the speed controller producing a voltage output to control the motor speed. 
 
-The ESC testing was successful, the testing proved the arduino's capability to control the motor with a variable input. The testing had flaws as a pwm duty cycle was used instead of a timed pulse width input. The duty cycle had potential of operating correcly as the range of times could have been calibrated to a range in the duty cycle although this method proved to be difficult due to low values causing the ESC to enter calibration mode. The script used to operate the ESC was re-written as a timed pulse width to ensure complete compatibility and ease of future integration.
+The ESC testing was successful, the testing proved the Arduino's capability to control the motor with a variable input. The testing had flaws as a PWM duty cycle was used instead of a timed pulse width input. The duty cycle had potential of operating correctly as the range of times could have been calibrated to a range in the duty cycle although this method proved to be difficult due to low values causing the ESC to enter calibration mode. The script used to operate the ESC was re-written as a timed pulse width to ensure complete compatibility and ease of future integration.
 
-  \subsubsection{Wi-Fi Range}
+  \subsubsection{Wi-Fi and Bluetooth Range}
   
-  A simple proof of concept regarding the range of Wi-Fi communications was performed. The test incorperated a a Wi-Fi communicating camera tethered to a Wi-Fi output from a cell phone. A user walked down Spring Garden holding the cell phone and found the approximate distance at which the phone and the camera lost communication. It was found that the range was approximately 100 ft with line of sight available but no Wi-Fi boosting technology.
+  A simple proof of concept regarding the range of Wi-Fi communications was performed. The test incorporated a a Wi-Fi communicating camera tethered to a Wi-Fi output from a cell phone. A user walked down Spring Garden holding the cell phone and found the approximate distance at which the phone and the camera lost communication. It was found that the range was approximately 100 ft with line of sight available but no Wi-Fi boosting technology. Bluetooth communications were also tested using the Raspberry Pi 3 connected to a Playstation 4 controller although the communication channel held a strong connection for only approximately 10 ft, this distance was considered insufficient for the scope of the project.
+  
   
   \subsubsection{I2C Communication Channel}
   
-  The flight controller will consist of both an arduino microcontroller and a 
+  The flight controller will consist of both an Arduino micro controller and a Raspberry Pi 3 Linux based computer system. The flight controller will require a communication channel between each component to transmit data between each system. To enable these communications, an I2C bus is planned to be utilized.
+  
+  The I2C bus was enabled on the Raspberry Pi and a sample open source script was run on the Arduino to begin I2C communications. The test resulted in the Raspberry Pi recognizing the Arduino on I2C bus.
   
   
   \subsubsection{Playstation Controller Integration}
