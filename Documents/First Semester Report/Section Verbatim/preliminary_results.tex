@@ -1,12 +1,21 @@
 %This section discusses our preliminary results.
 %This file should be included in doc using \input{file}
 \section{Preliminary Results}
-\subsection{Simulations Performed}
+\subsection{SimuLink System Models}
+Using SimuLink, a model of the quadcopter system and control system was built.  This was used to perform preliminary hovering tests.  The SimuLink model was broken down into several blocks.  Each of these blocks was built to handle key aspects of the system.  The system can be seen in it's current state in the following figure.  Each of the blocks shown are discussed in detail below.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.75]{Supplementary Files/system_arch.png}
+  \caption{SimuLink Control System Architecture}
+  \label{fig:sys_arch}
+\end{figure}
+
 \begin{itemize}
-  \item{PWM Simulation}
-  \item{Thrust Simulation}
-  \item{Torque Simulation}
-  \item{Visual Representation}
+  \item{Input_Model.slx}
+  \item{Controller_Model.slx}
+  \item{Motor_Characterization.slx}
+  \item{Multibody_Base.slx}
  \end{itemize}
   
 \subsubsection{PWM Simulation}
