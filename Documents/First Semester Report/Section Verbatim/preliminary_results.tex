@@ -26,8 +26,7 @@ Using SimuLink, a model of the quadcopter system and control system was built.  
 
 \subsubsection{Visual Representation}
 
-  
-\subsection{Proof of Concept and Testing Performed}
+  \subsection{Proof of Concept and Testing Performed}
 \begin{itemize}
   \item{PWM}
   \item{Electronic Speed Controller}
@@ -54,7 +53,9 @@ The ESC testing was successful, the testing proved the Arduino's capability to c
  
  Using a 12V power supply, the provided ESC and the Multi-Star Elite motor the characteristics of the motor's lifting capacity were tested. A weight was attached to a support system with the motor and blade seated on top. The apparatus was placed on a scale and the scale's reading was zeroed. As the rotor speed increased, the reduction in weight read by the scale was considered the lift capacity.
  
- The test was performed beginning at a pulse width of 1127$\mu$s.
+ The test was performed beginning at a pulse width of 1127$\mu$s which was found through experimentation to be the cut in pulse width for motor operation. The test was performed at increments of 25$\mu$s. The resultant current draw values and lift values were documented. The lift values were used to create a simulink lookup table to characterize the motor's available force for simulation purposes. 
+ 
+ During the load testing, it was noticed that the current draw from the individual motor was high. The power supply being used had a current limit of 3 A therefore the maximum current draw allowed during testing was 2.95 A to ensure no brown out due to lack of supply. The current limiting factor resulted in the test ending at a pulse width of 1525$\mu$s and a lift value of 137.5g.
 
   \subsubsection{Wi-Fi and Bluetooth Range}
   
