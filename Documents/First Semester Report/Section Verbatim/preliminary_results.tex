@@ -17,14 +17,32 @@ Using SimuLink, a model of the quadcopter system and control system was built.  
 %  \item{Motor_Characterization.slx}
 %  \item{Multibody_Base.slx}
 % \end{itemize}
-  
-\subsubsection{Unput Model}
+\subsubsection{Input Model}
+This block is the front end of the simulation.  The four inputs to this block specify the origin of the control signal as well as the limits or sensitivity on the signal.  As well as a port for sensor feedback.  The final output is the error vector for the control system.  The inputs are discussed in further detail below:
+\begin{enumerate}
+	\item \textbf{Limit Vector}:  This input takes a four dimensional vector of limits.  These limits respectively apply to roll, pitch, yaw, and altitude.  Roll, pitch, and yaw should be specified in degrees.
+	\item \textbf{Feedback Vector}: This input takes a four dimensional vector of the current values of roll, pitch, yaw, and altitude.  This is then subtracted from the control signal to create the error signal.
+	\item \textbf{Defined Input Signal}:  This input takes a four dimensional vector of control signal.  Values for this should be normalized between -1 and 1.
+	\item \textbf{Controller/Define Input}:  This input specifies whether to use a control signal from \textbf{Input 3} or from a controller (e.g. Joystick, DualShock gamepad) attached to the computer.
+\end{enumerate}
 
 \subsubsection{Controller Model}
+This subsystem contains the control system for the quadcopter.  It currently consists of a PI controller for all four of our control signals.  The gain values for these controllers have not yet been finely tuned.  The outputs of the controllers are limited to be between 0 and 100.  This is to represent a percentage of our throttle.
+
+\subsubsection{Pulse Width Subsystem}
+This subsystem takes the percentage of throttle and translates it into a pulse width within the applicable range for our speed controller.  Our lowest throttle is at 1127 $\mu s$ while our highest throttle is at 1860 $\mu s$.  Our output is given by the equation:
+
+\begin{align*}
+	PulseWidth &= Throttle\% \cdot (1860 \mu s - 1127 \mu s) + 1127 \mu s 
+\end{align*}
 
 \subsubsection{Motor Characterization}
+This subsystem determines the thrust and torque from each motor depending on their respective pulse width.  Thrust is determined by using a lookup table; extrapolated from our experimental data.  As we were unable to characterize the torque or the speed of the rotor, the output torque is an estimate based on the value of the thrust.
 
-\subsubsection{Multibody Base}
+\subsubsection{Physical Subsystem}
+This subsystem houses the physical simulation that has been created using SimuLink's Simscape Multibody package.  It currently consists of a rudimentary visualization of a quadcopter.  No more complex than a cross representing the body between the motors.  In the simulation a force and torque is applied at the end of these arms to simulate the action created by the motors.  
+The inputs for this subsystem are a vector of the magnitude of the motor thrusts and a vector of magnitude of the motor torques.  The simulation accounts for the direction of rotation of the motors by applying the torques along either the X or Y axis of the model, depending on the rotation.  The subsystem also outputs the current roll, pitch, yaw, and altitude to be fed back.
+
 
 
   \subsection{Proof of Concept and Testing Performed}
