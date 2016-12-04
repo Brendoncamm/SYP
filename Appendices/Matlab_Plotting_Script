@@ -1,0 +1,12 @@
+x=[1127,1200:25:1525]
+y=[10.3,32.6,40.5,49.5,58.2,67.7,76.5,84.6,92.6,97.8,105.3,116.5,122.8,125,137.5]
+z=[0.21,0.53,0.67,0.83,1.01,1.19,1.38,1.56,1.74,1.9,2.05,2.37,2.55,2.62,2.95]
+
+yyaxis left
+title('Lift & Current Draw vs Pulse Width')
+xlabel('Pulse Width (uS)')
+plot(x,y)
+ylabel('Lift (g)')
+yyaxis right
+plot(x,z)
+ylabel('Current Draw (A)')
