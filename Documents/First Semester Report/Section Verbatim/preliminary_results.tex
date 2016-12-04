@@ -18,8 +18,14 @@ Using SimuLink, a model of the quadcopter system and control system was built.  
 %  \item{Multibody_Base.slx}
 % \end{itemize}
   
-\subsubsection{Unput Model}
-
+\subsubsection{Input Model}
+This block is the front end of the simulation.  The four inputs to this block specify the origin of the control signal as well as the limits or sensitivity on the signal.  As well as a port for sensor feedback.  The final output is the error vector for the control system.  The inputs are discussed in further detail below:
+\begin{enumerate}
+	\item \textbf{Limit Vector}:  This input takes a four dimensional vector of limits.  These limits respectively apply to roll, pitch, yaw, and altitude.  Roll, pitch, and yaw should be specified in degrees.
+	\item \textbf{Feedback Vector}: This input takes a four dimensional vector of the current values of roll, pitch, yaw, and altitude.  This is then subtracted from the control signal to create the error signal.
+	\item \textbf{Defined Input Signal}:  This input takes a four dimensional vector of control signal.  Values for this should be normalized between -1 and 1.
+	\item \textbf{Controller/Define Input}:  This input specifies whether to use a control signal from \textbf{Input 3} or from a controller (e.g. Joystick, DualShock gamepad) attached to the computer.
+\end{enumerate}
 \subsubsection{Controller Model}
 
 \subsubsection{Motor Characterization}
