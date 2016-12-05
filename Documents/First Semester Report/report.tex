@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{listings}
 \usepackage{chngcntr}
+\usepackage{titlepic}
 
 \renewcommand{\baselinestretch}{1.5}
 % Title Page
@@ -10,34 +11,41 @@
 \title{First Semester Progress Report \\ Programmable Flight Controller}
 \author{Brendon Camm \\ B00649176 \and Lucas Doucette \\ B00685962 \and Dylan Humber \\ B00695554}
 \date{Submitted: December 6, 2016}
-
+\titlepic{\includegraphics[width=0.9\textwdith]{logo.pdf}}
 
 \begin{document}
-\maketitle
+	\maketitle
+	\newpage
+	\pagenumbering{gobble}
+	\begin{center}
+		This page left intentionally blank.
+	\end{center}
 
-\begin{abstract} %Need abstract. Yes.
-\end{abstract}
-%Need TOC
-\setcounter{tocdepth}{2}
-\tableofcontents
-\pagebreak
-
-%Please keep body of report seperated by section.  If you need to add a section create another .tex file for it and input it below.
-
-\input{"Section Verbatim/list_of_acronyms"}
-\input{"Section Verbatim/objectives_deliverables"}
-\input{"Section Verbatim/background_significance"}
-\input{"Section Verbatim/approach_validation"}
-\input{"Section Verbatim/preliminary_results"}
-\input{"Section Verbatim/wplan_milestones"}
-\input{"Section Verbatim/task_distribution"}
-\input{"Section Verbatim/budget"}
-
-\appendix
-\counterwithin{figure}{section}
-
-\input{"Section Verbatim/Prelim_Results_Appendix"}
-
-
-
+	\newpage
+	\begin{abstract} %Need abstract. Yes.
+	\end{abstract}
+	%Need TOC
+	\pagenumbering{roman}
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	\pagebreak
+	\pagenumbering{arabic}
+	%Please keep body of report seperated by section.  If you need to add a section create another .tex file for it and input it below.
+	
+	\input{"Section Verbatim/list_of_acronyms"}
+	\input{"Section Verbatim/objectives_deliverables"}
+	\input{"Section Verbatim/background_significance"}
+	\input{"Section Verbatim/approach_validation"}
+	\input{"Section Verbatim/preliminary_results"}
+	\input{"Section Verbatim/wplan_milestones"}
+	\input{"Section Verbatim/task_distribution"}
+	\input{"Section Verbatim/budget"}
+	
+	\appendix
+	\counterwithin{figure}{section}
+	
+	\input{"Section Verbatim/Prelim_Results_Appendix"}
+	
+	
+	
 \end{document}          
