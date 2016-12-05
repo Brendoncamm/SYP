@@ -5,6 +5,7 @@
 \usepackage{chngcntr}
 \usepackage{titlepic}
 \usepackage{hyperref}
+\usepackage{lscape}
 
 \renewcommand{\baselinestretch}{1.5}
 % Title Page
@@ -41,11 +42,14 @@
 	\input{"Section Verbatim/wplan_milestones"}
 	\input{"Section Verbatim/task_distribution"}
 	\input{"Section Verbatim/budget"}
+	\pagebreak
 	
 	\appendix
 	\counterwithin{figure}{section}
 	\counterwithin{lstlisting}{section} 
 	\input{"Section Verbatim/Prelim_Results_Appendix"}
+	\newpage
+	\input{"Section Verbatim/appendix_simulink"}
 	
 	
 	
