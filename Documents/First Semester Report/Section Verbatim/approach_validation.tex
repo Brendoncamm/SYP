@@ -1,4 +1,13 @@
 %This file discusses our proposed approach and validation methods.
 %This file should be icluded in main document with \input{file}
 \section{Proposed Approach and Validation}
-Our approach to begin designing the controller is to first design a simulation that takes control inputs from a Playstation Bluetooth Controller. 
+We have decided to approach the design of the controller by breaking it down into two phases, each phase will consist of four months. The first phase will deal purely with simulation and proof of concept testing of the hardware to gain a better understanding of what we were working with. The second phase will be to apply what we've learned during the first phase to develop the flight controller software.
+
+\subsection{First Phase}
+Before we can begin developing the flight controller we must first decide on which type of contol will be optimal for our application. The types of control we will consider are Proportional Integral and Proportional Integral Derivative. Each type of control will be applied to a simple simulation that outputs an the reaction torque of a 1kg body to a step input, which ever control supplies the most steady value of non-zero average torque will be the control type we will move forward with. Upon deciding which control type we will be using more advanced simulations will be run.
+
+The more advanced simulation will consist of a 3D representation of the drone that is connected to various subsystems. The response of the system to a step input will be studied and the system will be tuned to obtain a reasonable response. The response we're going to achieve will simulate that the drone is hovering in a location, this response should be resemblant to that of a sinusoidal function. Upon completion of the simulations Proof of Concept (POC) testing will be performed. 
+
+The POC testing will consist of determining methods to control the hardware, characteristics and limitations of the hardware and software and which communication protocol is optimal. 
+
+ 
