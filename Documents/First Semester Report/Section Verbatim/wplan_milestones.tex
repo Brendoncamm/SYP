@@ -1,3 +1,45 @@
 %This file discusses our work plan and milestone.  Will probably have to have a Gantt Chart or two.
 %This file should be included in in doc using \input{file}
 \section{Work Plan and Milestones}
+
+\subsection{First Semester (Sep - Dec 2016)}
+%Short term objectives from design memo
+%Simulations of controller and flight dynamics
+%initial design of the controller
+%initial testing
+%this report
+The objectives for this semester, as outlined in our design memo (October 28th), are as follows:
+
+\begin{itemize}
+	\item Flight Simulation
+	\item Assembly of Quadcopter
+	\item Initial Controller Design
+	\item Initial Testing
+\end{itemize}
+
+The flight simulation and initial controller design have been completed and exist within our SimuLink simulation.  Additionally, the schematics of the physical implementation have been finished.  With the simulation complete and initial hover test has been carried out in simulation.  This is discussed in further detail in Section 5.2.
+
+The frame and motors of the quadcopter have been assembled by Dr Rhinelander.  However, one of the motors is currently on loan to us in order to perform the characterization discussed in Section 5.3.3.
+
+The Gantt chart submitted with the design memo may be found in Appendix WHO KNOWS WHICH ONE?!
+
+\subsection{Second Semester (Jan - Apr 2017)}
+%finalize controller
+% gui designs
+%final testing
+%final report
+%documentation
+In the second semester of the project, our milestones build off of the ground work finished this past semester.  The principal milestones are as follows:
+\begin{itemize}
+	\item Refinement of simulation.
+	\item Refined controller tuning.
+	\item Base Station GUI.
+	\item Raspberry Pi programming.
+	\item Arduino programming.
+	\item Documentation.
+\end{itemize}
+As communication with the quadcopter and the basestation goes through the Raspberry Pi, the development of the two will coincide.  This will allow for a flexible platform to be built.  The base station will be designed to display data that the Raspberry Pi sends it, dynamically allocating screen space based on the volume of data or display settings.  This means that if a sensor is added to the platform at a later date, the base station GUI will not have to be updated to display the data.
+
+Implementation of the control loop on the Arduino can begin during the refinement of the simulation and controller tuning.  However, these will need to be finished before the Arduino implementation can be finished.  These will begin in parallel with the base station GUI and Raspberry Pi programming.
+
+Documentation will be an ongoing effort throughout the semester.  Due to it's flexibility, this will be written in \LaTeX.  Packages such as the listings package will be used to make the documentation of our code straightforward.  This process can be automated in such away that as modules are added or changed, their documentation can be flagged for updating.  This will ensure that we are able to provide clear and thorough documentation throughout the project. 
