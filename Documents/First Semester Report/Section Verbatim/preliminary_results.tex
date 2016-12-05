@@ -43,7 +43,17 @@ This subsystem determines the thrust and torque from each motor depending on the
 This subsystem houses the physical simulation that has been created using SimuLink's Simscape Multibody package.  It currently consists of a rudimentary visualization of a quadcopter.  No more complex than a cross representing the body between the motors.  In the simulation a force and torque is applied at the end of these arms to simulate the action created by the motors.  
 The inputs for this subsystem are a vector of the magnitude of the motor thrusts and a vector of magnitude of the motor torques.  The simulation accounts for the direction of rotation of the motors by applying the torques along either the X or Y axis of the model, depending on the rotation.  The subsystem also outputs the current roll, pitch, yaw, and altitude to be fed back.
 
+\subsection{Hover Test}
+Using the models and systems discussed in the previous subsection, our preliminary flight simulation was constructed.  The SimuLink model Dynamic\_Simulation.slx was created.  The altitude controller was tested by providing a step input.  After some tuning of the controller, we were able to obtain the following step response.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale = 0.5]{stepresponse.jpg}
+	\caption{Hovering Step Response, for 1 metre altitude.}
+	\label{fig:1m_step}
+\end{figure}
+
+Currently the simulation does not account for a hard stop at 0 altitude.  At the beginning of the response above, the quadcopter can be seen to fall briefly.  Once the rotors have generated sufficient thrust, the quadcopter continues towards the requested 1 meter altitude.
 
   \subsection{Proof of Concept and Testing Performed}
   
