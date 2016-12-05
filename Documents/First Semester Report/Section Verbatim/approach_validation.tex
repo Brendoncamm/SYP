@@ -8,6 +8,11 @@ Before we can begin developing the flight controller we must first decide on whi
 
 The more advanced simulation will consist of a 3D representation of the drone that is connected to various subsystems. The response of the system to a step input will be studied and the system will be tuned to obtain a reasonable response. The response we're going to achieve will simulate that the drone is hovering in a location, this response should be resemblant to that of a sinusoidal function. Upon completion of the simulations Proof of Concept (POC) testing will be performed. 
 
-The POC testing will consist of the following items: determining methods to control the motor speed, characteristics and limitations of the hardware and software and which communication protocol is optimal. The following:
+The POC testing will consist of the following items: determining methods to control the motor speed, characteristics and limitations of the hardware and software and which communication protocol is optimal. 
+
+The main method we will be implementing to test control of the motor speed is the apply different pulse lengths to the motor. This will be achieved by using Pulse Width Modulation (PWM) applied at different duty cycles. A script will be written that applies a voltage across a potentiometer that can then be varried to apply different duty cycles. The duty cycle will be displayed on a serial terminal to easily determine the current draw vs duty cycle characteristic of the motor. 
+
+Upon validating that the motor speed can be controlled using PWM characterization of the Electronic Speed Controllers (ESC) and BLDC motors will be performed. The ESC tests will attempt to prove that the Arduino is capable to control the motor speed using a variable input supplied by a potentiometer. 
+
 
  
