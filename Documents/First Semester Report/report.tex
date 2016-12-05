@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{listings}
+\usepackage{chngcntr}
 
 \renewcommand{\baselinestretch}{1.5}
 % Title Page
@@ -33,6 +34,7 @@
 \input{"Section Verbatim/budget"}
 
 \appendix
+\counterwithin{figure}{section}
 
 \input{"Section Verbatim/Prelim_Results_Appendix"}
 
