@@ -1,6 +1,7 @@
 %Preliminary Results Appendix
 %Include in main doc using \input{file}
 \section{Proof of Concept and Testing}
+\counterwithin{figure}{section}
 \begin{lstlisting}[language=C,caption={ESC Driver Script},label={lst:Driver_Script}]
 
 #include<Servo.h>
@@ -49,14 +50,14 @@ Serial.println(time_value);
 
 \newpage
 
-\begin{figure}[p]
+\begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{Motor_Driving_Schematic.jpg}
 	\caption{Motor Driver Circuit POC Schematic}
 	\label{fig:Motor_Drive_Schem}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}
 	\centering
 	\includegraphics[width=1\textwidth]{Motor_Characterization.jpg}
 	\caption{Motor Characterization Testing}
