@@ -12,7 +12,7 @@
 	\begingroup
 	\let\origwrite\write
 	\def\write{\immediate\origwrite}%
-	\addcontentsline{#1}{#2}{\protect{#3}%
+	\addcontentsline{#1}{#2}{#3}%
 	\endgroup
 }
 % Title Page
@@ -72,15 +72,13 @@
 	\counterwithin{figure}{section}
 	\counterwithin{lstlisting}{section} 
 	\input{"Section Verbatim/Prelim_Results_Appendix"}
-	\pagebreak
+	\clearpage
 	\input{"Section Verbatim/appendix_simulink"}
 	\newpage
+	
 	\cleardoublepage
-	\setcounter{page}{32}
-	\immediateaddcontentsline{toc}{section}{C  Gantt Charts}
-	
-	
-	
-	
-	
+	%\phantomsection
+	%\pagenumbering{arabic}
+	\immediateaddcontentsline{toc}{section}{\numberline{C} Gantt Charts}
+	%\cftaddtitleline{toc}{section}{Gantt Charts}{32}
 \end{document}          
