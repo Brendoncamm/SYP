@@ -8,6 +8,13 @@
 \usepackage{lscape}
 
 \renewcommand{\baselinestretch}{1.5}
+\newcommand\immediateaddcontentsline[3]{%
+	\begingroup
+	\let\origwrite\write
+	\def\write{\immediate\origwrite}%
+	\addcontentsline{#1}{#2}{\protect{#3}%
+	\endgroup
+}
 % Title Page
 %Will need to add signature fields for Drs Jason & Jason
 \title{First Semester Progress Report \\ Programmable Flight Controller}
@@ -59,14 +66,20 @@
 	\input{"Section Verbatim/wplan_milestones"}
 	\input{"Section Verbatim/task_distribution"}
 	\input{"Section Verbatim/budget"}
-	\newpage
+	\pagebreak
 	
 	\appendix
 	\counterwithin{figure}{section}
 	\counterwithin{lstlisting}{section} 
 	\input{"Section Verbatim/Prelim_Results_Appendix"}
-	\newpage
+	\pagebreak
 	\input{"Section Verbatim/appendix_simulink"}
+	\newpage
+	\cleardoublepage
+	\setcounter{page}{32}
+	\immediateaddcontentsline{toc}{section}{C  Gantt Charts}
+	
+	
 	
 	
 	
