@@ -20,3 +20,11 @@
 \BOOKMARK [2][-]{subsection.7.2}{Second Semester \(Jan - Apr 2017\)}{section.7}% 20
 \BOOKMARK [1][-]{section.8}{Budget}{}% 21
 \BOOKMARK [1][-]{appendix.A}{Proof of Concept and Testing}{}% 22
+\BOOKMARK [1][-]{appendix.B}{SimuLink Models}{}% 23
+\BOOKMARK [2][-]{subsection.B.1}{Dynamic Simulation}{appendix.B}% 24
+\BOOKMARK [2][-]{subsection.B.2}{Input Model Subsystem}{appendix.B}% 25
+\BOOKMARK [2][-]{subsection.B.3}{Controller Subsystem}{appendix.B}% 26
+\BOOKMARK [2][-]{subsection.B.4}{Motor Subsystem}{appendix.B}% 27
+\BOOKMARK [2][-]{subsection.B.5}{Motor Characterization Model}{appendix.B}% 28
+\BOOKMARK [2][-]{subsection.B.6}{Physical Subsystem}{appendix.B}% 29
+\BOOKMARK [2][-]{subsection.B.7}{Pulsewidth Subsystem}{appendix.B}% 30
