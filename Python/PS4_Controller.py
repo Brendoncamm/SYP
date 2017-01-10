@@ -15,6 +15,8 @@
 import os
 import pprint
 import pygame
+import socket 
+
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -47,7 +49,8 @@ class PS4Controller(object):
             self.hat_data = {}
             for i in range(self.controller.get_numhats()):
                 self.hat_data[i] = (0, 0)
-
+                
+                
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.JOYAXISMOTION:
@@ -61,11 +64,24 @@ class PS4Controller(object):
 
                 # Insert your code on what you would like to happen for each event here!
                 # In the current setup, I have the state simply printing out to the screen.
+               
+                #Defining Variables to send through the socket to the RPi, need to be strings
+                        
+                axis_data=str(self.axis_data) 
+                button_data=str(self.button_data)
+                hat_data=str(self.hat_data)
                 
-                os.system('clear')
-                pprint.pprint(self.button_data)
-                pprint.pprint(self.axis_data)
-                pprint.pprint(self.hat_data)
+                #Sending Data over a socket to the RPi
+                
+                s = socket.socket()        
+                host = '192.168.0.10' #ip of Server (PI)?
+                port = 12345               
+                s.connect((host, port))
+                s.send(axis_data)  #sending the controller data over the port
+                s.send(button_data)
+                s.send(hat_data)
+                s.close()
+       
 
 
 if __name__ == "__main__":
