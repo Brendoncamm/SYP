@@ -1,0 +1,59 @@
+/*Assuming values are recieved as 1060 - 1860 from the RPi
+This is a script to use a trigger input transmitted from
+the RPi to all four motors simultaneously.
+*/
+
+#include<Servo.h>
+#include <Wire.h>
+
+Servo esc_1, esc_2, esc_3, esc_4;
+const int MotorPin1 = 6;
+const int MotorPin2 = 9;
+const int MotorPin3 = 10;
+const int MotorPin4 = 11;
+int time_value=0;
+
+void setup() {
+
+  Serial.begin(9600);//begin serial monitor & baud rate
+  esc_1.attach(MotorPin1);  //set up motor connections
+  esc_2.attach(MotorPin2);
+  esc_3.attach(MotorPin3);
+  esc_4.attach(MotorPin4);
+  
+  //Initialization of the ESCs
+  esc_1.writeMicroseconds(1860);
+  esc_2.writeMicroseconds(1860);
+  esc_3.writeMicroseconds(1860);
+  esc_4.writeMicroseconds(1860);
+  delay(3000);
+  esc_1.writeMicroseconds(1060);
+  esc_2.writeMicroseconds(1060);
+  esc_3.writeMicroseconds(1060);
+  esc_4.writeMicroseconds(1060);
+  delay(3000);
+
+ //initialize I2C
+ Wire.begin(8);
+ Wire.onReceive(receiveEvent);
+ 
+}
+
+void loop() {
+
+//Write the throttle value to the motors
+
+esc_1.writeMicroseconds(time_value);
+esc_2.writeMicroseconds(time_value);
+esc_3.writeMicroseconds(time_value);
+esc_4.writeMicroseconds(time_value); 
+
+}
+
+
+void receiveEvent(int bytes) //Handle the received event
+  {
+    time_value=Wire.read();
+    Serial.Println(time_value);
+  }
+
