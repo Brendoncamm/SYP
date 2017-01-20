@@ -6,12 +6,14 @@ the RPi to all four motors simultaneously.
 #include<Servo.h>
 #include <Wire.h>
 
+
 Servo esc_1, esc_2, esc_3, esc_4;
 const int MotorPin1 = 6;
 const int MotorPin2 = 9;
 const int MotorPin3 = 10;
 const int MotorPin4 = 11;
-int time_value=0;
+int time_value[3]={0,0,0};
+
 
 void setup() {
 
@@ -20,7 +22,7 @@ void setup() {
   esc_2.attach(MotorPin2);
   esc_3.attach(MotorPin3);
   esc_4.attach(MotorPin4);
-  
+
   //Initialization of the ESCs
   esc_1.writeMicroseconds(1860);
   esc_2.writeMicroseconds(1860);
@@ -36,24 +38,30 @@ void setup() {
  //initialize I2C
  Wire.begin(8);
  Wire.onReceive(receiveEvent);
- 
-}
+ }
 
 void loop() {
 
 //Write the throttle value to the motors
 
-esc_1.writeMicroseconds(time_value);
-esc_2.writeMicroseconds(time_value);
-esc_3.writeMicroseconds(time_value);
-esc_4.writeMicroseconds(time_value); 
+//esc_1.writeMicroseconds(time_value);
+//esc_2.writeMicroseconds(time_value);
+//esc_3.writeMicroseconds(time_value);
+//esc_4.writeMicroseconds(time_value);
+delay(100);
 
 }
 
 
-void receiveEvent(int bytes) //Handle the received event
+void receiveEvent(int val) //Handle the received event
   {
-    time_value=Wire.read();
-    Serial.Println(time_value);
+    int i=0;
+    for (i=0; i<=val; i++)
+    {
+     time_value[i]=Wire.read();
+     Serial.println(time_value[i]);
+    }
   }
+
+
 
