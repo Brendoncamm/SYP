@@ -15,7 +15,8 @@
 import os
 import pprint
 import pygame
-import socket 
+import socket
+import struct
 
 
 class PS4Controller(object):
@@ -28,7 +29,7 @@ class PS4Controller(object):
 
     def init(self):
         """Initialize the joystick components"""
-        
+
         pygame.init()
         pygame.joystick.init()
         self.controller = pygame.joystick.Joystick(0)
@@ -36,9 +37,14 @@ class PS4Controller(object):
 
     def listen(self):
         """Listen for events to happen"""
-        
+
         if not self.axis_data:
-            self.axis_data = {}
+            self.axis_data = {0: float(0),
+                              1: float(0),
+                              2: float(0),
+                              3: float(0),
+                              4: float(-1),
+                              5: float(-1)} #Added explicity number of axes to avoid waiting for input
 
         if not self.button_data:
             self.button_data = {}
@@ -49,39 +55,53 @@ class PS4Controller(object):
             self.hat_data = {}
             for i in range(self.controller.get_numhats()):
                 self.hat_data[i] = (0, 0)
-                
-                
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.JOYAXISMOTION:
-                    self.axis_data[event.axis] = round(event.value,2)
-                elif event.type == pygame.JOYBUTTONDOWN:
-                    self.button_data[event.button] = True
-                elif event.type == pygame.JOYBUTTONUP:
-                    self.button_data[event.button] = False
-                elif event.type == pygame.JOYHATMOTION:
-                    self.hat_data[event.hat] = event.value
 
-                # Insert your code on what you would like to happen for each event here!
-                # In the current setup, I have the state simply printing out to the screen.
-               
-                #Defining Variables to send through the socket to the RPi, need to be strings
-                        
-                axis_data=str(self.axis_data) 
-                button_data=str(self.button_data)
-                hat_data=str(self.hat_data)
-                
-                #Sending Data over a socket to the RPi
-                
-                s = socket.socket()        
-                host = '192.168.0.10' #ip of Server (PI)?
-                port = 12345               
-                s.connect((host, port))
-                s.send(axis_data)  #sending the controller data over the port
-                s.send(button_data)
-                s.send(hat_data)
-                s.close()
-       
+        with socket.socket() as connection:
+            host = '192.168.2.19' #ip of Server (PI)
+            port = 12345
+            connection.connect((host, port))
+            while True:
+                for event in pygame.event.get():
+                    if event.type == pygame.JOYAXISMOTION:
+                        self.axis_data[event.axis] = round(event.value,2)
+                    elif event.type == pygame.JOYBUTTONDOWN:
+                        self.button_data[event.button] = True
+                    elif event.type == pygame.JOYBUTTONUP:
+                        self.button_data[event.button] = False
+                    elif event.type == pygame.JOYHATMOTION:
+                        self.hat_data[event.hat] = event.value
+
+                    # Insert your code on what you would like to happen for each event here!
+                    # In the current setup, I have the state simply printing out to the screen.
+
+                    #Defining Variables to send through the socket to the RPi, need to be strings
+
+                    #axis_data=str(self.axis_data)
+                    button_data=str(self.button_data)
+                    hat_data=str(self.hat_data)
+
+                    #Sending Data over a socket to the RPi
+                    #print(str(self.axis_data))
+                    #Isolate desired Axes
+
+                    axes_data = [self.axis_data[1],
+                                 self.axis_data[2],
+                                 self.axis_data[3],
+                                 self.axis_data[4]]
+                    byte_data = [] #To hold the axes data serialized to bytes
+                    for axis in axes_data:
+                        byte_data.append(struct.pack("f", axis))
+
+                    xmission_bytes = bytes().join(byte_data)
+                    connection.send(xmission_bytes)  #sending the controller data over the port
+                    #print(xmission_bytes)
+
+                    #os.system('cls')
+                    #break
+                    #s.send(button_data)
+                    #s.send(hat_data)
+                    #s.close()
+
 
 
 if __name__ == "__main__":
