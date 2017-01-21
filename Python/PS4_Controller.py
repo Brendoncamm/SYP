@@ -57,7 +57,8 @@ class PS4Controller(object):
                 self.hat_data[i] = (0, 0)
 
         with socket.socket() as connection:
-            host = '192.168.2.19' #ip of Server (PI)
+            #host = '192.168.2.19' #ip of Server (PI)
+            host = socket.gethostbyname('raspberrypi') #if fails install samba on pi and reboot
             port = 12345
             connection.connect((host, port))
             while True:
