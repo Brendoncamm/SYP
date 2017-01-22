@@ -27,7 +27,7 @@ class PS4Controller(object):
     button_data = None
     hat_data = None
 
-    def init(self):
+    def __init__(self):
         """Initialize the joystick components"""
 
         pygame.init()
@@ -56,7 +56,7 @@ class PS4Controller(object):
             for i in range(self.controller.get_numhats()):
                 self.hat_data[i] = (0, 0)
 
-        with socket.socket() as connection:
+        with socket.socket(AF_INET, SOCK_RAW) as connection:
             #host = '192.168.2.19' #ip of Server (PI)
             host = socket.gethostbyname('raspberrypi') #if fails install samba on pi and reboot
             port = 12345
@@ -107,5 +107,5 @@ class PS4Controller(object):
 
 if __name__ == "__main__":
     ps4 = PS4Controller()
-    ps4.init()
+    #ps4.init()
     ps4.listen()
