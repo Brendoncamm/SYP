@@ -21,15 +21,18 @@ class Arduino_Controller(object):
         self.bus = smbus.SMBus(1)
 
     def write_axes(self, axes):
-	"""Breaks received 16 byte string into list of 4 byte floats. 
+	"""Breaks received 16 byte string into list of 4 byte floats.
 	Then writes them to the bus.
 	"""
+    #I2C block data write requires a list, so we will build it from the byte array.
 	axis_list = []
 	for i in range(0,16,4):
 		axis_list.append(axes[i:i+4])
-
-        self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
+        if type(axis_list) == type(list()):
+            print('Created list: writing to bus.')
+            self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
+        else
+            raise TypeError('Failed to create a list, created a {0}'.format(type(axis_list)))
 
     def write_button(self, button):
         pass
-    
