@@ -18,7 +18,7 @@ while True:
   #print('waiting for receive')
   #c, addr = s.accept()
   data=bytes(c.recv(16))
-  controller.write(data)
+  controller.write_axes(data)
   print(len(data))
   #os.system('clear')
   #c.close()
