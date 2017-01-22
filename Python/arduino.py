@@ -27,11 +27,11 @@ class Arduino_Controller(object):
     #I2C block data write requires a list, so we will build it from the byte array.
 	axis_list = []
 	for i in range(0,16,4):
-		axis_list.append(axes[i:i+4])
-        if type(axis_list) == type(list()):
+		axis_list.append(int(axes[i:i+4]))
+        if type(axis_list) == type(list()) &:
             print('Created list: writing to bus.')
             self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
-        else
+        else:
             raise TypeError('Failed to create a list, created a {0}'.format(type(axis_list)))
 
     def write_button(self, button):
