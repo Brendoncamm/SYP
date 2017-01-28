@@ -1,10 +1,16 @@
 import socket
 import os
 import binascii
-import arduino
+import RPi.GPIO as gp
+from arduino import Arduino_Controller
 from subprocess import check_output
 
 controller = Arduino_Controller(0x08)
+
+request_pin = 7
+
+gp.setmode(GPIO.BOARD)
+gp.setup(request_pin, GPIO.IN)
 
 s = socket.socket()
 #host = '192.168.0.10'# IP of Server (PI?)
@@ -18,7 +24,8 @@ while True:
   #print('waiting for receive')
   #c, addr = s.accept()
   data=bytes(c.recv(16))
-  controller.write_axes(data)
+  if gp.input(request_pin):
+    controller.write_axes(data)
   print(len(data))
   #os.system('clear')
   #c.close()
