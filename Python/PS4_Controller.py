@@ -27,13 +27,14 @@ class PS4Controller(object):
     button_data = None
     hat_data = None
 
-    def __init__(self):
+    def __init__(self, axis_order=[1,2,3,4]):
         """Initialize the joystick components"""
 
         pygame.init()
         pygame.joystick.init()
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
+        self.axis_order = axis_order
 
     def listen(self):
         """Listen for events to happen"""
@@ -85,10 +86,10 @@ class PS4Controller(object):
                     #print(str(self.axis_data))
                     #Isolate desired Axes
 
-                    axes_data = [self.axis_data[1],
-                                 self.axis_data[2],
-                                 self.axis_data[3],
-                                 self.axis_data[4]]
+                    axes_data = [self.axis_data[self.axis_order[1]],
+                                 self.axis_data[self.axis_order[2]],
+                                 self.axis_data[self.axis_order[3],
+                                 self.axis_data[self.axis_order[4]]
                     byte_data = [] #To hold the axes data serialized to bytes
                     for axis in axes_data:
                         byte_data.append(struct.pack("f", axis))
