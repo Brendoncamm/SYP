@@ -97,8 +97,8 @@ class PS4Controller(object):
 
                     axes_data = [self.axis_data[self.axis_order[1]],
                                  self.axis_data[self.axis_order[2]],
-                                 self.axis_data[self.axis_order[3],
-                                 self.axis_data[self.axis_order[4]]
+                                 self.axis_data[self.axis_order[3]],
+                                 self.axis_data[self.axis_order[4]]]
                     byte_data = [] #To hold the axes data serialized to bytes
                     for axis in axes_data:
                         byte_data.append(struct.pack("f", axis)) #F for float
