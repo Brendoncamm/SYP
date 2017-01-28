@@ -23,8 +23,8 @@ class Arduino_Controller(object):
     #Then writes them to the bus.
     
     #I2C block data write requires a list, so we will build it from the byte array.
-    axis_list = list(axes)
-    self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
+        axis_list = list(axes)
+        self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
 
     def write_button(self, button):
         pass
