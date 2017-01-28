@@ -4,6 +4,10 @@ import binascii
 import RPi.GPIO as gp
 from arduino import Arduino_Controller
 from subprocess import check_output
+import sys
+
+if sys.version_info[0] < 3:
+    raise Exception('Lucas','not compatible with Python version 2')
 
 controller = Arduino_Controller(0x08)
 

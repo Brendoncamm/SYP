@@ -17,7 +17,10 @@ import pprint
 import pygame
 import socket
 import struct
+import sys
 
+if sys.version_info[0] < 3:
+    raise Exception('Lucas','not compatible with Python version 2')
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -34,6 +37,12 @@ class PS4Controller(object):
         pygame.joystick.init()
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
+        if type(axis_order) == type(list()):
+            self.axis_order = axis_order #For changing how controller axes are bound
+        else:
+            raise Exception(TypeError,'axis_order must be list.')
+
+    def update_axes(axis_order):
         self.axis_order = axis_order
 
     def listen(self):
@@ -92,7 +101,7 @@ class PS4Controller(object):
                                  self.axis_data[self.axis_order[4]]
                     byte_data = [] #To hold the axes data serialized to bytes
                     for axis in axes_data:
-                        byte_data.append(struct.pack("f", axis))
+                        byte_data.append(struct.pack("f", axis)) #F for float
 
                     xmission_bytes = bytes().join(byte_data)
                     connection.send(xmission_bytes)  #sending the controller data over the port
