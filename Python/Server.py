@@ -26,6 +26,6 @@ while True:
   data=bytes(c.recv(16))
   if gp.input(request_pin):
     controller.write_axes(data)
-  print(len(data))
+    print('Writing {0} bytes.'.format(len(data)))
   #os.system('clear')
   #c.close()
