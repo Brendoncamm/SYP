@@ -9,8 +9,8 @@ controller = Arduino_Controller(0x08)
 
 request_pin = 7
 
-gp.setmode(GPIO.BOARD)
-gp.setup(request_pin, GPIO.IN)
+gp.setmode(gp.BOARD)
+gp.setup(request_pin, gp.IN)
 last_state = gp.LOW
 s = socket.socket()
 #host = '192.168.0.10'# IP of Server (PI?)
