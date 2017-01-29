@@ -3,6 +3,7 @@
 # 2017-01-13 Auth: Dylan
 
 import smbus
+import subprocess
 
 ##bus = smbus.SMBus(1)
 ##
@@ -24,7 +25,12 @@ class Arduino_Controller(object):
     
     #I2C block data write requires a list, so we will build it from the byte array.
         axis_list = list(axes)
-        self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
+        
+        try:
+            self.bus.write_i2c_block_data(self.address, 0x01, axis_list)
+        except:
+            subprocess.call(['i2cdetect','-y','1'])
+        
 
     def write_button(self, button):
         pass
