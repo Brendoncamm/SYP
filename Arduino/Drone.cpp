@@ -1,5 +1,5 @@
 /*
-  Drone.cpp - Library for Drone Controller.
+  Drone.h - Library for Drone Controller.
   Created by Lucas Doucette, February 17, 2017.
 */
 
@@ -22,18 +22,23 @@ Adafruit_BMP085_Unified       bmp   = Adafruit_BMP085_Unified(18001);
 
 Servo esc_1, esc_2, esc_3, esc_4;
 float Error, DError, IError, LastTime, NowTime, LastError, Output;
-/* Update this with the correct SLP for accurate altitude measurements */
 
-  float temperature;
-  float sensorAltitude;
-  float sensorYaw;
-  float sensorPitch;
-  float sensorRoll;
+//Smooting Constant
+const int numReadings=10000;
+float SmoothingVariable=0;
+float NowPressure=0;
+
+float temperature;
+float sensorAltitude;
+float sensorYaw;
+float sensorPitch;
+float sensorRoll;
+float currentPressure;
   
-  sensors_event_t accel_event;
-  sensors_event_t mag_event;
-  sensors_event_t bmp_event;
-  sensors_vec_t   orientation;
+sensors_event_t accel_event;
+sensors_event_t mag_event;
+sensors_event_t bmp_event;
+sensors_vec_t   orientation;
 
 Drone::Drone()
 {
@@ -87,22 +92,56 @@ float Drone::get_sensorYaw()
   }
 }
        
-float Drone::get_sensorAltitude()
+float Drone::get_sensorAltitude(float startingPressure)
 {
   // Calculate the altitude using the barometric pressure sensor
-float seaLevelPressure = SENSORS_PRESSURE_SEALEVELHPA;
-  bmp.getEvent(&bmp_event);
-  if (bmp_event.pressure)
-  {
     
+  
+  bmp.getEvent(&bmp_event);
+ 
+      
+      for(int i=0; i<numReadings; i++)
+    {
+        SmoothingVariable+=bmp_event.pressure;
+    
+    }
+    
+    NowPressure=SmoothingVariable/numReadings;
+    SmoothingVariable=0;
+    
+    Serial.print("Pressure:    ");
+    Serial.print(NowPressure);
+    Serial.println(" hPa");
+      
     // Get ambient temperature in C
     bmp.getTemperature(&temperature);
+    Serial.print(temperature);  
     
     // Convert atmospheric pressure, SLP and temp to altitude  
-    sensorAltitude=bmp.pressureToAltitude(seaLevelPressure,bmp_event.pressure,temperature); 
+    sensorAltitude=bmp.pressureToAltitude(startingPressure,NowPressure,temperature); 
     return sensorAltitude;  
-  }
   
+  
+}
+
+//must be called after initSensors();
+
+float Drone::get_currentPressure()
+{
+    bmp.getEvent(&bmp_event);
+    for(int i=0; i<numReadings; i++)
+    {
+        SmoothingVariable+=bmp_event.pressure;
+    
+    }
+    currentPressure = SmoothingVariable/numReadings;
+    SmoothingVariable=0;
+    
+    Serial.print("CurrentPressure:    ");
+    Serial.print(bmp_event.pressure);
+    return currentPressure;
+    
+    
 }
 
 float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki )
