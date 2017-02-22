@@ -7,7 +7,7 @@
 
 #include "Arduino.h"
 #include <Wire.h>
-#include<Servo.h>
+#include <Servo.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_LSM303_U.h>
 #include <Adafruit_BMP085_U.h>
@@ -21,11 +21,11 @@ class Drone
     float get_sensorRoll();
     float get_sensorPitch();
     float get_sensorYaw();
-    float get_sensorAltitude();
+    float get_sensorAltitude(float startingPressure);
+    float get_currentPressure();
     float PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki );
     void initSensors();
     void initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4);
-    
  
 };
 
