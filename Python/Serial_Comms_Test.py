@@ -2,9 +2,9 @@
 
 import serial
 
-arduino = serial.Serial('/dev/tty.usbserial', 9600)
+arduino = serial.Serial('/dev/ttyACM0', 9600)
 
-ser.write(b'Test')
+arduino.write(b'Test\r\n')
 
 while True:
-    print(ser.readline())
+    print(arduino.readline())
