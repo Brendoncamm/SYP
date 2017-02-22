@@ -1,7 +1,7 @@
 #include <Drone.h>
 //float sensorRoll;
 Drone drone;
-float roll, pitch, yaw, altitude;
+float roll, pitch, yaw, altitude, initial_pressure;
 
 
 
@@ -10,12 +10,13 @@ void setup() {
 
   Serial.begin(9600);
   drone.initSensors();
+  initial_pressure=drone.get_currentPressure();
  
 
 }
 
 void loop() {
-  roll=drone.get_sensorRoll();
+ /* roll=drone.get_sensorRoll();
   Serial.print("Roll: ");
   Serial.print(roll);
 
@@ -26,10 +27,10 @@ void loop() {
   yaw=drone.get_sensorYaw();
   Serial.print("Yaw: ");
   Serial.print(yaw);
-  
-  altitude=drone.get_sensorAltitude();
+  */
+  altitude=drone.get_sensorAltitude(initial_pressure);
   Serial.print("Altitude: ");
   Serial.println(altitude);
- 
+
 
 }
