@@ -9,7 +9,7 @@ URL             = '<a href="http://www.mathworks.com/matlabcentral/fileexchange/
 LIB_NAME        = 'multibody_3D_1D_intf_lib';
 
 test = exist(LIB_NAME);
-test = 3;
+%test = 3;
 if test == NOT_FOUND
     fprintf(strcat('Library not found. Proceed to:\n ', URL))
 elseif test == FOUND_SIMULINK
