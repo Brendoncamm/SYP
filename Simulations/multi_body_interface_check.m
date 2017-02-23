@@ -12,6 +12,9 @@ test = exist(LIB_NAME);
 %test = 3;
 if test == NOT_FOUND
     fprintf(strcat('Library not found. Proceed to:\n ', URL))
+    fprintf('Attempting to add library to MATLAB path.')
+    cd 'Multibody Interfaces'
+    addpath(pwd)
 elseif test == FOUND_SIMULINK
     fprintf('Library is found.\n')
 else
