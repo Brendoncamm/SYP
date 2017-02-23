@@ -12,8 +12,8 @@
 #
 # Distributed under terms of the MIT license.
 
-import os
-import pprint
+# import os
+# import pprint
 import pygame
 import socket
 import struct
@@ -26,10 +26,10 @@ if sys.version_info[0] < 3:
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
 
-    self.controller = None
-    self.axis_data = None
-    self.button_data = None
-    self.hat_data = None
+    controller = None
+    axis_data = None
+    button_data = None
+    hat_data = None
 
     def __init__(self, axis_order=[1, 2, 3, 4]):
         """Initialize the joystick components"""
@@ -38,12 +38,12 @@ class PS4Controller(object):
         pygame.joystick.init()
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
-        if type(axis_order) == type(list()):
+        if isinstance(axis_order, list):
             self.axis_order = axis_order  # For changing how controller axes are bound
         else:
             raise Exception(TypeError, 'axis_order must be list.')
 
-    def update_axes(axis_order):
+    def update_axes(self, axis_order):
         self.axis_order = axis_order
 
     def listen(self):
@@ -89,8 +89,8 @@ class PS4Controller(object):
                     # Defining Variables to send through the socket to the RPi, need to be strings
 
                     # axis_data=str(self.axis_data)
-                    button_data = str(self.button_data)
-                    hat_data = str(self.hat_data)
+                    # button_data = str(self.button_data)
+                    # hat_data = str(self.hat_data)
 
                     # Sending Data over a socket to the RPi
                     # print(str(self.axis_data))
