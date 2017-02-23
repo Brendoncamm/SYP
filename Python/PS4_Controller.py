@@ -31,13 +31,14 @@ class PS4Controller(object):
     button_data = None
     hat_data = None
 
-    def __init__(self, axis_order=[1, 2, 3, 4]):
+    def __init__(self, axis_order=[1, 2, 3, 4], hostname='raspberrypi'):
         """Initialize the joystick components"""
 
         pygame.init()
         pygame.joystick.init()
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
+        self.hostname = hostname
         if isinstance(axis_order, list):
             self.axis_order = axis_order  # For changing how controller axes are bound
         else:
@@ -69,7 +70,7 @@ class PS4Controller(object):
 
         with socket.socket() as connection:
             # host = '192.168.2.19' #ip of Server (PI)
-            host = socket.gethostbyname('raspberrypi')  # if fails install samba on pi and reboot
+            host = socket.gethostbyname(hostname)  # if fails install samba on pi and reboot
             port = 12345
             connection.connect((host, port))
             while True:
