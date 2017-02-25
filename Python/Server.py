@@ -36,5 +36,7 @@ while True:
   if Transmit_Begin="xmit"
     controller.write_axes(data)
     print('Writing {0} bytes.'.format(len(data)))
+    Transmit_Begin=""
+    
   #os.system('clear')
   #c.close()
