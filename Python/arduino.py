@@ -13,5 +13,8 @@ class Arduino_Controller(object):
     def write_axes(self, axes):
         self.serial_bus.write(axes)
 
+    def ready(self):
+        return self.serial_bus.inWaiting()
+
     def write_button(self, button):
         pass
