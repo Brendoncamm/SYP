@@ -9,24 +9,51 @@
 #include <Servo.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_LSM303_U.h>
+#include <Adafruit_LSM303.h>
 #include <Adafruit_BMP085_U.h>
 #include <Adafruit_L3GD20_U.h>
 #include <Adafruit_10DOF.h>
 
 
   /* Assign a unique ID to the sensors */
-Adafruit_10DOF                dof   = Adafruit_10DOF();
+Adafruit_10DOF dof   = Adafruit_10DOF();
 Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(30301);
 Adafruit_LSM303_Mag_Unified   mag   = Adafruit_LSM303_Mag_Unified(30302);
 Adafruit_BMP085_Unified       bmp   = Adafruit_BMP085_Unified(18001);
 
+
+
+//Define Motors for Initialization
 Servo esc_1, esc_2, esc_3, esc_4;
+
+//Define PID Variables
 float Error, DError, IError, LastTime, NowTime, LastError, Output;
 
 //Smooting Constant
-const int numReadings=10000;
+const int numReadings=100;
 float SmoothingVariable=0;
 float NowPressure=0;
+
+//PS4 Receive Variables
+int buffer[16];
+float PS4Yaw, PS4Pitch, PS4Roll, PS4Altitude;
+int YawBuffer[4], PitchBuffer[4], RollBuffer[4], AltitudeBuffer[4];
+
+
+// kalman filtering variables
+
+float Variance=0.4;
+float varProcess = 1e-1;
+float Pc = 0.0;
+float G = 0.0;
+float P = 1.0;
+float Xp = 0.0;
+float Zp = 0.0;
+float Xe = 0.0;
+
+/*unsigned long Time=0, prevTime=0, TimeBetween=0;
+float Displacement=0, TotalDisplacement, Acceleration=0, InitialAcceleration=0;
+*/
 
 float temperature;
 float sensorAltitude;
@@ -97,30 +124,35 @@ float Drone::get_sensorAltitude(float startingPressure)
   // Calculate the altitude using the barometric pressure sensor
     
   
-  bmp.getEvent(&bmp_event);
- 
-      
-      for(int i=0; i<numReadings; i++)
-    {
-        SmoothingVariable+=bmp_event.pressure;
+    bmp.getEvent(&bmp_event);
+    NowPressure=bmp_event.pressure;
     
-    }
-    
-    NowPressure=SmoothingVariable/numReadings;
-    SmoothingVariable=0;
-    
-    Serial.print("Pressure:    ");
-    Serial.print(NowPressure);
-    Serial.println(" hPa");
-      
     // Get ambient temperature in C
     bmp.getTemperature(&temperature);
-    Serial.print(temperature);  
     
-    // Convert atmospheric pressure, SLP and temp to altitude  
-    sensorAltitude=bmp.pressureToAltitude(startingPressure,NowPressure,temperature); 
-    return sensorAltitude;  
-  
+    
+    // Convert atmospheric pressure, SLP and temp to altitude
+    sensorAltitude=bmp.pressureToAltitude(startingPressure,NowPressure,temperature);
+    
+    
+    // kalman filter;
+    Pc=P+varProcess;
+    G=Pc/(Pc+Variance);
+    P=(1-G)*Pc;
+    Xp=Xe;
+    Zp=Xp;
+    Xe=G*(sensorAltitude-Zp)+Xp;
+    
+    
+    //Cutoff useless info (Less than ground level)
+    
+      if(Xe<0)
+    {
+        Xe=0;
+    }
+    
+    return Xe;
+    
   
 }
 
@@ -128,40 +160,103 @@ float Drone::get_sensorAltitude(float startingPressure)
 
 float Drone::get_currentPressure()
 {
+   //Initializing Pressure, Filtered for accuracy
+    
     bmp.getEvent(&bmp_event);
     for(int i=0; i<numReadings; i++)
     {
         SmoothingVariable+=bmp_event.pressure;
+        //delay(1);
     
     }
-    currentPressure = SmoothingVariable/numReadings;
+    
+    currentPressure = SmoothingVariable/numReadings;    
     SmoothingVariable=0;
     
-    Serial.print("CurrentPressure:    ");
-    Serial.print(bmp_event.pressure);
     return currentPressure;
-    
     
 }
 
 float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki )
 {
-    //unsigned long NowTime = millis();
-//if(NowTime-LastTime >= SampleTime)
-//{
-  //calculate error
-  Error = Setpoint-SenseRead;
-  DError = (Error-LastError)/(NowTime-LastTime);
-  IError += (Error*(NowTime-LastTime));
+    
+    //find current time
+    unsigned long NowTime = millis();
+    
+    //calculate PID Error values
+    Error = Setpoint-SenseRead;
+    DError = (Error-LastError)/(NowTime-LastTime);
+    IError += (Error*(NowTime-LastTime));
 
-  Output = kp*Error+ki*IError+kd*DError;
-//Save LastTime and LastError
+    //Calculate Output
+    Output = kp*Error+ki*IError+kd*DError;
+   
+    //Save LastTime and LastError
+    LastTime=NowTime;
+    LastError=Error;
 
-  LastTime=NowTime;
-  LastError=Error;
-
-  return Output;
+    return Output;
 }
+
+
+void Drone::read_PS4Setpoints()
+    
+{
+    
+    //Write serially to Pi to begin transmission.
+    if (Serial.available()) {
+        for (int i=0; i<15; i++) {
+            buffer[i] = Serial.read();
+        }
+    }
+
+}
+
+float Drone::get_PS4Yaw()
+{
+    for(int i=0; i<4; i++)
+    {
+        YawBuffer[i]=buffer[i];
+        PS4Yaw = *((float*)(YawBuffer));
+    }
+    
+    return YawBuffer[1];
+}
+
+float Drone::get_PS4Pitch()
+{
+    for(int i=4; i<8; i++)
+    {
+        PitchBuffer[i]=buffer[i];
+        PS4Pitch = *((float*)(PitchBuffer));
+    }
+    
+    return PS4Pitch;
+}
+
+float Drone::get_PS4Roll()
+{
+    for(int i=8; i<12; i++)
+    {
+        RollBuffer[i]=buffer[i];
+        PS4Roll = *((float*)(RollBuffer));
+    }
+    
+    return PS4Roll;
+}
+
+float Drone::get_PS4Altitude()
+{
+    for(int i=12; i<16; i++)
+    {
+        AltitudeBuffer[i]=buffer[i];
+        PS4Altitude = *((float*)(AltitudeBuffer));
+    }
+    
+    return PS4Altitude;
+    
+}
+
 
 void Drone::initSensors()
 {
@@ -184,7 +279,7 @@ void Drone::initSensors()
     Serial.println("Ooops, no BMP180 detected ... Check your wiring!");
     while(1);
   }
-
+    
 }
 
 void Drone::initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4)
@@ -209,3 +304,5 @@ void Drone::initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4)
 
 
 }
+
+
