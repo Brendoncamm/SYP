@@ -34,10 +34,8 @@ const int numReadings=100;
 float SmoothingVariable=0;
 float NowPressure=0;
 
-//PS4 Receive Variables
-int buffer[16];
+//PS4 controller variables
 float PS4Yaw, PS4Pitch, PS4Roll, PS4Altitude;
-int YawBuffer[4], PitchBuffer[4], RollBuffer[4], AltitudeBuffer[4];
 
 
 // kalman filtering variables
@@ -51,9 +49,7 @@ float Xp = 0.0;
 float Zp = 0.0;
 float Xe = 0.0;
 
-/*unsigned long Time=0, prevTime=0, TimeBetween=0;
-float Displacement=0, TotalDisplacement, Acceleration=0, InitialAcceleration=0;
-*/
+//Sensor Receive Variables
 
 float temperature;
 float sensorAltitude;
@@ -122,8 +118,6 @@ float Drone::get_sensorYaw()
 float Drone::get_sensorAltitude(float startingPressure)
 {
   // Calculate the altitude using the barometric pressure sensor
-    
-  
     bmp.getEvent(&bmp_event);
     NowPressure=bmp_event.pressure;
     
@@ -202,59 +196,34 @@ float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, 
 void Drone::read_PS4Setpoints()
     
 {
-    
     //Write serially to Pi to begin transmission.
-    if (Serial.available()) {
-        for (int i=0; i<15; i++) {
-            buffer[i] = Serial.read();
+    
+    
+    while (Serial.available())
+    {
+        for(int i=0; i<4; i++)
+        {
+            PS4Yaw=Serial.parseFloat();
         }
-    }
-
-}
-
-float Drone::get_PS4Yaw()
-{
-    for(int i=0; i<4; i++)
-    {
-        YawBuffer[i]=buffer[i];
-        PS4Yaw = *((float*)(YawBuffer));
-    }
-    
-    return YawBuffer[1];
-}
-
-float Drone::get_PS4Pitch()
-{
-    for(int i=4; i<8; i++)
-    {
-        PitchBuffer[i]=buffer[i];
-        PS4Pitch = *((float*)(PitchBuffer));
+        
+        for(int i=4; i<8; i++)
+        {
+            PS4Pitch=Serial.parseFloat();
+        } 
+        
+        for(int i=8; i<12; i++)
+        {
+            PS4Roll=Serial.parseFloat();
+        } 
+        
+        for(int i=12; i<16; i++)
+        {
+            PS4Altitude=Serial.parseFloat();
+        }    
+        
     }
     
-    return PS4Pitch;
-}
 
-float Drone::get_PS4Roll()
-{
-    for(int i=8; i<12; i++)
-    {
-        RollBuffer[i]=buffer[i];
-        PS4Roll = *((float*)(RollBuffer));
-    }
-    
-    return PS4Roll;
-}
-
-float Drone::get_PS4Altitude()
-{
-    for(int i=12; i<16; i++)
-    {
-        AltitudeBuffer[i]=buffer[i];
-        PS4Altitude = *((float*)(AltitudeBuffer));
-    }
-    
-    return PS4Altitude;
-    
 }
 
 
@@ -304,5 +273,4 @@ void Drone::initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4)
 
 
 }
-
 
