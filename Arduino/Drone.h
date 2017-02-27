@@ -24,6 +24,7 @@ class Drone
     float get_sensorAltitude(float startingPressure);
     float get_currentPressure();
     float PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki );
+    void read_PS4Setpoints();
     void initSensors();
     void initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4);
  
