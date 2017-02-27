@@ -197,6 +197,13 @@ void Drone::read_PS4Setpoints()
     
 {
     //Write serially to Pi to begin transmission.
+  
+    byte XMIT = 00000001
+    
+    if (Serial.available()) 
+    {
+        Serial.write(XMIT);
+    }
     
     
     while (Serial.available())
