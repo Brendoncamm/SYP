@@ -4,7 +4,7 @@
 
 import serial
 
-class Arduino_Controller(object, baud):
+class Arduino_Controller(object):
     #  Provides a wrapper for communicating with the Arduino over I2C/SMBUS.
     def __init__(self, baud):
         self.baudrate = baud
