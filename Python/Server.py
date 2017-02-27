@@ -12,7 +12,6 @@ if sys.version_info[0] < 3:
 controller = Arduino_Controller(0x08)
 
 #request_pin = 7
-Transmit_Begin=""
 
 gp.setmode(gp.BOARD)
 gp.setup(request_pin, gp.IN)
@@ -32,11 +31,9 @@ while True:
   #if gp.input(request_pin) == last_state:
     #last_state = not(last_state)
     
-  Transmit_Begin=ser.readline()  
-  if Transmit_Begin="xmit"
-    controller.write_axes(data)
-    print('Writing {0} bytes.'.format(len(data)))
-    Transmit_Begin=""
+  controller.write_axes(data)
+  print('Writing {0} bytes.'.format(len(data)))
+  
     
   #os.system('clear')
   #c.close()
