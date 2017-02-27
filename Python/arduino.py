@@ -8,7 +8,7 @@ class Arduino_Controller(object, baud):
     #  Provides a wrapper for communicating with the Arduino over I2C/SMBUS.
     def __init__(self, baud):
         self.baudrate = baud
-        self.serial_bus = serial.Serial('/dev/ttyACM0', baud)
+        self.serial_bus = serial.Serial('/dev/ttyACM0', self.baudrate)
 
     def write_axes(self, axes):
         self.serial_bus.write(axes)
