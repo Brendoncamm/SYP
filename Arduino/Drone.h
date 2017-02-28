@@ -27,7 +27,9 @@ class Drone
     void read_PS4Setpoints();
     void initSensors();
     void initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4);
- 
+    float read_float();
+    void send_float();
+
 };
 
 #endif
