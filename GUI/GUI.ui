@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>703</width>
+    <width>740</width>
     <height>599</height>
    </rect>
   </property>
@@ -14,85 +14,110 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="page">
-       <widget class="QListWidget" name="listWidget">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>0</y>
-          <width>151</width>
-          <height>531</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="start">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>500</y>
-          <width>88</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Start</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="end">
-        <property name="geometry">
-         <rect>
-          <x>410</x>
-          <y>500</y>
-          <width>88</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Finish</string>
-        </property>
-       </widget>
-       <widget class="QWidget" name="windowmpl" native="true">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>-10</y>
-          <width>491</width>
-          <height>491</height>
-         </rect>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <widget class="QWidget" name="verticalLayoutWidget">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>-60</y>
-           <width>491</width>
-           <height>551</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="mplvl"/>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page_2"/>
+   <widget class="QStackedWidget" name="home">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>8</y>
+      <width>845</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QPushButton" name="start">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>88</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
      </widget>
-    </item>
-   </layout>
+     <widget class="QPushButton" name="end">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>490</y>
+        <width>88</width>
+        <height>27</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Finish</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="windowmpl" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>-10</y>
+        <width>531</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-60</y>
+         <width>531</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="mplvl"/>
+      </widget>
+     </widget>
+     <widget class="QTextEdit" name="thisworks">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>450</y>
+        <width>541</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>start</zorder>
+     <zorder>end</zorder>
+     <zorder>windowmpl</zorder>
+     <zorder>thisworks</zorder>
+     <zorder>list</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+     <zorder>list</zorder>
+     <zorder>list</zorder>
+    </widget>
+    <widget class="QWidget" name="Controller"/>
+   </widget>
+   <widget class="QListWidget" name="list">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>10</y>
+      <width>141</width>
+      <height>531</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>703</width>
+     <width>740</width>
      <height>21</height>
     </rect>
    </property>
