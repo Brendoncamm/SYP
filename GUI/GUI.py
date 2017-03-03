@@ -30,7 +30,8 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.end.clicked.connect(self.stop)
         self.list.insertItem(0, 'Home')
         self.list.insertItem(1, 'Controller')
-        self.list.insertItem(2, 'New plot ?? ')
+        self.list.insertItem(2, 'Notes')
+        self.list.insertItem(3, 'New Plot')
         self.list.currentRowChanged.connect(self.display)
     def stop(self):
         sys.exit(app.exec_())
@@ -59,14 +60,22 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
     def Controller(self):
         layout = QFormLayout()
         self.Controller.setLayout(layout)
+    def Notes(self):
+        layout = QFormLayout()
+        self.Notes.setLayout(layout)
+    def NotSure(self):
+        layout = QFormLayout()
+        self.NoteSure.setLayout(layout)
     def display(self,i):
         self.home.setCurrentIndex(i)
- 
+
     
 if __name__ == '__main__':
+    x1 = np.linspace(0.0,5.0)
+    y1 = np.cos(2*np.pi*x1)
     fig1 = Figure()
     axlfl = fig1.add_subplot(111)
-    axlfl.plot(np.random.rand(5))
+    axlfl.plot(x1,y1)
     app = QtWidgets.QApplication(sys.argv)
     main = GUI()
     main.addmpl(fig1)
