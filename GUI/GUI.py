@@ -15,7 +15,7 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
 
-class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
+class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS4 eventually
     def __init__(self):
 
         #Qt initialization
@@ -51,8 +51,8 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         sys.exit(app.exec_())
     def connection(self):
         s = socket.socket()
-        host = socket.gethostbyname('Brendon')
-        port = 1248
+        host = socket.gethostbyname('Brendon-PC')
+        port = 1247
         status = s.connect_ex((host,port)) #Returns 0 if true
         if status: # Status = errno
             self.thisworks.setText("Connection Unsuccessful")
@@ -72,7 +72,6 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
     def axisSettings(self):
         text, ok = QtWidgets.QInputDialog.getText(self, 'Input', ' Type text:')
         t = str(text)
-
         if t == '':
             self.axisVal.setText('1 2 3 4')
         else:
@@ -98,15 +97,14 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         else:
             self.portVal.setText(newPort)
         return int(newPort)
-        
     def updateConnection(self):
         host1 = self.hostSettings()
         port1 = self.portSettings()
-        print(host1)
         s = socket.socket()
         status = s.connect_ex((host1,port1))
         if status:
             self.connectionStat.setText("Update and Connection Unsuccessful")
+            #socket.send('Success')
         else:
             self.connectionStat.setText("Update and connection Successful")
 if __name__ == '__main__':

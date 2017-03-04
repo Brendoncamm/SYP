@@ -17,14 +17,14 @@
    <widget class="QStackedWidget" name="home">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>-10</y>
+      <x>0</x>
+      <y>-30</y>
       <width>845</width>
       <height>541</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="start">
@@ -72,9 +72,9 @@
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>-60</y>
+         <y>40</y>
          <width>531</width>
-         <height>511</height>
+         <height>411</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="mplvl"/>
@@ -212,8 +212,8 @@
      <widget class="QTextEdit" name="connectionStat">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>360</y>
+        <x>70</x>
+        <y>330</y>
         <width>431</width>
         <height>71</height>
        </rect>
@@ -222,8 +222,8 @@
      <widget class="QPushButton" name="updateConnect">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>450</y>
+        <x>190</x>
+        <y>420</y>
         <width>211</width>
         <height>27</height>
        </rect>
