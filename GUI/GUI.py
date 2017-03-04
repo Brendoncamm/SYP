@@ -6,19 +6,19 @@ from matplotlib.backends.backend_qt5agg import (FigureCanvasQTAgg as FigureCanva
 from matplotlib.figure import Figure
 import numpy as np
 import time
-from timeit import default_timer as timer
 import struct
 import socket
-from dictionaryTest import a
+from PS4_Controller import PS4Controller as PS4
 
 qtCreatorFile = "GUI.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
 
-class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
+class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
     def __init__(self):
-       
+
+        #Qt initialization
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.page = QtWidgets.QStackedWidget()
@@ -26,27 +26,39 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle("Drone")
         self.setWindowIcon(QtGui.QIcon('smu.png'))
+
+        #Networking
+        getHost = socket.gethostname()
+        #Main Page buttons
         self.start.clicked.connect(self.connection)
         self.end.clicked.connect(self.stop)
+
+        #Listing widget
         self.list.insertItem(0, 'Home')
         self.list.insertItem(1, 'Controller')
-        self.list.insertItem(2, 'Notes')
-        self.list.insertItem(3, 'New Plot')
+        self.list.insertItem(2, 'Distance') 
         self.list.currentRowChanged.connect(self.display)
+
+        #Controller Page
+        self.axisVal.setText('1 2 3 4')
+        self.hostVal.setText(getHost)
+        self.portVal.setText('2222')
+        self.axisMenu.clicked.connect(self.axisSettings)
+        self.hostMenu.clicked.connect(self.hostSettings)
+        self.portMenu.clicked.connect(self.portSettings)
+        self.updateConnect.clicked.connect(self.updateConnection)
     def stop(self):
         sys.exit(app.exec_())
     def connection(self):
         s = socket.socket()
-        host = socket.gethostbyname('Brendon-PC') #Will change to RPI eventually
-        port = 1247
-        s.connect((host,port))
-        status = s.connect_ex((host,port))
-        s.close()
-        if status:
+        host = socket.gethostbyname('Brendon')
+        port = 1248
+        status = s.connect_ex((host,port)) #Returns 0 if true
+        if status: # Status = errno
+            self.thisworks.setText("Connection Unsuccessful")
+        else: # Status = 0
+            print(status)
             self.thisworks.setText("Connection Successful")
-        else:
-            self.thisworks.setText("Connection unsuccessful")
-            
             
     def addmpl(self,fig):
         self.canvas = FigureCanvas(fig)
@@ -57,19 +69,46 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow):
                                          coordinates = True)
         self.mplvl.addWidget(self.toolBar)
   
-    def Controller(self):
-        layout = QFormLayout()
-        self.Controller.setLayout(layout)
-    def Notes(self):
-        layout = QFormLayout()
-        self.Notes.setLayout(layout)
-    def NotSure(self):
-        layout = QFormLayout()
-        self.NoteSure.setLayout(layout)
+    def axisSettings(self):
+        text, ok = QtWidgets.QInputDialog.getText(self, 'Input', ' Type text:')
+        t = str(text)
+
+        if t == '':
+            self.axisVal.setText('1 2 3 4')
+        else:
+            self.axisVal.setText(t)
     def display(self,i):
         self.home.setCurrentIndex(i)
-
-    
+    def addData(self,name,fig):
+        self.fig_duct[name] = fig
+        self.list.addItem(name)
+    def hostSettings(self):
+        text, ok = QtWidgets.QInputDialog.getText(self,'Input', 'Type text:')
+        newHost = str(text)
+        if newHost == '':
+            self.hostVal.setText(socket.gethostname())
+        else:
+            self.hostVal.setText(newHost)
+        return newHost
+    def portSettings(self):
+        text, ok = QtWidgets.QInputDialog.getText(self,'Input','Type text:')
+        newPort = str(text)
+        if newPort == '':
+            self.portVal.setText('2222')
+        else:
+            self.portVal.setText(newPort)
+        return int(newPort)
+        
+    def updateConnection(self):
+        host1 = self.hostSettings()
+        port1 = self.portSettings()
+        print(host1)
+        s = socket.socket()
+        status = s.connect_ex((host1,port1))
+        if status:
+            self.connectionStat.setText("Update and Connection Unsuccessful")
+        else:
+            self.connectionStat.setText("Update and connection Successful")
 if __name__ == '__main__':
     x1 = np.linspace(0.0,5.0)
     y1 = np.cos(2*np.pi*x1)
