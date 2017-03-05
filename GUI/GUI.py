@@ -56,9 +56,11 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
         status = s.connect_ex((host,port)) #Returns 0 if true
         if status: # Status = errno
             self.thisworks.setText("Connection Unsuccessful")
+            self.connectionStat.setText("Communications have not been established")
         else: # Status = 0
             print(status)
             self.thisworks.setText("Connection Successful")
+            self.connectionStat.setText("Communications are active")
             
     def addmpl(self,fig):
         self.canvas = FigureCanvas(fig)
@@ -104,9 +106,11 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
         status = s.connect_ex((host1,port1))
         if status:
             self.connectionStat.setText("Update and Connection Unsuccessful")
+            self.thisworks.setText("Update and Connection Unsuccessful")
             #socket.send('Success')
         else:
-            self.connectionStat.setText("Update and connection Successful")
+            self.connectionStat.setText("Update and Connection Successful")
+            self.thisworks.setText("Update and Connection Successful")
 if __name__ == '__main__':
     x1 = np.linspace(0.0,5.0)
     y1 = np.cos(2*np.pi*x1)
