@@ -189,6 +189,14 @@ float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, 
     LastTime=NowTime;
     LastError=Error;
 
+    Output=Output+1060;
+    
+    if(Output>=1860){
+        
+        Output = 1860; 
+        
+    }
+    
     return Output;
 }
 
@@ -210,22 +218,22 @@ void Drone::read_PS4Setpoints()
     {
         for(int i=0; i<4; i++)
         {
-            PS4Yaw=Serial.parseFloat();
+            PS4Yaw=read_float();
         }
 
         for(int i=4; i<8; i++)
         {
-            PS4Pitch=Serial.parseFloat();
+            PS4Pitch=read_float();
         }
 
         for(int i=8; i<12; i++)
         {
-            PS4Roll=Serial.parseFloat();
+            PS4Roll=read_float();
         }
 
         for(int i=12; i<16; i++)
         {
-            PS4Altitude=Serial.parseFloat();
+            PS4Altitude=read_float();
         }
 
     }
@@ -297,3 +305,4 @@ float Drone::read_float () {
  float test = data.a;
  return(test);
 }
+
