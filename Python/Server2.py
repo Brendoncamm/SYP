@@ -34,8 +34,8 @@ class SerialRequestHandler(threading.Thread):
 
 class QuadControlHandler(socketserver.BaseRequestHandler):
     def __init__(self, request, client_address, server, stateq):
+        self.stateq = stateq        
         super(self.__class__, self).__init__(request, client_address, server)
-        self.stateq = stateq
         return
 
     def handle(self):
