@@ -7,8 +7,6 @@ from subprocess import check_output
 
 #TODO:
 #   Control Side
-#       Write Handler
-#       Test
 #       Write Server w/ logging
 #       Test
 #   Backchannel
@@ -28,13 +26,13 @@ class SerialRequestHandler(threading.Thread):
         while True:
             ready = sbus.ready()
             if ready:
-                sbus.read(ready)
+                sbus.serial_bus.read(ready)
                 sbus.write(self.stateq.get())
 
 
 class QuadControlHandler(socketserver.BaseRequestHandler):
     def __init__(self, request, client_address, server, stateq):
-        self.stateq = stateq        
+        self.stateq = stateq
         super(self.__class__, self).__init__(request, client_address, server)
         return
 
@@ -73,5 +71,3 @@ if __name__ == '__main__':
 
     test_serv = QuadControlServer((HOST, CONTROL_PORT), QuadControlHandler)
     test_serv.serve_forever()
-
-
