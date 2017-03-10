@@ -59,7 +59,7 @@ class QuadControlServer(socketserver.TCPServer):
         return
 
     def finish_request(self, request, client_address):
-        self.RequestHandler(request, client_address, self, self.stateq)
+        self.RequestHandlerClass(request, client_address, self, self.stateq)
 
 
 
