@@ -58,7 +58,8 @@ class QuadControlServer(socketserver.TCPServer):
         super(self.__class__, self).serve_forever(poll_interval)
         return
 
-
+    def finish_request(self, request, client_address):
+        self.RequestHandler(request, client_address, self, self.stateq)
 
 
 
