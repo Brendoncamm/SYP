@@ -101,16 +101,16 @@ class PS4Controller(object):
                 # print(str(self.axis_data))
                 # Isolate desired Axes
 
-                axes_data = [self.axis_data[self.axis_order[1]],
+                axes_data = [self.axis_data[self.axis_order[0]],
+                             self.axis_data[self.axis_order[1]],
                              self.axis_data[self.axis_order[2]],
-                             self.axis_data[self.axis_order[3]],
-                             self.axis_data[self.axis_order[4]]]
+                             self.axis_data[self.axis_order[3]]]
                 byte_data = []  # To hold the axes data serialized to bytes
                 for axis in axes_data:
                     byte_data.append(struct.pack("f", axis))  # F for float
 
                 xmission_bytes = bytes().join(byte_data)
-
+                connection = socket.socket()
                 connection.connect((host, self.port))
                 connection.send(xmission_bytes)  # sending the controller data over the port
                 connection.close()
