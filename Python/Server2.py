@@ -26,9 +26,9 @@ class SerialRequestHandler(threading.Thread):
         #TODO: Add poison pill to exit thread
         sbus = arduino.Arduino_Controller(9600)
         while True:
-            buffer = sbus.inWaiting()
-            if buffer:
-                sbus.read(buffer)
+            ready = sbus.ready()
+            if ready:
+                sbus.read(ready)
                 sbus.write(self.stateq.get())
 
 
@@ -39,7 +39,7 @@ class QuadControlHandler(socketserver.BaseRequestHandler):
         return
 
     def handle(self):
-        if self.stateq.full()
+        if self.stateq.full():
             self.stateq.get() #Queue has size of 1, if full clear for new state
         self.stateq.put(self.request.recv(16))
         return
@@ -47,7 +47,7 @@ class QuadControlHandler(socketserver.BaseRequestHandler):
 
 class QuadControlServer(socketserver.TCPServer):
     def __init__(self, server_address, RequestHandlerClass):
-        super(self.__class__, self).__init__(server_address, ReequestHandlerClass)
+        super(self.__class__, self).__init__(server_address, RequestHandlerClass)
         self.controller = arduino.Arduino_Controller(9600)
         self.stateq = queue.Queue(1)
         return
