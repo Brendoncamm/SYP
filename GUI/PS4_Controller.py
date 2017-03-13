@@ -22,10 +22,8 @@ import pygame
 import socket
 import struct
 import sys
-
 if sys.version_info[0] < 3:
     raise Exception('Lucas', 'not compatible with Python version 2')
-
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -49,8 +47,8 @@ class PS4Controller(object):
         else:
             raise Exception(TypeError, 'axis_order must be list.')
 
-    def update_axes(self, axis_order):
-        self.axis_order = axis_order
+    def update_axes(self):
+        print("hey")
 
     def listen(self):
         """Listen for events to happen"""
@@ -74,8 +72,8 @@ class PS4Controller(object):
                 self.hat_data[i] = (0, 0)
 
 
-        # host = '192.168.2.19' #ip of Server (PI)
-        host = socket.gethostbyname(self.hostname)  # if fails install samba on pi and reboot
+        host = '192.168.2.13' #ip of Server (PI)
+        # host = socket.gethostbyname(self.hostname)  # if fails install samba on pi and reboot
 
         while True:
             for event in pygame.event.get():
@@ -98,20 +96,21 @@ class PS4Controller(object):
                 # hat_data = str(self.hat_data)
 
                 # Sending Data over a socket to the RPi
-                # print(str(self.axis_data))
+                # print(str(self.axis_order))
                 # Isolate desired Axes
 
-                axes_data = [self.axis_data[self.axis_order[1]],
+                axes_data = [self.axis_data[self.axis_order[0]],
+                             self.axis_data[self.axis_order[1]],
                              self.axis_data[self.axis_order[2]],
-                             self.axis_data[self.axis_order[3]],
-                             self.axis_data[self.axis_order[4]]]
+                             self.axis_data[self.axis_order[3]]]
                 byte_data = []  # To hold the axes data serialized to bytes
                 for axis in axes_data:
                     byte_data.append(struct.pack("f", axis))  # F for float
-
+                #print(str(self.axis_order))
+                #print(str(self.axis_order))
                 xmission_bytes = bytes().join(byte_data)
-
-                connection.connect((host, self.port))
+                connection = socket.socket()
+                connection.connect((host, 1247))
                 connection.send(xmission_bytes)  # sending the controller data over the port
                 connection.close()
                 # print(xmission_bytes)

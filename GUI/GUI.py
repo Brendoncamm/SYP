@@ -8,6 +8,7 @@ import numpy as np
 import time
 import struct
 import socket
+from timeit import default_timer as timer
 from PS4_Controller import PS4Controller as PS4
 
 qtCreatorFile = "GUI.ui" # Enter file here.
@@ -15,7 +16,7 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
 
-class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS4 eventually
+class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):   
     def __init__(self):
 
         #Qt initialization
@@ -47,6 +48,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
         self.hostMenu.clicked.connect(self.hostSettings)
         self.portMenu.clicked.connect(self.portSettings)
         self.updateConnect.clicked.connect(self.updateConnection)
+        self.connectPS4.clicked.connect(self.connectController)
     def stop(self):
         sys.exit(app.exec_())
     def connection(self):
@@ -61,7 +63,6 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
             print(status)
             self.thisworks.setText("Connection Successful")
             self.connectionStat.setText("Communications are active")
-            
     def addmpl(self,fig):
         self.canvas = FigureCanvas(fig)
         self.mplvl.addWidget(self.canvas)
@@ -72,19 +73,22 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
         self.mplvl.addWidget(self.toolBar)
   
     def axisSettings(self):
-        text, ok = QtWidgets.QInputDialog.getText(self, 'Input', ' Type text:')
-        t = str(text)
-        if t == '':
-            self.axisVal.setText('1 2 3 4')
-        else:
-            self.axisVal.setText(t)
+        cont = PS4()
+        text, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[0]', 'No Spaces')
+        text1, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[1]', 'No Spaces')
+        text2, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[2]', 'No Spaces')
+        text3, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[3]', 'No Spaces')
+        axis = [int(text), int(text1), int(text2), int(text3)]
+        self.axisVal.setText(str(axis))
+        cont.axis_order = axis
+        return cont.axis_order
     def display(self,i):
         self.home.setCurrentIndex(i)
     def addData(self,name,fig):
         self.fig_duct[name] = fig
         self.list.addItem(name)
     def hostSettings(self):
-        text, ok = QtWidgets.QInputDialog.getText(self,'Input', 'Type text:')
+        text, ok = QtWidgets.QInputDialog.getText(self,'Host', 'Host name or IP address')
         newHost = str(text)
         if newHost == '':
             self.hostVal.setText(socket.gethostname())
@@ -92,13 +96,18 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu,):   #Inherit PS
             self.hostVal.setText(newHost)
         return newHost
     def portSettings(self):
-        text, ok = QtWidgets.QInputDialog.getText(self,'Input','Type text:')
+        text, ok = QtWidgets.QInputDialog.getText(self,'Port','Port number')
         newPort = str(text)
         if newPort == '':
             self.portVal.setText('2222')
         else:
             self.portVal.setText(newPort)
         return int(newPort)
+    def connectController(self):
+        new = PS4()
+        cont.axis_order = self.axisSettings()
+        print(str(cont.axis_order))
+        new.listen()
     def updateConnection(self):
         host1 = self.hostSettings()
         port1 = self.portSettings()
@@ -121,6 +130,8 @@ if __name__ == '__main__':
     main = GUI()
     main.addmpl(fig1)
     main.show()
+    cont = PS4()
+    print(str(cont.axis_order))
     sys.exit(app.exec_())
     
 
