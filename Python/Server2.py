@@ -39,7 +39,9 @@ class QuadControlHandler(socketserver.BaseRequestHandler):
     def handle(self):
         if self.stateq.full():
             self.stateq.get() #Queue has size of 1, if full clear for new state
-        self.stateq.put(self.request.recv(16))
+        recv = self.request.recv(16)
+        self.stateq.put(recv)
+        print('Received: ' + str(recv))
         return
 
 
