@@ -27,7 +27,7 @@ class SerialRequestHandler(threading.Thread):
             ready = sbus.ready()
             if ready:
                 sbus.serial_bus.read(ready)
-                sbus.write(self.stateq.get())
+                sbus.serial_bus.write(self.stateq.get())
 
 
 class QuadControlHandler(socketserver.BaseRequestHandler):
