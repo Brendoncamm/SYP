@@ -10,15 +10,20 @@ import struct
 import socket
 from timeit import default_timer as timer
 from PS4_Controller import PS4Controller as PS4
+import threading
+import logging
+import matplotlib.animation as animation
+import pyqtgraph as pg
 
 qtCreatorFile = "GUI.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
 
-class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):   
+class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):   
     def __init__(self):
 
+        super(GUI,self).__init__()
         #Qt initialization
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
@@ -37,7 +42,6 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):
         #Listing widget
         self.list.insertItem(0, 'Home')
         self.list.insertItem(1, 'Controller')
-        self.list.insertItem(2, 'Distance') 
         self.list.currentRowChanged.connect(self.display)
 
         #Controller Page
@@ -49,6 +53,17 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):
         self.portMenu.clicked.connect(self.portSettings)
         self.updateConnect.clicked.connect(self.updateConnection)
         self.connectPS4.clicked.connect(self.connectController)
+
+        self.initplt()
+        self.plotcurve = pg.PlotDataItem()
+        self.plotwidget.addItem(self.plotcurve)
+        self.t = 0
+        self.amplitude = 10
+        self.update1()
+        self.timer = pg.QtCore.QTimer()
+        self.timer.timeout.connect(self.move)
+        self.timer.start(1000)
+        
     def stop(self):
         sys.exit(app.exec_())
     def connection(self):
@@ -63,15 +78,6 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):
             print(status)
             self.thisworks.setText("Connection Successful")
             self.connectionStat.setText("Communications are active")
-    def addmpl(self,fig):
-        self.canvas = FigureCanvas(fig)
-        self.mplvl.addWidget(self.canvas)
-        self.canvas.draw()
-        self.toolBar = NavigationToolBar(self.canvas,
-                                         self.windowmpl,
-                                         coordinates = True)
-        self.mplvl.addWidget(self.toolBar)
-  
     def axisSettings(self):
         cont = PS4()
         text, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[0]', 'No Spaces')
@@ -120,20 +126,42 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu, PS4):
         else:
             self.connectionStat.setText("Update and Connection Successful")
             self.thisworks.setText("Update and Connection Successful")
+
+    def liveData(self):
+        graph_data = open('test.txt', 'r').read()
+        lines = graph_data.split('\n')
+        xs = []
+        ys = []
+        for line in lines:
+            if len(line)>1:
+                x, y = line.split(' ,')
+                xs.append(int(x))
+                ys.append(int(y))
+        return xs,ys
+
+        
+    def initplt(self):
+        self.plotwidget = pg.PlotWidget()
+        self.mplvl.addWidget(self.plotwidget)
+        self.plotwidget.setLabel('left', 'Altitude [m]')
+        self.plotwidget.setLabel('bottom','Time[s]')
+        self.show()
+    def update1(self):
+        list1,list2 = self.liveData()
+        self.plotcurve.setData(list1,list2)
+    def move(self):
+        self.t+=1
+        self.update1()
+    
+        
 if __name__ == '__main__':
-    x1 = np.linspace(0.0,5.0)
-    y1 = np.cos(2*np.pi*x1)
-    fig1 = Figure()
-    axlfl = fig1.add_subplot(111)
-    axlfl.plot(x1,y1)
     app = QtWidgets.QApplication(sys.argv)
     main = GUI()
-    main.addmpl(fig1)
     main.show()
-    cont = PS4()
-    print(str(cont.axis_order))
+    #cont = PS4()
+    #print(str(cont.axis_order))
+    QtWidgets.QApplication.processEvents()
     sys.exit(app.exec_())
-    
 
    
     

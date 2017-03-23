@@ -72,7 +72,7 @@ class PS4Controller(object):
                 self.hat_data[i] = (0, 0)
 
 
-        host = '192.168.2.13' #ip of Server (PI)
+        host = '192.168.2.10' #ip of Server (PI)
         # host = socket.gethostbyname(self.hostname)  # if fails install samba on pi and reboot
 
         while True:
@@ -106,14 +106,14 @@ class PS4Controller(object):
                 byte_data = []  # To hold the axes data serialized to bytes
                 for axis in axes_data:
                     byte_data.append(struct.pack("f", axis))  # F for float
-                #print(str(self.axis_order))
+                print(str(self.axis_order))
                 #print(str(self.axis_order))
                 xmission_bytes = bytes().join(byte_data)
                 connection = socket.socket()
                 connection.connect((host, 1247))
                 connection.send(xmission_bytes)  # sending the controller data over the port
                 connection.close()
-                # print(xmission_bytes)
+                print(xmission_bytes)
 
                 # os.system('cls')
                 # break

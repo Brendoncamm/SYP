@@ -24,46 +24,20 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QPushButton" name="start">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>510</y>
-        <width>88</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Start</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="end">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>510</y>
-        <width>88</width>
-        <height>27</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Finish</string>
-      </property>
-     </widget>
      <widget class="QWidget" name="windowmpl" native="true">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>-10</y>
-        <width>531</width>
-        <height>451</height>
+        <width>611</width>
+        <height>491</height>
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -73,19 +47,23 @@
         <rect>
          <x>0</x>
          <y>40</y>
-         <width>531</width>
-         <height>411</height>
+         <width>611</width>
+         <height>451</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="mplvl"/>
+       <layout class="QVBoxLayout" name="mplvl">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetNoConstraint</enum>
+        </property>
+       </layout>
       </widget>
      </widget>
      <widget class="QTextEdit" name="thisworks">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>460</y>
-        <width>541</width>
+        <y>490</y>
+        <width>611</width>
         <height>31</height>
        </rect>
       </property>
@@ -238,9 +216,9 @@
      <widget class="QPushButton" name="connectPS4">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>220</x>
         <y>310</y>
-        <width>101</width>
+        <width>131</width>
         <height>23</height>
        </rect>
       </property>
@@ -255,11 +233,37 @@
    <widget class="QListWidget" name="list">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>10</y>
-      <width>141</width>
-      <height>531</height>
+      <x>630</x>
+      <y>0</y>
+      <width>91</width>
+      <height>551</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="end">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>520</y>
+      <width>88</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Finish</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="start">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>520</y>
+      <width>88</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
     </property>
    </widget>
   </widget>
