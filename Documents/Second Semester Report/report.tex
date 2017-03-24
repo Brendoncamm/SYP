@@ -1,0 +1,84 @@
+\documentclass[12pt, twoside, letterpaper,titlepage]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{chngcntr}
+\usepackage{titlepic}
+\usepackage{hyperref}
+\usepackage{lscape}
+
+\renewcommand{\baselinestretch}{1.5}
+\newcommand\immediateaddcontentsline[3]{%
+	\begingroup
+	\let\origwrite\write
+	\def\write{\immediate\origwrite}%
+	\addcontentsline{#1}{#2}{#3}%
+	\endgroup
+}
+% Title Page
+%Will need to add signature fields for Drs Jason & Jason
+\title{First Semester Progress Report \\ Programmable Flight Controller}
+\author{Brendon Camm \\ B00649176 \and Lucas Doucette \\ B00685962 \and Dylan Humber \\ B00695554}
+\date{Submitted: December 6, 2016}
+\titlepic{\includegraphics[width=0.9\textwidth]{logo.pdf}}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\pagenumbering{gobble}
+	\vspace*{2in}
+	This document was written in \LaTeX.  It was compiled with pdflatex.  The source of the document may be viewed at: \newline\small	https://github.com/Brendoncamm/SYP/tree/master/Documents/First\%20Semester\%20Report
+	\vspace*{4in}
+	\pagebreak
+
+	\newpage
+	\begin{abstract} %Need abstract. Yes.
+	The following report summarizes the progress made throughout the first term of the Quad Copter Programmable Flight Controller project and the plan moving forward toward the final design. The goal of the project is to design a programmable quad copter flight controller that will have the capability of responding to live control inputs and react appropriately to disturbances present. The objective of this report is to summarize the deliverables set forth for first term and for the final design of the controller, the background of the proposed project, simulations performed and testing results from the first term. The report also outlines the work plan and distribution of tasks followed for the duration of the first term and discusses the suggested scheduling of tasks for the second term of the project. 
+	
+	\textbf{Authorship}
+	\begin{itemize}
+		\itemsep-.5em
+		\item{Abstract - Lucas Doucette}
+		\item{Objectives and Deliverables - Brendon Camm}
+		\item{Background and Significance - Brendon Camm}
+		\item{Proposed Approach and Validation - Brendon Camm}
+		\item{Preliminary Results - Lucas Doucette and Dylan Humber}
+		\item{Work Plan and Milestones - Dylan Humber}
+		\item{Distribution of Tasks - Dylan Humber}
+		\item{Budget - Dylan Humber}
+		\item{Appendices - Lucas Doucette and Dylan Humber}
+	\end{itemize}
+	
+	\end{abstract}
+	%Need TOC
+	\pagenumbering{roman}
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	\pagebreak
+	\pagenumbering{arabic}
+	%Please keep body of report seperated by section.  If you need to add a section create another .tex file for it and input it below.
+	
+	\input{"Section Verbatim/list_of_acronyms"}
+	\input{"Section Verbatim/objectives_deliverables"}
+	\input{"Section Verbatim/background_significance"}
+	\input{"Section Verbatim/approach_validation"}
+	\input{"Section Verbatim/preliminary_results"}
+	\input{"Section Verbatim/wplan_milestones"}
+	\input{"Section Verbatim/task_distribution"}
+	\input{"Section Verbatim/budget"}
+	\pagebreak
+	
+	\appendix
+	\counterwithin{figure}{section}
+	\counterwithin{lstlisting}{section} 
+	\input{"Section Verbatim/Prelim_Results_Appendix"}
+	\clearpage
+	\input{"Section Verbatim/appendix_simulink"}
+	\newpage
+	
+	\cleardoublepage
+	%\phantomsection
+	%\pagenumbering{arabic}
+	\immediateaddcontentsline{toc}{section}{\numberline{C} Gantt Charts}
+	%\cftaddtitleline{toc}{section}{Gantt Charts}{32}
+\end{document}          
