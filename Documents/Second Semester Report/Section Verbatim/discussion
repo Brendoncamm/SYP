@@ -1,0 +1,11 @@
+%This file will discuss the project's success
+%This file should be included in doc using \input{file}
+
+\section{Discussion}
+\subsection{Simulations}
+
+\subsection{Physical Implementation}
+
+
+\subsection{Graphical User Interface}
+
