@@ -34,7 +34,8 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         self.setWindowIcon(QtGui.QIcon('smu.png'))
 
         #Networking
-        getHost = socket.gethostname()
+        self.getHost = socket.gethostname()
+        self.staticPort = '1247'
         #Main Page buttons
         self.start.clicked.connect(self.connection)
         self.end.clicked.connect(self.stop)
@@ -46,7 +47,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
 
         #Controller Page
         self.axisVal.setText('1 2 3 4')
-        self.hostVal.setText(getHost)
+        self.hostVal.setText(self.getHost)
         self.portVal.setText('2222')
         self.axisMenu.clicked.connect(self.axisSettings)
         self.hostMenu.clicked.connect(self.hostSettings)
@@ -68,8 +69,8 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         sys.exit(app.exec_())
     def connection(self):
         s = socket.socket()
-        host = socket.gethostbyname('Brendon-PC')
-        port = 1247
+        host = self.getHost
+        port = int(self.staticPort)
         status = s.connect_ex((host,port)) #Returns 0 if true
         if status: # Status = errno
             self.thisworks.setText("Connection Unsuccessful")
@@ -97,17 +98,22 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         text, ok = QtWidgets.QInputDialog.getText(self,'Host', 'Host name or IP address')
         newHost = str(text)
         if newHost == '':
-            self.hostVal.setText(socket.gethostname())
+            self.hostVal.setText(self.getHost)
         else:
             self.hostVal.setText(newHost)
         return newHost
     def portSettings(self):
         text, ok = QtWidgets.QInputDialog.getText(self,'Port','Port number')
-        newPort = str(text)
-        if newPort == '':
-            self.portVal.setText('2222')
+        if ok:
+            print('success')
+            newPort = str(text)
+            if newPort == '':
+                self.portVal.setText(self.staticPort)
+            else:
+                self.portVal.setText(newPort)
         else:
-            self.portVal.setText(newPort)
+            self.display(1)
+            
         return int(newPort)
     def connectController(self):
         new = PS4()
@@ -119,6 +125,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         port1 = self.portSettings()
         s = socket.socket()
         status = s.connect_ex((host1,port1))
+            
         if status:
             self.connectionStat.setText("Update and Connection Unsuccessful")
             self.thisworks.setText("Update and Connection Unsuccessful")
