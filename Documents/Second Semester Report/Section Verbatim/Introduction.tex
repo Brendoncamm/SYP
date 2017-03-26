@@ -7,5 +7,10 @@
 \subsection{Physical Implementation}
 
 
+The physical implementation of the drone software and hardware requires a communication channel between a control input, a base station host, a wireless communication receiving unit, and a host for the controlling system. The objective of the physical implementation is to provide the software and hardware design required to successfully implement a quad rotor drone flight controller. It is desired to have a controller that is capable of sensing disturbances in flight and stabilizing the system based upon the measured disturbances.
+
+The objectives of the physical implementation for the project begin with successfully creating a WiFi communication channel between a controller input and a wireless device placed on the drone hardware. The drone is to have flight sensing capabilities, interfaced with both the on board wireless device and a grounded controlling station. The flight sensing is to include yaw, pitch, roll and altitude measurements with a polling rate sufficient for real time control of the drone. The flight sensing is to be combined with a set point from the wirelessly transmitted control input by a PI or PID loop to control the flight of the drone with stabilizing features. The code written for the control input, communication interface, and final controller is to be well documented to ensure ease of use and simplicity for updating and modifying after handing over the final product.
+
+
 \subsection{Graphical User Interface}
 
