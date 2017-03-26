@@ -15,6 +15,14 @@
 
 \subsection{Physical Implementation}
 
+The physical implementation of the system began with determining a method to interface a controller input with a base station host. To do this, research of available python libraries was performed. It was determined quickly that the most effective route would be to use Python's Pygame library which analyses a bluetooth or usb connected device and determines the types of control inputs applicable for the device. Initially, a PS4 bluetooth connected controller was successfully utilized, receiving all axis and button inputs through the Python interface. 
+
+The next challenge of the physical implementation was to determine the best method of Wi-Fi communication. It was determined that Python's socket library would be best suited, and a Raspberry Pi 3 with a Wi-Fi module available would act as the server in the server, client architecture. A preliminary communication server client script set was written and tested successfully between the base station laptop and the Raspberry Pi server host. 
+
+For the controller host, two possible solutions were considered. Utilizing an Arduino micro-controller as a permanent host of the control loop, communicating with the Raspberry Pi to receive control input data or using the Raspberry Pi for both communication and the controller. Using Arduino would provide a dedicated control loop and an intuitive interface to prototype with. The Raspberry Pi is capable of running the control loop, but issues with regards to a real time operating system were anticipated. Using an Arduino would require more mounting space on the drone as well as another communication channel between the RPi and Arduino to troubleshoot. Many other controllers could have been considered but both RPi and Arduino are owned by group members.
+
+
+
 
 
 
