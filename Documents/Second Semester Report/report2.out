@@ -1,32 +1,23 @@
 \BOOKMARK [1][-]{section.1}{List of Acronyms}{}% 1
 \BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Simulations}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Physical Implementation}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Graphical User Interface}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Design Process}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Simulations}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Physical Implementation}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{Graphical User Interface}{section.3}% 9
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Framework Selection}{subsection.3.3}% 10
-\BOOKMARK [1][-]{section.4}{Design Solutions}{}% 11
-\BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{Project Results}{}% 15
-\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 18
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 19
-\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 20
-\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 21
-\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 22
-\BOOKMARK [1][-]{appendix.A}{Proof of Concept and Testing}{}% 23
-\BOOKMARK [1][-]{appendix.B}{SimuLink Models}{}% 24
-\BOOKMARK [2][-]{subsection.B.1}{Dynamic Simulation}{appendix.B}% 25
-\BOOKMARK [2][-]{subsection.B.2}{Input Model Subsystem}{appendix.B}% 26
-\BOOKMARK [2][-]{subsection.B.3}{Controller Subsystem}{appendix.B}% 27
-\BOOKMARK [2][-]{subsection.B.4}{Motor Subsystem}{appendix.B}% 28
-\BOOKMARK [2][-]{subsection.B.5}{Motor Characterization Model}{appendix.B}% 29
-\BOOKMARK [2][-]{subsection.B.6}{Physical Subsystem}{appendix.B}% 30
-\BOOKMARK [2][-]{subsection.B.7}{Pulsewidth Subsystem}{appendix.B}% 31
-\protect \BOOKMARK [1][-]{subsection.B.7}{ Gantt Charts}{}% 32
+\BOOKMARK [2][-]{subsection.2.1}{Background and Significance}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Simulations}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Physical Implementation}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Graphical User Interface}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Methods}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Simulations}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Physical Implementation}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Graphical User Interface}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Framework Selection}{subsection.3.3}% 11
+\BOOKMARK [1][-]{section.4}{Proposed Solutions}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Project Results}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 23
