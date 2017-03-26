@@ -3,13 +3,8 @@
 
 \section{Methods}
 
-\subsection{Planning and Scheduling}
-
-
-
 
 \subsection{Simulations}
-
 
 
 
@@ -21,10 +16,11 @@ The next challenge of the physical implementation was to determine the best meth
 
 For the controller host, two possible solutions were considered. Utilizing an Arduino micro-controller as a permanent host of the control loop, communicating with the Raspberry Pi to receive control input data or using the Raspberry Pi for both communication and the controller. Using Arduino would provide a dedicated control loop and an intuitive interface to prototype with. The Raspberry Pi is capable of running the control loop, but issues with regards to a real time operating system were anticipated. Using an Arduino would require more mounting space on the drone as well as another communication channel between the RPi and Arduino to troubleshoot. Many other controllers could have been considered but both RPi and Arduino are owned by group members.
 
+The controller required input from a 10 degree of freedom inertial measurement unit to calculate yaw, pitch, roll and altitude to poll and compare to the control set points. Eventually, alternative methods of calculating altitude were considered and discussed. The methods included infra-red distance sensing, ultrasonic sensing, multiple barometers coupled with Kalman filters, or a barometer accelerometer coupling. PI and PID loops were researched to be implemented on the controller. Several additional filtering techniques were considered for altitude measurement, including moving average filtering, averaging filtering and Kalman filtering with a feedback loop for comparison.
 
+Communications between the RPi and the Arduino were researched, using the interface to interface bus or the serial communication channel were both considered. The data was required to be transmitted as single bytes, thus an algorithm to convert received bytes into floating point values needed research and development.
 
-
-
+From a technical background perspective, research regarding the Python language and Python's available libraries was required. Server to client interfacing is also required technical background. Previous knowledge of the Python language assisted in directing the research and development flow throughout the project. PI and PID control loop knowledge was required and research time was used to learn filtering processes, Arduino library development, miscellaneous communication algorithms and utilization of the Adafruit 10 DOF IMU.
 
 
 
