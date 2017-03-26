@@ -56,13 +56,13 @@ Many different features were considered when initially designing the graphical u
 	\item Display Flight Time
 	\item Initialize communications between base station host and Raspberry Pi 3
 \end{itemize}
-Each of these features have pros but upon futher research on how each individual feature could be implemented highlighted that some may be out of the scope of this project. From a technical background perspective the research done required knowledge of the Qt and PyQt5 framework, networking knowledge and knowledge about basic PI and PID controllers.  
+Each of these features have pros but upon futher research on how each individual feature could be implemented highlighted that some may be out of the scope of this project. It was decided that regardless of the difficulty of implementation that our GUI would at least contain the ability to have live plots, initialize the physical controller and initialize the communications between the base station host and Raspberry Pi 3 therefore further research was put into these. From a technical background perspective the research done required knowledge of the Qt and PyQt5 framework, networking knowledge and knowledge about basic PI and PID controllers.  
 
 \subsubsection{GUI Layout}  
 The layout of a GUI can make or break the end users experience, a clunky non-intuitive GUI will undoubtably cause the end user an unneeded headache. For this reason, a prototype of a graphical user interface that included some of the features mentioned above was developed and sent to our client to get an idea of what he would be comfortable with, this prototype was then optimized based on his comments. From a technical background perspective designing the two prototypes requires knowledge on how to develop using QtDesigner as well as basic GUI layout techniques. 
 
 \subsubsection{Live Plotting}
-A snapshot of the original prototype layout can be viewed in APPENDIX X, and the final layout can be viewed in the figures below. The purpose and functionality of the widgets will be discussed in the following section. With the layout of the GUI decided on it was time to begin developing the functionality of the widgets.
+When thinking about how to plot the live sensor data two libraries were considered these are, matplotlib and pyqtgraph. Matplotlib is a favorite when it comes to plotting data with Python where pyqtgraph is a plotting library specifically developed for use on PyQt. Each of these libraries were used to create plots on the GUI and then the performance was examined. The performance factors that were considered were: latency to plot when data is received and accuracy of the plotted data. Research into both of these libraries and how they can be integrated into the user interface was performed.
 
 \begin{figure}[H]
 	\includegraphics[width=\linewidth]{Final_GUI_HOME.png}
