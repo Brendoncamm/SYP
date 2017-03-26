@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  25 MAR 2017 23:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  25 MAR 2017 23:48
 entering extended mode
 **./report2.tex
 (report2.tex
@@ -326,7 +326,7 @@ LaTeX Info: Redefining \nameref on input line 28.
 \@outlinefile=\write3
 \openout3 = `report2.out'.
 
- <logo.pdf, id=126, 653.91501pt x 217.01276pt>
+ <logo.pdf, id=130, 653.91501pt x 217.01276pt>
 File: logo.pdf Graphic file (type pdf)
 
 <use logo.pdf>
@@ -367,7 +367,7 @@ l.12 T
 [1] [2]) ("Section Verbatim/design_process.tex")
 ("Section Verbatim/design_solutions.tex") ("Section Verbatim/results.tex")
 ("Section Verbatim/discussion.tex") [3] [4]
-Overfull \vbox (17.53632pt too high) has occurred while \output is active []
+Overfull \vbox (46.35817pt too high) has occurred while \output is active []
 
 
 [5] ("Section Verbatim/Prelim_Results_Appendix.tex"
@@ -385,14 +385,14 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 7.
  [6] [7]
-<Motor_Driving_Schematic.jpg, id=272, 1389.19pt x 851.18pt>
+<Motor_Driving_Schematic.jpg, id=277, 1389.19pt x 851.18pt>
 File: Motor_Driving_Schematic.jpg Graphic file (type jpg)
 
 <use Motor_Driving_Schematic.jpg>
 Package pdftex.def Info: Motor_Driving_Schematic.jpg used on input line 55.
 (pdftex.def)             Requested size: 390.0pt x 238.9522pt.
 
-<Motor_Characterization.jpg, id=273, 2569.6pt x 1503.6175pt>
+<Motor_Characterization.jpg, id=278, 2569.6pt x 1503.6175pt>
 File: Motor_Characterization.jpg Graphic file (type jpg)
 
 <use Motor_Characterization.jpg>
@@ -400,7 +400,7 @@ Package pdftex.def Info: Motor_Characterization.jpg used on input line 62.
 (pdftex.def)             Requested size: 390.0pt x 228.19432pt.
 ) [8 <./Motor_Driving_Schematic.jpg> <./Motor_Characterization.jpg>] ("Section 
 Verbatim/appendix_simulink.tex"
-<Dynamic_Simulation.pdf, id=281, page=1, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=286, page=1, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 1>
@@ -414,28 +414,28 @@ Overfull \vbox (21.71298pt too high) has occurred while \output is active []
 
 
 [10 <./Dynamic_Simulation.pdf>]
-<Input_Model.pdf, id=307, page=1, 794.97pt x 614.295pt>
+<Input_Model.pdf, id=312, page=1, 794.97pt x 614.295pt>
 File: Input_Model.pdf Graphic file (type pdf)
 
 <use Input_Model.pdf, page 1>
 Package pdftex.def Info: Input_Model.pdf, page1 used on input line 8.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
 
-<Dynamic_Simulation.pdf, id=308, page=2, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=313, page=2, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 10.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [11 <./Input_Model.pdf>]
-<Dynamic_Simulation.pdf, id=324, page=3, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=329, page=3, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 12.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [12 <./Dynamic_Simulation.pdf>]
-<motor_characterization.pdf, id=382, page=1, 794.97pt x 614.295pt>
+<motor_characterization.pdf, id=387, page=1, 794.97pt x 614.295pt>
 File: motor_characterization.pdf Graphic file (type pdf)
 
 <use motor_characterization.pdf, page 1>
@@ -443,35 +443,35 @@ Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 4.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [13 <./Dynamic_Simulation.pdf>]
-<Dynamic_Simulation.pdf, id=395, page=4, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=400, page=4, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 16.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [14 <./motor_characterization.pdf>]
-<Dynamic_Simulation.pdf, id=418, page=5, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=423, page=5, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 18.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [15 <./Dynamic_Simulation.pdf>] [16 <./Dynamic_Simulation.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 86.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 86.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (report2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 86.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 86.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `report2.out' has not changed.
-(rerunfilecheck)             Checksum: 7FBA5310FD4DE91944C717E17C3E6E60;2038.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 86.
+(rerunfilecheck)             Checksum: 27EBE132AED92BED731F5EB4E3A57448;2118.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 7325 strings out of 493334
- 107205 string characters out of 3139246
- 219637 words of memory out of 3000000
- 10645 multiletter control sequences out of 15000+200000
- 11420 words of font info for 41 fonts, out of 3000000 for 9000
+ 7328 strings out of 493334
+ 107260 string characters out of 3139246
+ 219659 words of memory out of 3000000
+ 10647 multiletter control sequences out of 15000+200000
+ 11727 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,6n,51p,959b,1773s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
@@ -483,9 +483,9 @@ nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on report2.pdf (21 pages, 591152 bytes).
+Output written on report2.pdf (21 pages, 591976 bytes).
 PDF statistics:
- 892 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 500000)
- 299 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 897 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
+ 307 words of extra memory for PDF output out of 10000 (max. 10000000)
 
