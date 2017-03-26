@@ -7,7 +7,7 @@
 \usepackage{hyperref}
 \usepackage{lscape}
 \usepackage{setspace}
-
+\usepackage{pdfpages}
 
 \singlespacing
 \renewcommand{\baselinestretch}{1}
@@ -34,28 +34,9 @@
 	This document was written in \LaTeX.  It was compiled with pdflatex.  The source of the document may be viewed at: \newline\small	https://github.com/Brendoncamm/SYP/tree/master/Documents/Second\%20Semester\%20Report
 	\vspace*{4in}
 	\pagebreak
-
-
-	\newpage
-	\begin{abstract} %Need abstract. Yes.
-	The following report summarizes the progress made throughout the Quad Rotor Drone Programmable Flight Controller project and the future recommendations based upon project findings. The goal of the project is to design a programmable quadcopter flight controller that will have the capability of responding to live control inputs and react appropriately to disturbances present. The objective of this report is to summarize the deliverables set forth for the project and to present findings, results and testing procedures. The report also outlines the design process of the project. The Quad Rotor Flight Controller project has three major components; flight and stabilizing simulations, implementation of software, and a GUI interface.  
-	\vspace{0.2in}	
 	
-	\textbf{Authorship}
-	\begin{itemize}
-		\itemsep-.5em
-		\item{Abstract - Lucas Doucette}
-		\item{Letter of Transmittal - Brendon Camm}
-		\item{Simulations - Dylan Humber}
-		\item{GUI - Brendon Camm}
-		\item{Physical Implementation - Lucas Doucette}
-		\item{Conclusions - Dylan Humber}
-		\item{Future Recommendations - Group}
-		\item{References - Group}
-		\item{Appendices - Group}
-	\end{itemize}
+	\includepdf[pages={1}]{"../Second Semester Report/Letter of Transmittal/document"}
 	
-	\end{abstract}
 	%Need TOC
 	\pagenumbering{roman}
 	\setcounter{tocdepth}{2}
@@ -74,6 +55,26 @@
 	\input{"Section Verbatim/discussion"}
 	\pagebreak
 	
+	\newpage
+	\begin{abstract} %Need abstract. Yes.
+		The following report summarizes the progress made throughout the Quad Rotor Drone Programmable Flight Controller project and the future recommendations based upon project findings. The goal of the project is to design a programmable quadcopter flight controller that will have the capability of responding to live control inputs and react appropriately to disturbances present. The objective of this report is to summarize the deliverables set forth for the project and to present findings, results and testing procedures. The report also outlines the design process of the project. The Quad Rotor Flight Controller project has three major components; flight and stabilizing simulations, implementation of software, and a GUI interface.  
+		\vspace{0.2in}	
+		
+		\textbf{Authorship}
+		\begin{itemize}
+			\itemsep-.5em
+			\item{Abstract - Lucas Doucette}
+			\item{Letter of Transmittal - Brendon Camm}
+			\item{Simulations - Dylan Humber}
+			\item{GUI - Brendon Camm}
+			\item{Physical Implementation - Lucas Doucette}
+			\item{Conclusions - Dylan Humber}
+			\item{Future Recommendations - Group}
+			\item{References - Group}
+			\item{Appendices - Group}
+		\end{itemize}
+		
+	\end{abstract}
 	%\appendix
 	%\counterwithin{figure}{section}
 	%\counterwithin{lstlisting}{section} 
