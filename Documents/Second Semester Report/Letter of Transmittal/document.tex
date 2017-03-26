@@ -1,0 +1,35 @@
+\documentclass[letterpaper]{letter}
+%\usepackage{graphicx}
+\usepackage[margin=1.25in]{geometry}
+
+\newcommand{\SignatureAndDate}[2]{%
+	\begin{minipage}[c]{\textwidth}
+		\makebox[12cm][c]{
+			\makebox[5cm][c] {\hrulefill} \hfill \makebox[5cm][c] {\hrulefill} \hfill
+		}
+		\makebox[12cm][l]{
+			#1 \hfill Date \hfill \hfill
+		}
+		\makebox[12cm][l]{
+			#2  \hfill \hfill
+		}
+		\vspace{1cm}
+	\end{minipage}	
+}%
+\signature{Dylan Humber \\ \vspace{0.3in} Brendon Camm \\ \vspace{0.3in} Lucas Doucette}
+\address{Department of Electrical \\ and Computer Engineering \\ Dalhousie University \\ P.O. Box 1000 \\ Halifax, Nova Scotia \\ B3J 1B6}
+
+\begin{document}
+\begin{letter}{Dr Jason Rhinelander \\ Reiland Systems Ltd. \\ PLACEHOLDER ADDRESS \\ Dartmouth, NS \\ POSTAL CODE \\ CC: \\ Dr. Jason Gu \\ Dr Jos\'{e} Gonzalez-Cueto}	
+\opening{Dear Dr. Rhinelander:}
+
+Attached is Group 2’s senior design interim report titled “Programmable Flight Controller”, written in fulfillment of the requirements of the Faculty of Engineering ECED 4901 Senior Design course. The report outlines the specifics of each portion of the project encounters throughout the 2016/2017 academic year. 
+	
+The intention of this project is to develop a completely programmable flight controller for use on a quad-rotor drone. The controller and sensors will be implemented using an Arduino Uno Microcontroller and Raspberry Pi 3 computer. A graphical user interface was also developed to display information about the controller and sensors. The sections enclosed in the attached report discusses the simulation, implementation and testing of the controller as well as the design and testing of the graphical user interface. In addition, this report outlines the management side of the project including the Gantt Chart showing the time-lines, task division and each individual group members responsibilities. The report concludes with sections highlighting some of the challenges that were encountered over the course of the project including a new legislation regarding recreational drone usage introduced by the federal government in March of 2017 which severely disrupted our planned flight testing following this section will be recommended future improvements. 
+
+Please contact the group’s nominated project manager, Dylan Humber (at  dylan.humber@gmail.com) should you have any questions about the report. 
+
+\closing{Best Regards,}
+
+\end{letter}
+\end{document}
