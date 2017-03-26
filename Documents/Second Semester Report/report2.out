@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section.1}{List of Acronyms}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Simulations}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Physical Implementation}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Graphical User Interface}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Design Process}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Simulations}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Physical Implementation}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Graphical User Interface}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Design Solutions}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Project Results}{}% 14
+\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 18
+\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 21
+\BOOKMARK [1][-]{appendix.A}{Proof of Concept and Testing}{}% 22
+\BOOKMARK [1][-]{appendix.B}{SimuLink Models}{}% 23
+\BOOKMARK [2][-]{subsection.B.1}{Dynamic Simulation}{appendix.B}% 24
+\BOOKMARK [2][-]{subsection.B.2}{Input Model Subsystem}{appendix.B}% 25
+\BOOKMARK [2][-]{subsection.B.3}{Controller Subsystem}{appendix.B}% 26
+\BOOKMARK [2][-]{subsection.B.4}{Motor Subsystem}{appendix.B}% 27
+\BOOKMARK [2][-]{subsection.B.5}{Motor Characterization Model}{appendix.B}% 28
+\BOOKMARK [2][-]{subsection.B.6}{Physical Subsystem}{appendix.B}% 29
+\BOOKMARK [2][-]{subsection.B.7}{Pulsewidth Subsystem}{appendix.B}% 30
+\protect \BOOKMARK [1][-]{subsection.B.7}{ Gantt Charts}{}% 31

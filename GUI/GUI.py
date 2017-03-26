@@ -14,6 +14,7 @@ import threading
 import logging
 import matplotlib.animation as animation
 import pyqtgraph as pg
+import pyqtgraph.exporters
 
 qtCreatorFile = "GUI.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
