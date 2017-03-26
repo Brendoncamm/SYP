@@ -36,7 +36,27 @@ There is a multitude of frameworks available for graphical user interface develo
 \end{itemize}
 With these restrictions placed and further research into various frameworks the selections narrowed down to Qt and PyQt5. Each of these use the Qt framework which is regarded as a reliable, cross-platform GUI development software with extremely well documented libraries which met the major requirements. Although both Qt and PyQt5 use the same framework there are a few key differences. 
 
-The most notable difference at first glance is that the two use different languages, Qt uses C++ where PyQt5 uses Python but the biggest difference is in the design suites. When developing using Qt you're able to use the QtCreator design suite which allows the user to design the look of the GUI using click and drag widgets, code the functionality of the widgets then simply compile all within the design suite. When using PyQt5 there isn't a complete design suite, instead the user must design the user interface using QtDesigner and then import the GUI file into the Python script, from here the widgets are coded is relatively the same other than the obvious differences between C++ and Python. 
+The most notable difference at first glance is that the two use different languages, Qt uses C++ where PyQt5 uses Python but the biggest difference is in the design suites. When developing using Qt you're able to use the QtCreator design suite which allows the user to design the look of the GUI using click and drag widgets, code the functionality of the widgets then simply compile all within the design suite. When using PyQt5 there isn't a complete design suite, instead the user must design the user interface using QtDesigner and then import the GUI file into the Python script, from here the widgets are coded is relatively the same other than the obvious differences between C++ and Python. To finalize the decision on which framework to use two basic GUI's with the same functionality were developed using Qt and then PyQt5. 
+
+The basic GUI was to have the ability to call the PS4 controller initialization script and manipulate the axis settings. Because the initialization script was written in Python it was very difficult and time consuming to do this using the C++ version of Qt compared to using PyQt5 where all that had to be done was import the script. Because each of the scripts that the GUI needs to call are written using Python it was decided to carry on using PyQt5. On top of the ease of importing the scripts using PyQt5 it also allows us to use the vast amount of Python libraries that are available. With the development framework decision made it was time use QtDesigner to design the layout of the GUI that will be intuitive for the end user.
+
+\subsubsection{GUI Layout}  
+The layout of a GUI can make or break the end users experience, a clunky non-intuitive GUI will undoubtably cause the end user an unneeded headache. For this reason, a prototype of a graphical user interface was developed and sent to our client to get an idea of what he would be comfortable with and then this prototype was optimized based on his comments. The optimized layout was presented to each of the group members and a consensus was made to move forward using the new layout as it provides all of the required functionality in a clean manner. 
+
+A snapshot of the original prototype layout can be viewed in APPENDIX X, and the final layout can be viewed in the figures below. The purpose and functionality of the widgets will be discussed in the following section. With the layout of the GUI decided on it was time to begin developing the functionality of the widgets.
+\begin{figure}[ht]
+	\includegraphics[width=\linewidth]{Final_GUI_HOME.png}
+	\caption{Final GUI Home Page}
+	\label{fig:GUIHome}
+\end{figure}
+\begin{figure}[ht]
+	\includegraphics[width=\linewidth]{Final_GUI_CTRL.png}
+	\caption{Final GUI Controller and Network Settings page}
+	\label{fig:GUICtrl}
+\end{figure}
+
+\subsubsection{Widgets}
+
 
 
 

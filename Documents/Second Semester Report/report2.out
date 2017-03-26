@@ -1,23 +1,26 @@
 \BOOKMARK [1][-]{section.1}{List of Acronyms}{}% 1
 \BOOKMARK [1][-]{section.2}{Introduction}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Background and Significance}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Simulations}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Physical Implementation}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Graphical User Interface}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{Methods}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Simulations}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{Physical Implementation}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Graphical User Interface}{section.3}% 10
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Framework Selection}{subsection.3.3}% 11
-\BOOKMARK [1][-]{section.4}{Proposed Solutions}{}% 12
-\BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 15
-\BOOKMARK [1][-]{section.5}{Project Results}{}% 16
-\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 17
-\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 18
-\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 19
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 20
-\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 21
-\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 22
-\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 23
+\BOOKMARK [2][-]{subsection.2.2}{Overall Objective}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Simulations}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Physical Implementation}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Graphical User Interface}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Methods}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Simulations}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Physical Implementation}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Graphical User Interface}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Framework Selection}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.2}{GUI Layout}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Widgets}{subsection.3.3}% 14
+\BOOKMARK [1][-]{section.4}{Proposed Solutions}{}% 15
+\BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Project Results}{}% 19
+\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 22
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 26
