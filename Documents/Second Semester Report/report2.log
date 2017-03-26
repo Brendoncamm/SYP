@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  25 MAR 2017 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  26 MAR 2017 01:45
 entering extended mode
 **./report2.tex
 (report2.tex
@@ -364,13 +364,10 @@ een already used, duplicate ignored
                    \relax 
 l.12 T
       he objectives of the physical implementation for the project begin wit...
-[1] [2]) ("Section Verbatim/design_process.tex")
+[1] [2]) ("Section Verbatim/design_process.tex" [3])
 ("Section Verbatim/design_solutions.tex") ("Section Verbatim/results.tex")
-("Section Verbatim/discussion.tex") [3] [4]
-Overfull \vbox (46.35817pt too high) has occurred while \output is active []
-
-
-[5] ("Section Verbatim/Prelim_Results_Appendix.tex"
+("Section Verbatim/discussion.tex") [4] [5]
+("Section Verbatim/Prelim_Results_Appendix.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -483,7 +480,7 @@ nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 msfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on report2.pdf (21 pages, 591976 bytes).
+Output written on report2.pdf (21 pages, 594177 bytes).
 PDF statistics:
  897 PDF objects out of 1000 (max. 8388607)
  107 named destinations out of 1000 (max. 500000)

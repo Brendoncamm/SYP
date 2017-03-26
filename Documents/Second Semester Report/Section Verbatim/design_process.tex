@@ -12,3 +12,17 @@
 \subsection{Graphical User Interface}
 \subsubsection{Framework Selection}
 
+There is a multitude of frameworks available for graphical user interface development so in order to narrow down the choices the following restrictions were placed: 
+\begin{itemize}
+	\item Must function on Windows, Mac OS and UNIX environments
+	\item Have the ability to display live plots
+	\item Be compatibile with the physical controller initialization software
+	\item Have well documented libraries for ease of development 
+\end{itemize}
+With these restrictions placed and further research into various frameworks the selections narrowed down to Qt and PyQt5. Each of these use the Qt framework which is regarded as a reliable, cross-platform GUI development software with extremely well documented libraries which met the major requirements. Although both Qt and PyQt5 use the same framework there are a few key differences. 
+
+The most notable difference at first glance is that the two use different languages, Qt uses C++ where PyQt5 uses Python but the biggest difference is in the design suites. When developing using Qt you're able to use the QtCreator design suite which allows the user to design the look of the GUI using click and drag widgets, code the functionality of the widgets then simply compile all within the design suite. When using PyQt5 there isn't a complete design suite, instead the user must design the user interface using QtDesigner and then import the GUI file into the Python script, from here the widgets are coded is relatively the same other than the obvious differences between C++ and Python. 
+
+
+
+
