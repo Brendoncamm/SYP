@@ -4,6 +4,33 @@
 \section{Proposed Solutions}
 
 \subsection{Simulations}
+For the control design, four separate controllers will be used.  A PID controller will be used to control the altitude of the quad-rotor drone.  Pitch, roll, and yaw will each be controlled respectively by a separate PI controller. These controllers will be first tested and tuned using test inputs.  The physical aspect of the simulation will be defined by a SimScape MultiBody model.  Once this rudimentary model is verified, the simulation will be developed into taking real-time signals from a HID and rendering the flight of the quad-rotor drone in response to user input.
+
+\subsubsection{Simulation Design}
+The overall architecture of the proposed design can be seen in Figure \ref{fig:sim_arch}.  The entire system is broken down into six subsystems.  Their specifications are discussed below.  The layout of each subsystem and the overall SimuLink simulation layout may be found in Appendix \ref{appendix:simulink}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{simulation_arch.jpg}
+	\label{fig:sim_arch}
+	\caption{Proposed Simulation Architecture}
+\end{figure}
+
+\begin{enumerate}
+	\item \textbf{Input Block:}  This block handles the HID input and pre-configured test signals.  As well as the specifications of limit/scalar values of the input signals.  As the limits will be scalar values, control signal input should be restricted between $-1$ and $1$.
+	
+	\item \textbf{Feedback Block:}  This block receives the contents specified from the input block as well as the current orientation of the quad-rotor drone in the simulation.  It combines all of these to output an error signal for the pitch, roll, yaw, and altitude controllers.
+	
+	\item \textbf{Controller Block:}  This block houses the four controllers.  The output of these controllers is normalized to a throttle percentage.
+	
+	\item \textbf{Pulsewidth Subsystem:}  This block takes the throttle percentage and transform it to a value in microseconds that can be used to define the pulsewidth output of the microcontroller.  Physically, this PWM signal controls the ESCs.
+	
+	\item \textbf{Motor Characterization:}  This block contains motor thrust data corresponding to characterization tests performed in the first semester.  Functionally this block contains a look up table that relates pulsewidth to thrust and torque for each motor.  The torque value is an approximation based on the value of thrust from the motor.
+	
+	\item \textbf{Physical Subsystem:}  This block contains the physical subsystem built in SimScape Multibody.  This library allows for the system to be built quickly and easily, as well as providing a (although simple) 3D rendering model.
+	
+	\item \textbf{3D Rendering:}  This subsystem will handle the real-time rendering of the simulation for flying with input from the HID.
+\end{enumerate}
 
 \subsection{Physical Implementation}
 
