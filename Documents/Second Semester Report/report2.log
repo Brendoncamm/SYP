@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  26 MAR 2017 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  26 MAR 2017 18:49
 entering extended mode
 **./report2.tex
 (report2.tex
@@ -390,7 +390,7 @@ LaTeX Info: Redefining \nameref on input line 30.
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<logo.pdf, id=115, 653.91501pt x 217.01276pt>
+<logo.pdf, id=151, 653.91501pt x 217.01276pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 32.
@@ -404,7 +404,7 @@ ond%20Semester%20Report
  []
 
 [1]
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=132, 614.29
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=168, 614.29
 5pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
@@ -421,7 +421,7 @@ Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
 ent".pdf used on input line 39.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=135, page=1
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=171, page=1
 , 614.295pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
@@ -466,11 +466,11 @@ ent".pdf, page1 used on input line 39.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 
 [2 <../Second Semester Report/Letter of Transmittal/document.pdf>] (report2.toc
-)
+[1])
 \tf@toc=\write4
 \openout4 = `report2.toc'.
 
- [1]
+ [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -497,14 +497,14 @@ ne 9.
 LaTeX Warning: Reference `proposed:simulations' on page 4 undefined on input li
 ne 17.
 
-[4] [5] [6] <Final_GUI_HOME.png, id=222, 550.30594pt x 426.84468pt>
+[4] [5] [6] <Final_GUI_HOME.png, id=271, 550.30594pt x 426.84468pt>
 File: Final_GUI_HOME.png Graphic file (type png)
 
 <use Final_GUI_HOME.png>
 Package pdftex.def Info: Final_GUI_HOME.png used on input line 68.
 (pdftex.def)             Requested size: 390.0pt x 302.51474pt.
 
-<Final_GUI_CTRL.png, id=223, 547.2947pt x 430.60875pt>
+<Final_GUI_CTRL.png, id=272, 547.2947pt x 430.60875pt>
 File: Final_GUI_CTRL.png Graphic file (type png)
 
 <use Final_GUI_CTRL.png>
@@ -517,46 +517,129 @@ Package pdftex.def Info: Final_GUI_CTRL.png used on input line 73.
                                                   \fi \fi 
 l.77 
       <./Final_GUI_HOME.png>]) ("Section Verbatim/proposed_solution.tex"
+
+LaTeX Warning: Reference `appendix:simulink' on page 9 undefined on input line 
+10.
+
 [9pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.17 \item 1
-            0 Degree of Freedom Inertial Measurement Unit <./Final_GUI_CTRL.png
->] <flowchart-architecture.jpg, id=240, 449.42906pt x 490.08093pt>
-File: flowchart-architecture.jpg Graphic file (type jpg)
+l.11 
+      <./Final_GUI_CTRL.png>]
 
-<use flowchart-architecture.jpg>
-Package pdftex.def Info: flowchart-architecture.jpg used on input line 25.
-(pdftex.def)             Requested size: 272.99881pt x 297.7001pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
-) has been already used, duplicate ignored
+LaTeX Warning: File `simulation_arch.jpg' not found on input line 14.
+
+
+! Package pdftex.def Error: File `simulation_arch.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 ...[width=0.9\textwidth]{simulation_arch.jpg}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.36 
+l.23 
+     ] <flowchart-architecture.jpg, id=297, 449.42906pt x 490.08093pt>
+File: flowchart-architecture.jpg Graphic file (type jpg)
+
+<use flowchart-architecture.jpg>
+Package pdftex.def Info: flowchart-architecture.jpg used on input line 52.
+(pdftex.def)             Requested size: 272.99881pt x 297.7001pt.
+ [11] [12pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.63 
       <./flowchart-architecture.jpg>]) ("Section Verbatim/results.tex")
-("Section Verbatim/discussion.tex") [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
+("Section Verbatim/discussion.tex") [13]
+("Section Verbatim/appendix_simulink.tex"
+<Dynamic_Simulation.pdf, id=318, page=1, 794.97pt x 614.295pt>
+File: Dynamic_Simulation.pdf Graphic file (type pdf)
+
+<use Dynamic_Simulation.pdf, page 1>
+Package pdftex.def Info: Dynamic_Simulation.pdf, page1 used on input line 5.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [14
+
+]
+Overfull \vbox (12.71298pt too high) has occurred while \output is active []
+
+
+[15 <./Dynamic_Simulation.pdf>]
+<Input_Model.pdf, id=344, page=1, 794.97pt x 614.295pt>
+File: Input_Model.pdf Graphic file (type pdf)
+
+<use Input_Model.pdf, page 1>
+Package pdftex.def Info: Input_Model.pdf, page1 used on input line 7.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+
+<Dynamic_Simulation.pdf, id=345, page=2, 794.97pt x 614.295pt>
+File: Dynamic_Simulation.pdf Graphic file (type pdf)
+
+<use Dynamic_Simulation.pdf, page 2>
+Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [16 <./Input_Model.pdf>]
+<Dynamic_Simulation.pdf, id=361, page=3, 794.97pt x 614.295pt>
+File: Dynamic_Simulation.pdf Graphic file (type pdf)
+
+<use Dynamic_Simulation.pdf, page 3>
+Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [17 <./Dynamic_Simulation.pdf>]
+<motor_characterization.pdf, id=419, page=1, 794.97pt x 614.295pt>
+File: motor_characterization.pdf Graphic file (type pdf)
+
+<use motor_characterization.pdf, page 1>
+Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
+3.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [18 <./Dynamic_Simulation.pdf>]
+<Dynamic_Simulation.pdf, id=432, page=4, 794.97pt x 614.295pt>
+File: Dynamic_Simulation.pdf Graphic file (type pdf)
+
+<use Dynamic_Simulation.pdf, page 4>
+Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [19 <./motor_characterization.pdf>]
+<Dynamic_Simulation.pdf, id=455, page=5, 794.97pt x 614.295pt>
+File: Dynamic_Simulation.pdf Graphic file (type pdf)
+
+<use Dynamic_Simulation.pdf, page 5>
+Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 17.
+(pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+ [20 <./Dynamic_Simulation.pdf>] [21 <./Dynamic_Simulation.pdf>])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (report2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `report2.out' has not changed.
-(rerunfilecheck)             Checksum: 5BBDCD8142EACEBF6BF556AF67AE4CF0;1866.
+(rerunfilecheck)             Checksum: 889D9751528B4178606520FCA766C8C8;2501.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 8292 strings out of 493334
- 120663 string characters out of 3139246
- 220316 words of memory out of 3000000
- 11642 multiletter control sequences out of 15000+200000
- 11381 words of font info for 41 fonts, out of 3000000 for 9000
+ 8364 strings out of 493334
+ 122006 string characters out of 3139246
+ 221371 words of memory out of 3000000
+ 11678 multiletter control sequences out of 15000+200000
+ 11550 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,18n,43p,1139b,451s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
@@ -565,10 +648,11 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb>
-Output written on report2.pdf (16 pages, 199413 bytes).
+fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmtt12.pfb>
+Output written on report2.pdf (27 pages, 449691 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 922 PDF objects out of 1000 (max. 8388607)
+ 88 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

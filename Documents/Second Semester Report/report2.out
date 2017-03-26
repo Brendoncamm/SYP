@@ -15,14 +15,23 @@
 \BOOKMARK [3][-]{subsubsection.3.3.4}{Live Plotting}{subsection.3.3}% 15
 \BOOKMARK [1][-]{section.4}{Proposed Solutions}{}% 16
 \BOOKMARK [2][-]{subsection.4.1}{Simulations}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 19
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Framework Selection}{subsection.4.3}% 20
-\BOOKMARK [1][-]{section.5}{Project Results}{}% 21
-\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 24
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 25
-\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 26
-\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 28
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Simulation Design}{subsection.4.1}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Physical Implementation}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Graphical User Interface}{section.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Framework Selection}{subsection.4.3}% 21
+\BOOKMARK [1][-]{section.5}{Project Results}{}% 22
+\BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 25
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 26
+\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 29
+\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 30
+\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 31
+\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 33
+\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 34
+\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 35
+\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 36
+\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 37
