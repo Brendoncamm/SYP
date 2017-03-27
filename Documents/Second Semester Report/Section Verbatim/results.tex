@@ -45,7 +45,14 @@ The ESC testing was successful, the testing proved the Arduino's capability to c
  
  The test was performed beginning at a pulse width of 1127$\mu$s which was found through experimentation to be the cut in pulse width for motor operation. The test was performed at increments of 25$\mu$s. The resultant current draw values and lift values were documented. The lift values were used to create a simulink lookup table to characterize the motor's available force for simulation purposes. 
  
- During the load testing, it was noticed that the current draw from the individual motor was high. The power supply being used had a current limit of 3A therefore the maximum current draw allowed during testing was 2.95A to ensure no brown out due to lack of supply. The current limiting factor resulted in the test ending at a pulse width of 1525$\mu$s and a lift value of 137.5g.The resulting plot of the load testing is found in Appendix Figure %\ref{fig:Motor_Char}
+ During the load testing, it was noticed that the current draw from the individual motor was high. The power supply being used had a current limit of 3A therefore the maximum current draw allowed during testing was 2.95A to ensure no brown out due to lack of supply. The current limiting factor resulted in the test ending at a pulse width of 1525$\mu$s and a lift value of 137.5g.The resulting plot of the load testing is found in Figure \ref{fig:Motor_Char}.
+ 
+ \begin{figure}{H}
+	\centering
+	\includegraphics[width=1\textwidth]{Motor_Characterization.jpg}
+	\caption{Motor Characterization Testing}
+	\label{fig:Motor_Char}
+\end{figure}
 
   \subsubsection{Wi-Fi and Bluetooth Range}
   

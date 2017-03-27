@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  27 MAR 2017 00:11
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2017 01:19
+>>>>>>> Stashed changes
 entering extended mode
 **./report2.tex
 (report2.tex
@@ -390,7 +394,11 @@ LaTeX Info: Redefining \nameref on input line 30.
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
+<<<<<<< Updated upstream
 <logo.pdf, id=199, 653.91501pt x 217.01276pt>
+=======
+<logo.pdf, id=205, 653.91501pt x 217.01276pt>
+>>>>>>> Stashed changes
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 32.
@@ -404,7 +412,11 @@ ond%20Semester%20Report
  []
 
 [1]
+<<<<<<< Updated upstream
 <"../Second Semester Report/Letter of Transmittal/document".pdf, id=216, 614.29
+=======
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=222, 614.29
+>>>>>>> Stashed changes
 5pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
@@ -421,7 +433,11 @@ Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
 ent".pdf used on input line 39.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
+<<<<<<< Updated upstream
 <"../Second Semester Report/Letter of Transmittal/document".pdf, id=219, page=1
+=======
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=225, page=1
+>>>>>>> Stashed changes
 , 614.295pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
@@ -502,7 +518,11 @@ ne 17.
 LaTeX Warning: Reference `appendix:simulink' on page 8 undefined on input line 
 10.
 
+<<<<<<< Updated upstream
 <system_arch.jpg, id=337, 776.9025pt x 182.18062pt>
+=======
+<system_arch.jpg, id=345, 776.9025pt x 182.18062pt>
+>>>>>>> Stashed changes
 File: system_arch.jpg Graphic file (type jpg)
  <use system_arch.jpg>
 Package pdftex.def Info: system_arch.jpg used on input line 14.
@@ -515,7 +535,11 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.27 
       <./system_arch.jpg>]
+<<<<<<< Updated upstream
 <flowchart-architecture.jpg, id=347, 449.42906pt x 490.08093pt>
+=======
+<flowchart-architecture.jpg, id=355, 449.42906pt x 490.08093pt>
+>>>>>>> Stashed changes
 File: flowchart-architecture.jpg Graphic file (type jpg)
 
 <use flowchart-architecture.jpg>
@@ -528,7 +552,11 @@ e.2}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.62 
       <./flowchart-architecture.jpg>]
+<<<<<<< Updated upstream
 <control-loop.jpg, id=362, 196.48407pt x 448.67625pt>
+=======
+<control-loop.jpg, id=370, 196.48407pt x 448.67625pt>
+>>>>>>> Stashed changes
 File: control-loop.jpg Graphic file (type jpg)
  <use control-loop.jpg>
 Package pdftex.def Info: control-loop.jpg used on input line 65.
@@ -541,14 +569,22 @@ Package pdftex.def Info: control-loop.jpg used on input line 65.
                                                   \fi \fi 
 l.87 
       <./control-loop.jpg>] [12]
+<<<<<<< Updated upstream
 <Final_GUI_HOME.png, id=379, 550.30594pt x 426.84468pt>
+=======
+<Final_GUI_HOME.png, id=387, 550.30594pt x 426.84468pt>
+>>>>>>> Stashed changes
 File: Final_GUI_HOME.png Graphic file (type png)
 
 <use Final_GUI_HOME.png>
 Package pdftex.def Info: Final_GUI_HOME.png used on input line 111.
 (pdftex.def)             Requested size: 390.0pt x 302.51474pt.
 
+<<<<<<< Updated upstream
 <Final_GUI_CTRL.png, id=380, 547.2947pt x 430.60875pt>
+=======
+<Final_GUI_CTRL.png, id=388, 547.2947pt x 430.60875pt>
+>>>>>>> Stashed changes
 File: Final_GUI_CTRL.png Graphic file (type png)
 
 <use Final_GUI_CTRL.png>
@@ -561,7 +597,11 @@ re.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.120 T
        he red outlined box is the field that the live plot will populate whe...
+<<<<<<< Updated upstream
  <./Final_GUI_HOME.png>] <listWidget.png, id=395, 72.27pt x 54.2025pt>
+=======
+ <./Final_GUI_HOME.png>] <listWidget.png, id=403, 72.27pt x 54.2025pt>
+>>>>>>> Stashed changes
 File: listWidget.png Graphic file (type png)
 
 <use listWidget.png>
@@ -580,13 +620,22 @@ ame{figure.6}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.130 
+<<<<<<< Updated upstream
        <./listWidget.png>] <GUICtrlPop.png, id=411, 557.83406pt x 475.7775pt>
+=======
+       <./listWidget.png>] <GUICtrlPop.png, id=419, 2890.8pt x 813.0375pt>
+>>>>>>> Stashed changes
 File: GUICtrlPop.png Graphic file (type png)
 
 <use GUICtrlPop.png>
 Package pdftex.def Info: GUICtrlPop.png used on input line 134.
+<<<<<<< Updated upstream
 (pdftex.def)             Requested size: 390.0pt x 332.64268pt.
  [17] <GUIPopup.png, id=418, 556.32843pt x 472.76625pt>
+=======
+(pdftex.def)             Requested size: 390.0pt x 109.6809pt.
+ <GUIPopup.png, id=420, 556.32843pt x 472.76625pt>
+>>>>>>> Stashed changes
 File: GUIPopup.png Graphic file (type png)
 
 <use GUIPopup.png>
@@ -604,13 +653,21 @@ identifier (name{figure.8}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.149 
+<<<<<<< Updated upstream
        <./GUIPopup.png>] <plot.png, id=431, 556.32843pt x 473.51906pt>
+=======
+       <./GUIPopup.png>] <plot.png, id=434, 556.32843pt x 473.51906pt>
+>>>>>>> Stashed changes
 File: plot.png Graphic file (type png)
 
 <use plot.png>
 Package pdftex.def Info: plot.png used on input line 154.
 (pdftex.def)             Requested size: 390.0pt x 331.9524pt.
+<<<<<<< Updated upstream
  <plot2.png, id=433, 554.82281pt x 473.51906pt>
+=======
+ <plot2.png, id=436, 554.82281pt x 473.51906pt>
+>>>>>>> Stashed changes
 File: plot2.png Graphic file (type png)
  <use plot2.png>
 Package pdftex.def Info: plot2.png used on input line 159.
@@ -621,9 +678,15 @@ e.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+<<<<<<< Updated upstream
 l.163 
        <./plot.png>]) ("Section Verbatim/results.tex"
 <stepresponse.jpg, id=445, 562.1pt x 421.575pt>
+=======
+l.164 
+       <./plot.png>]) (./Section Verbatim/results.tex
+<stepresponse.jpg, id=450, 562.1pt x 421.575pt>
+>>>>>>> Stashed changes
 File: stepresponse.jpg Graphic file (type jpg)
  <use stepresponse.jpg>
 Package pdftex.def Info: stepresponse.jpg used on input line 12.
@@ -644,63 +707,116 @@ fier (name{figure.11}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.39 
+<<<<<<< Updated upstream
       <./stepresponse.jpg>] [24] [25]) ("Section Verbatim/discussion.tex")
 [26] [27] ("Section Verbatim/appendix_simulink.tex"
 <Dynamic_Simulation.pdf, id=475, page=1, 794.97pt x 614.295pt>
+=======
+      <./stepresponse.jpg>]
+<Motor_Characterization.jpg, id=463, 2569.6pt x 1503.6175pt>
+File: Motor_Characterization.jpg Graphic file (type jpg)
+
+<use Motor_Characterization.jpg>
+Package pdftex.def Info: Motor_Characterization.jpg used on input line 52.
+(pdftex.def)             Requested size: 390.0pt x 228.19432pt.
+ [23] [24pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.60 
+      <./Motor_Characterization.jpg>] [25]) (./Section Verbatim/discussion.tex)
+[26] (./Section Verbatim/appendix_simulink.tex
+<Dynamic_Simulation.pdf, id=483, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 1>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [28
+=======
+ [27
+>>>>>>> Stashed changes
 
 ]
 Overfull \vbox (12.71298pt too high) has occurred while \output is active []
 
 
+<<<<<<< Updated upstream
 [29 <./Dynamic_Simulation.pdf>]
 <Input_Model.pdf, id=501, page=1, 794.97pt x 614.295pt>
+=======
+[28 <./Dynamic_Simulation.pdf>]
+<Input_Model.pdf, id=509, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Input_Model.pdf Graphic file (type pdf)
 
 <use Input_Model.pdf, page 1>
 Package pdftex.def Info: Input_Model.pdf, page1 used on input line 7.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
 
+<<<<<<< Updated upstream
 <Dynamic_Simulation.pdf, id=502, page=2, 794.97pt x 614.295pt>
+=======
+<Dynamic_Simulation.pdf, id=510, page=2, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [30 <./Input_Model.pdf>]
 <Dynamic_Simulation.pdf, id=518, page=3, 794.97pt x 614.295pt>
+=======
+ [29 <./Input_Model.pdf>]
+<Dynamic_Simulation.pdf, id=526, page=3, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [31 <./Dynamic_Simulation.pdf>]
 <motor_characterization.pdf, id=577, page=1, 794.97pt x 614.295pt>
+=======
+ [30 <./Dynamic_Simulation.pdf>]
+<motor_characterization.pdf, id=585, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: motor_characterization.pdf Graphic file (type pdf)
 
 <use motor_characterization.pdf, page 1>
 Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 3.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [32 <./Dynamic_Simulation.pdf>]
 <Dynamic_Simulation.pdf, id=590, page=4, 794.97pt x 614.295pt>
+=======
+ [31 <./Dynamic_Simulation.pdf>]
+<Dynamic_Simulation.pdf, id=599, page=4, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [33 <./motor_characterization.pdf>]
 <Dynamic_Simulation.pdf, id=612, page=5, 794.97pt x 614.295pt>
+=======
+ [32 <./motor_characterization.pdf>]
+<Dynamic_Simulation.pdf, id=621, page=5, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 17.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [34 <./Dynamic_Simulation.pdf>] [35 <./Dynamic_Simulation.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
@@ -709,13 +825,55 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `report2.out' has not changed.
 (rerunfilecheck)             Checksum: 0538E764A5E5D959CBF82C6FFB63E5A4;3492.
+=======
+ [33 <./Dynamic_Simulation.pdf>] [34 <./Dynamic_Simulation.pdf>]) (./Section Ve
+rbatim/appendix_software.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 20.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
+ [35
+
+] [36]
+[37]
+Overfull \hbox (5.99945pt too wide) in paragraph at lines 232--233
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[38] [39])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
+ [40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
+ (./report2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
+Package rerunfilecheck Info: File `report2.out' has not changed.
+(rerunfilecheck)             Checksum: 27243D95BDA768BA7BBCF707FBE02304;3482.
+>>>>>>> Stashed changes
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< Updated upstream
  8455 strings out of 493334
  123383 string characters out of 3139246
  222775 words of memory out of 3000000
@@ -739,4 +897,37 @@ PDF statistics:
  1100 PDF objects out of 1200 (max. 8388607)
  121 named destinations out of 1000 (max. 500000)
  508 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ 9189 strings out of 493014
+ 134942 string characters out of 6133351
+ 277136 words of memory out of 5000000
+ 12103 multiletter control sequences out of 15000+600000
+ 12269 words of font info for 44 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,18n,51p,1136b,1730s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{figure.B.12} has been referenced but does not exi
+st, replaced by a fixed one
+
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
+Output written on report2.pdf (46 pages, 742401 bytes).
+PDF statistics:
+ 1576 PDF objects out of 1728 (max. 8388607)
+ 1399 compressed objects within 14 object streams
+ 477 named destinations out of 1000 (max. 500000)
+ 521 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 
