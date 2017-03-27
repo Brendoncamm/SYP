@@ -11,7 +11,7 @@ The overall architecture of the proposed design can be seen in Figure \ref{fig:s
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{simulation_arch.jpg}
+	\includegraphics[width=0.9\textwidth]{system_arch.jpg}
 	\label{fig:sim_arch}
 	\caption{Proposed Simulation Architecture}
 \end{figure}
@@ -89,4 +89,58 @@ The barometric pressure sensor calculation was found to be highly susceptible to
 \subsection{Graphical User Interface}
 \subsubsection{Framework Selection}
 The basic GUI was to have the ability to call the PS4 controller initialization script and manipulate the axis settings. Because the initialization script was written in Python it was very difficult and time consuming to do this using the C++ version of Qt compared to using PyQt5 where all that had to be done was import the script. Due to each of the scripts that the GUI needs to call are written using Python it was decided to carry on using PyQt5. On top of the ease of importing the scripts using PyQt5 it also allows us to use the vast amount of Python libraries that are available such as matplotlib and pyqtgraph and as discussed, these libraries will be used to plot the sensor data. 
+\subsubsection{Features}
+As mentioned in section 3.3.2 how we could go about implementing each of the listed features was researched. Through this research is was revealed that some of the features we had originally considered were out of the scope of this project because it would take too much time to implement for little benefit. For this reason the following features were removed from our consideration at this time, but they will be considered potentional future improvements: 
+\begin{itemize}
+	\item Manipulate and Display PI and PID Parameters
+	\item Display Sensor Status
+	\item Display Flight Time
+\end{itemize}
+Therefore the key features that will be implemented into the GUI at this time are as follows:
+\begin{itemize}
+	\item Initialize Manual Control of the Drone
+	\item Initialize communications between Base Station Host and Raspberry Pi 3
+	\item Display Live Plots
+\end{itemize}
+A detail explanation of how these features will be implemented into the GUI will be explained in sections 4.3.4-4.3.6.
+\subsubsection{GUI Layout}
+As explained in section 3.3.3 an initial GUI was developed and presented to our client this initial prototype can be viewed in APPENDIX X. As you can see from the figures in APPENDIX X the prototype presented to our client included most of the features we later deemed unnecessary therefore we could disregard these extra widgets. With the decision to not include the features and taking our clients comments into consideration a new GUI layout was developed. The new GUI layout includes all of the key features we have decided to implement and presents them in a clean and intuitive manner. This new layout was presented to each group member and a consensus was reached to carry on with development using this layout. The final GUI layout can be viewed in Figure \ref{fig:GUIHome} and Figure \ref{fig:GUICtrl}.
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{Final_GUI_HOME.png}
+	\caption{Final GUI Home Page}
+	\label{fig:GUIHome}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{Final_GUI_CTRL.png}
+	\caption{Final GUI Controller and Network Settings page}
+	\label{fig:GUICtrl}
+\end{figure}
+The red outlined box is the field that the live plot will populate when the GUI is compiled and the blank vertical rectangle is a list widget that will be populated with the names different pages of the GUI and will allow the user to access them by simply clicking on the name. An example of how the list widget will look can be viewed in Figure \ref{fig:list} and how the live plot will look can be viewed in section 4.3.5. An explanation of what purpose each of the other widgets and push buttons seen in Figures \ref{fig:GUIHome} and \ref{fig:GUICtrl} will serve is described in the following sections.
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{listWidget.png}
+	\caption{List Widget Example}
+	\label{fig:list}
+\end{figure}
+\subsubsection{Initializing Communications and Manual Control}
+In order for the GUI to receive sensor data or the controller to receive manual control inputs over WiFi a socket connection must be made. Instead of having to open and run the socket script on the client (base station host in our case) the Start button on the GUI calls the socket script and makes the connection to the socket. Once the Start button has been pressed the horizontal white fields found in Figures \ref{fig:GUIHome} and \ref{fig:GUICtrl} will tell the users whether or not communications have been successfully made how this push is coded can be found in the connection() definition of the GUI code in APPENDIX. When the GUI is initially compiled the white fields under Axis and Port seen in \ref{fig:GUICtrl} will be populated with the default values that are found in the PS4 Controller script for the Axis values and the socket script for the Port value. The white field under Host will be populated with the name of the host computer's IP or name. 
+
+The Axis values will determine which direction the drone will go depending on which way to joystick is moved therefore if the user would prefer the drone move differently they have the option to change the joystick settings by hitting the "Update Axis" push button. How this push button is coded to achieve this functionality can be found in the updateAxis() method in the GUI code in APPENDIX
+
+In the event that the client script is altered and a new host and port number is to be used for the socket the "Update Connection" push button will allow the user to enter the new host and port values and then the connection to the new socket will be made. If only one value has changed the user can select either the "Update Host" or "Update Port" push buttons and then hit "Update Connection" and the new connection will be made. If either of these cases occur the horizontal white field found in Figure \ref{fig:GUICtrl} will be populated letting the user know whether or not the values have been updated and the connection has been successfully established. How the Axis value, Host value, Port value and Connection Status will be displayed when the GUI is compiled and the Start button is pushed using the wrong port value can be viewed in Figure \ref{fig:guipop1} and how the text field that pops up when you click any of the push buttons mentioned looks can be viewed in Figure \ref{fig:popup}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{GUICtrlPop}
+	\caption{Compiled GUI with no active communications}
+	\label{fig:guipop1}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{GUIPopup.png}
+	\caption{Pop up to input new values on GUI}
+	\label{fig:popup}
+\end{figure}
+
+As mentioned in section 2.1 Dr. Rhinelander has aspirations for the drone to partially or fully fly on it's own but in the event that something goes wrong there must be a way to manually control the drone. This is where the manual control button seen in Figure \ref{fig:GUICtrl} comes into play. This push button calls the listen() definition of the PS4 Controller script found in APPENDIX. This initializes the PS4 Controller settings and then makes the connection to the socket on the Raspberry Pi 3 this will allow for control inputs to be sent. In order for this to be performed the Server script found in APPENDIX must be running on the Raspberry Pi 3 and the port numbers must match. The code for how this push button performs it's functions can be found in the connectController() definition on the GUI code found in APPENDIX.
+
+
 

@@ -30,8 +30,6 @@ Communications between the RPi and the Arduino were researched, using the interf
 
 From a technical background perspective, research regarding the Python language and Python's available libraries was required. Server to client interfacing is also required technical background. Previous knowledge of the Python language assisted in directing the research and development flow throughout the project. PI and PID control loop knowledge was required and research time was used to learn filtering processes, Arduino library development, miscellaneous communication algorithms and utilization of the Adafruit 10 DOF IMU.
 
-
-
 \subsection{Graphical User Interface}
 \subsubsection{Framework Selection}
 
@@ -63,19 +61,6 @@ The layout of a GUI can make or break the end users experience, a clunky non-int
 
 \subsubsection{Live Plotting}
 When thinking about how to plot the live sensor data two libraries were considered these are, matplotlib and pyqtgraph. Matplotlib is a favorite when it comes to plotting data with Python where pyqtgraph is a plotting library specifically developed for use on PyQt. Each of these libraries were used to create plots on the GUI and then the performance was examined. The performance factors that were considered were: latency to plot when data is received and accuracy of the plotted data. Research into both of these libraries and how they can be integrated into the user interface was performed.
-
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{Final_GUI_HOME.png}
-	\caption{Final GUI Home Page}
-	\label{fig:GUIHome}
-\end{figure}
-\begin{figure}[H]
-	\includegraphics[width=\linewidth]{Final_GUI_CTRL.png}
-	\caption{Final GUI Controller and Network Settings page}
-	\label{fig:GUICtrl}
-\end{figure}
-
-
 
 
 
