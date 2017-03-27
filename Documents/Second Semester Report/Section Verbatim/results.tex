@@ -67,4 +67,9 @@ All functions and scripts were tested to ensure compilation was possible and the
 
 
 \subsection{Graphical User Interface}
+The main validation for the GUI was to ensure that each of the push buttons do the proper thing as well as when a page is selected from the list widget that the proper page is displayed. The testing involved with this was to select the desired push button or page and ensure the expected outcome happens. Along this process many software bugs were encountered and fixed, these included invalid syntax, improper use of libraries and just wrong implementation. Through these tests much was learned and the result was a GUI that provides all of the required functionality and is intuitive. After these were validated testing the live plotting capability was next. 
+\subsubsection{Live Plotting Testing}
+Due to the new drone regulations proper flight tests to receive sensor data to live plot the altitude was unable to be performed. Instead, to validate that the plot on the seen in Figure \ref{fig:plot2} would update when new sensor data was received a test was developed. The test was to pull in data from a text file that was given in the form of x and y coordinates and then add new data to the text file as the GUI was running and make sure that the plot updated only when new data was availble. The definition to pull in the data from the file can be found in the liveData() definition in the GUI code in APPENDIX.
+
+The result of this test was positive, whenever new data when entered into the text file plot would update to include to new data point accurately and swiftly. A flaw with this test could be that when the sensor data is receieved it would not come in this form, in this case the script would have to be altered to allow for a different data form. This test proved that the plot can be updated in real time.
 
