@@ -7,6 +7,11 @@
 
 \subsection{Physical Implementation}
 
+The physical implementation of the drone components and software has been successful to date. The drone has a fully functional communication channel between a controller set point input through base station software to a Raspberry Pi computer over Wi-Fi. The Raspberry Pi also successfully relays the control information to the Arduino control loop to be processed.
+
+The Arduino controller has been tested to poll an inertial measurement unit to determine the current states of yaw, pitch, roll and altitude. The initializations of all sensors, motors and communication channels operate as expected. The electronic speed controllers properly react to PWM inputs from the Arduino, controlling the four motors for quadcopter flight. Altitude measurements have been filtered reasonably well with room for improvement with regards to the tolerance of altitude error. Testing of new filtering methods is to be performed. The Arduino successfully repackages the received bytes into floating point values for use in the PID loop, to be outputted to the motors.
+
+The PID loop has yet to be thoroughly tested, but a test is planned for the near future. The results of the simulations with regards to PID gain values are required to apply a proper PID system. The physical implementation to date is considered a success, although drone flight has not been tested. The groundwork for a successful, fully customizable Quad Rotor Drone Flight Controller is presented throughout this report. All current software packages applicable to the physical implementation of the drone can be found in  Appendix B.
 
 \subsection{Graphical User Interface}
 
