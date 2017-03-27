@@ -4,6 +4,30 @@
 \section{Discussion}
 \subsection{Simulations}
 \label{discussion:sim}
+\subsubsection{Roadblocks}
+For the most part, the implementation of the simulation went smoothly.  However, progress on the simulation has hit a road block with respect to receiving the current orientation of the drone.  These values are specifically from the SimScape MultiBody "Transform Sensor" block.  As such, it is purely an issue with the simulation and will not be paralleled by the IMU implementation.  When originally implemented this block, an output for axis orientation relative to the world frame was selected.  It was not noticed that this output was a normalized unit vector.  During this week leading to the design expo (March 30th), a block will be added to decode this vector into an appropriate pitch, roll, and yaw for use with our controller design.  
+
+\subsubsection{Tuning}
+Tuning of the altitude controller, and subsequently this week with the other controllers, was performed by Simulating the plant then approximating it using Least Mean Squares.  Although in our implementation of the design, our model of the pulsewidth modulation is linearized by only accounting for the width of pulses in microseconds.  Therefore it could be possible to linearize the plant of our model via other means.  This method has the benefit that it would continue to work if the the PWM model was more evolved and include the discontinuities created by a PWM signal.
+
+\subsubsection{Controller Combination}
+As motors are paired on the diagonal to balance torque, the combination of control signals to each motor is non trivial.  The altitude controller provides the baseline throttle, while the other controllers sum on top of this to create the output value.  These summations are provided in the following table.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|c|c}
+		& Positive & Negative \\
+		\hline
+		Motor One & Pitch, Yaw & Roll \\
+		Motor Two & Yaw & Pitch, Roll \\
+		Motor Three & Pitch, Roll & Yaw \\
+		Motor Four & Roll & Yaw, Pitch
+	\end{tabular}
+	\caption{Control Signal Combinations}
+\end{table}
+
+\subsubsection{3D Rendering}
+Currently the 3D rendering in place in the simulation is rudimentary.  It consists of rendering a cross with four arms that are distinctly coloured.  This allows for observing the orientation of the quad-rotor drone visually.  Currently there is nothing else rendered in the 3D renderings.  Improvements to this, are discussed in section \ref{recs:3d}.
 
 \subsection{Physical Implementation}
 
@@ -17,5 +41,10 @@ The PID loop has yet to be thoroughly tested, but a test is planned for the near
 The implementation of the GUI has been successful to date. The GUI achieves has the ability to initialize communications between the base station host and Raspberry Pi 3, plot live data and initialize manual control which are all the required features. These fuctions have been confirmed through the testing outlined in section 5.3.
 
 The ability to pull live data from the sensors has yet to be tested but from the results of the live plotting tests we are confident that this will be achievable. The GUI implementation to this point has been a success, the software that governs the behaviour can be found in Appendix C.1.
+
+\subsubsection{Timing \& Testing}
+Although the first semester schedule was adhered to quite well, the second semester schedule was not nearly as reflective of the actual timings.  The workloads of other courses were compounded by weather closures.  Additionally, the date of the coming expo taking place in March as opposed to April forced additional rescheduling.
+
+Unfortunately our original planned flight tests were first delayed by our simulation errors as well as delays in the assembling of the drone.  As if these were not unfortunate enough the regulations that govern restrictions on the flight of unmanned aerial vehicles was update earlier this month.  As such we were forced to cancel our original test plans and opt for more simplistic proof of concepts tests that do not involve flight.  With the updated regulations that came into effect, it is not legal for us to perform our original test plans.
 
 

@@ -2,12 +2,12 @@
 %This file should be included in doc using \input{file}
 
 \section{Proposed Solutions}
-
+\label{proposed:simulations}
 \subsection{Simulations}
 For the control design, four separate controllers will be used.  A PID controller will be used to control the altitude of the quad-rotor drone.  Pitch, roll, and yaw will each be controlled respectively by a separate PI controller. These controllers will be first tested and tuned using test inputs.  The physical aspect of the simulation will be defined by a SimScape MultiBody model.  Once this rudimentary model is verified, the simulation will be developed into taking real-time signals from a HID and rendering the flight of the quad-rotor drone in response to user input.
 
 \subsubsection{Simulation Design}
-The overall architecture of the proposed design can be seen in Figure \ref{fig:sim_arch}.  The entire system is broken down into six subsystems.  Their specifications are discussed below.  The layout of each subsystem and the overall SimuLink simulation layout may be found in Appendix \ref{appendix:simulink}.
+The overall architecture of the proposed design can be seen in Figure \ref{fig:sim_arch}.  The entire system is broken down into six subsystems.  Their specifications are discussed below.  The layout of each subsystem and the overall SimuLink simulation layout may be found in Appendix \ref{appendix:simulation}.
 
 \begin{figure}[H]
 	\centering
@@ -119,12 +119,13 @@ As explained in section 3.3.3 an initial GUI was developed and presented to our 
 \end{figure}
 The red outlined box is the field that the live plot will populate when the GUI is compiled and the blank vertical rectangle is a list widget that will be populated with the names different pages of the GUI and will allow the user to access them by simply clicking on the name. An example of how the list widget will look can be viewed in Figure \ref{fig:list} and how the live plot will look can be viewed in section 4.3.5 Figure \ref{fig:plt}. An explanation of what purpose each of the other widgets and push buttons seen in Figures \ref{fig:GUIHome} and \ref{fig:GUICtrl} will serve is described in the following sections.
 \begin{figure}[H]
-	\includegraphics[width=\linewidth]{listWidget.png}
+	\centering
+	\includegraphics[width=0.3\linewidth]{listWidget.png}
 	\caption{List Widget Example}
 	\label{fig:list}
 \end{figure}
 \subsubsection{Initializing Communications and Manual Control}
-In order for the GUI to receive sensor data or the controller to receive manual control inputs over WiFi a socket connection must be made. Instead of having to open and run the socket script on the client (base station host in our case) the Start button on the GUI calls the socket script and makes the connection to the socket. Once the Start button has been pressed the horizontal white fields found in Figures \ref{fig:GUIHome} and \ref{fig:GUICtrl} will tell the users whether or not communications have been successfully made how this push is coded can be found in the connection() definition of the GUI code in Appendix C.1. When the GUI is initially compiled the white fields under Axis and Port seen in \ref{fig:GUICtrl} will be populated with the default values that are found in the Joystick script found in Appendix B.3 Listing 5 for the Axis values and the socket script for the Port value. The white field under Host will be populated with the name of the host computer's IP or name. 
+In order for the GUI to receive sensor data or the controller to receive manual control inputs over WiFi a socket connection must be made. Instead of having to open and run the socket script on the client (base station host in our case) the Start button on the GUI calls the socket script and makes the connection to the socket. Once the Start button has been pressed the horizontal white fields found in Figures \ref{fig:GUIHome} and \ref{fig:GUICtrl} will tell the users whether or not communications have been successfully made how this push is coded can be found in the connection() definition of the GUI code in Appendix C.1. When the GUI is initially compiled the white fields under Axis and Port seen in Figure \ref{fig:GUICtrl} will be populated with the default values that are found in the Joystick script found in Appendix B.3 Listing 5 for the Axis values and the socket script for the Port value. The white field under Host will be populated with the name of the host computer's IP or name. 
 
 The Axis values will determine which direction the drone will go depending on which way to joystick is moved therefore if the user would prefer the drone move differently they have the option to change the joystick settings by hitting the "Update Axis" push button. How this push button is coded to achieve this functionality can be found in the updateAxis() method in the GUI code in Appendix C.1
 
