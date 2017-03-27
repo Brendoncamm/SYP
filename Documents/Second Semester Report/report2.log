@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2017 01:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2017 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,34 +756,34 @@ Overfull \hbox (36.79941pt too wide) in paragraph at lines 261--263
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[40] [41] [42]
+[40] [41] [42] [43] [44] [45]
 Missing character: There is no © in font cmr6!
- [43]
-Overfull \hbox (67.59937pt too wide) in paragraph at lines 550--552
+
+Overfull \hbox (67.59937pt too wide) in paragraph at lines 555--557
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (19.19943pt too wide) in paragraph at lines 564--566
+[46]
+Overfull \hbox (19.19943pt too wide) in paragraph at lines 569--571
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.39944pt too wide) in paragraph at lines 578--580
+Overfull \hbox (10.39944pt too wide) in paragraph at lines 583--585
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.59943pt too wide) in paragraph at lines 580--582
+Overfull \hbox (23.59943pt too wide) in paragraph at lines 585--587
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[44]
-Overfull \hbox (14.79944pt too wide) in paragraph at lines 601--602
+
+Overfull \hbox (14.79944pt too wide) in paragraph at lines 606--607
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[45])
+[47])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./report2.aux)
@@ -795,12 +795,15 @@ Package rerunfilecheck Info: File `report2.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 9946 strings out of 493014
- 144151 string characters out of 6133351
- 290301 words of memory out of 5000000
+ 9948 strings out of 493014
+ 144165 string characters out of 6133351
+ 284301 words of memory out of 5000000
  12621 multiletter control sequences out of 15000+600000
  12269 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -820,10 +823,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on report2.pdf (51 pages, 755588 bytes).
+Output written on report2.pdf (53 pages, 756186 bytes).
 PDF statistics:
- 1895 PDF objects out of 2073 (max. 8388607)
- 1709 compressed objects within 18 object streams
- 716 named destinations out of 1000 (max. 500000)
+ 1903 PDF objects out of 2073 (max. 8388607)
+ 1715 compressed objects within 18 object streams
+ 718 named destinations out of 1000 (max. 500000)
  545 words of extra memory for PDF output out of 10000 (max. 10000000)
 
