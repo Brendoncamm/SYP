@@ -144,5 +144,23 @@ In the event that the client script is altered and a new host and port number is
 
 As mentioned in section 2.1 Dr. Rhinelander has aspirations for the drone to partially or fully fly on it's own but in the event that something goes wrong there must be a way to manually control the drone. This is where the manual control button seen in Figure \ref{fig:GUICtrl} comes into play. This push button calls the listen() definition of the PS4 Controller script found in APPENDIX. This initializes the PS4 Controller settings and then makes the connection to the socket on the Raspberry Pi 3 this will allow for control inputs to be sent. In order for this to be performed the Server script found in APPENDIX must be running on the Raspberry Pi 3 and the port numbers must match. The code for how this push button performs it's functions can be found in the connectController() definition on the GUI code found in APPENDIX.
 
+\subsubsection{Live Plotting}
+As discussed in section 3.3.4 the libraries matplotlib and pyqtgraph were considered when trying to determine how to display the live plots on the GUI. When it came to just displayed a simple graph matplotlib integrated seemlessly into the GUI and looked clean. However, when it came time to update the plot a big problem was encountered this was whenever an update timer was connected to the plotting definition the instance of the plot window would repeat itself rather than pulling the data and updating the plot with the new values. Upon researching solutions to this issue it was discovered that when dealing with real time plots matplotlib has a real weakness but that pyqtgraph excels in this aspect. With these reasons combined it was decided that moving forward all live plotting will be performed using pyqtgraph.
+
+When using pyqtgraph live plotting became much easier to achieve. To achieve live plotting three definitions are required to set up the initial plot, what to do when the plot updates and which direction to move the plot. These definitions can be found in the initplt(), update1() and move() definitions in the GUI code in APPENDIX. Once these definitions are defined a QTimer must be connected to the move() definitions and an update interval will be defined the external dependancies and QTimer setup can be found under "Live Plotting" in the GUI code in APPENDIX. How the plot will look on the GUI can be seen in Figure \ref{fig:plt}.
+
+On top of pyqtgraph being easier to implement it also includes some useful features.
+The user is able to click on the plot window and drag in any direction. For example, if the user was interested in data that occurred at time = 0 seconds but they were 100 seconds into data collection they would be able to click and drag back to the desired point to see the data of interest without disrupting data collection. If the user left clicks they are also to instantly obtain the maximum and minimum X and Y values, or in our case maximum time and amplitude values an example of the can be view in Figure \ref{fig:plot2}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{plot.png}
+	\caption{Live Plot}
+	\label{fig:plt}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\linewidth]{plot2.png}
+	\caption{Display Y Values on Live Plot}
+	\label{fig:plot2}
+\end{figure}
+
 
 
