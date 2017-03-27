@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2017 02:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 MAR 2017 02:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -326,8 +326,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box33
 ) (./report2.aux)
 Runaway argument?
-{\contentsline {subsection}{\numberline 
-./report2.tex:30: File ended while scanning use of \@writefile.
+{{6}{16}{List Widget Example}{figure. 
+./report2.tex:30: File ended while scanning use of \@newl@bel.
 <inserted text> 
                 \par 
 l.30 \begin{document}
@@ -555,6 +555,20 @@ Package pdftex.def Info: control-loop.jpg used on input line 65.
                                                   \fi \fi 
 l.87 
       <./control-loop.jpg>] [12]
+
+LaTeX Warning: Reference `appendix:gui' on page 13 undefined on input line 109.
+
+
+
+LaTeX Warning: Reference `fig:oldgui1' on page 13 undefined on input line 109.
+
+
+LaTeX Warning: Reference `fig:oldgui2' on page 13 undefined on input line 109.
+
+
+LaTeX Warning: Reference `appendix:gui' on page 13 undefined on input line 109.
+
+
 <Final_GUI_HOME.png, id=154, 550.30594pt x 426.84468pt>
 File: Final_GUI_HOME.png Graphic file (type png)
 
@@ -575,10 +589,16 @@ re.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.120 T
        he red outlined box is the field that the live plot will populate whe...
- <./Final_GUI_HOME.png>] <listWidget.png, id=171, 72.27pt x 54.2025pt>
-File: listWidget.png Graphic file (type png)
+ <./Final_GUI_HOME.png>]
 
-<use listWidget.png>
+LaTeX Warning: Reference `fig:list' on page 15 undefined on input line 120.
+
+
+LaTeX Warning: Reference `fig:plt' on page 15 undefined on input line 120.
+
+<listWidget.png, id=170, 72.27pt x 54.2025pt>
+File: listWidget.png Graphic file (type png)
+ <use listWidget.png>
 Package pdftex.def Info: listWidget.png used on input line 122.
 (pdftex.def)             Requested size: 390.0pt x 292.57994pt.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
@@ -594,20 +614,27 @@ ame{figure.6}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.130 
-       <./listWidget.png>] <GUICtrlPop.png, id=188, 557.83406pt x 475.7775pt>
-File: GUICtrlPop.png Graphic file (type png)
+       <./listWidget.png>]
 
-<use GUICtrlPop.png>
+LaTeX Warning: Reference `fig:guipop1' on page 17 undefined on input line 131.
+
+
+LaTeX Warning: Reference `fig:popup' on page 17 undefined on input line 131.
+
+<GUICtrlPop.png, id=185, 557.83406pt x 475.7775pt>
+File: GUICtrlPop.png Graphic file (type png)
+ <use GUICtrlPop.png>
 Package pdftex.def Info: GUICtrlPop.png used on input line 134.
 (pdftex.def)             Requested size: 390.0pt x 332.64268pt.
- [17] <GUIPopup.png, id=195, 556.32843pt x 472.76625pt>
-File: GUIPopup.png Graphic file (type png)
 
-<use GUIPopup.png>
+[17] <GUIPopup.png, id=190, 556.32843pt x 472.76625pt>
+File: GUIPopup.png Graphic file (type png)
+ <use GUIPopup.png>
 Package pdftex.def Info: GUIPopup.png used on input line 140.
 (pdftex.def)             Requested size: 390.0pt x 331.42465pt.
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
-) has been already used, duplicate ignored
+
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -618,28 +645,35 @@ identifier (name{figure.8}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.149 
-       <./GUIPopup.png>] <plot.png, id=207, 556.32843pt x 473.51906pt>
-File: plot.png Graphic file (type png)
+       <./GUIPopup.png>]
 
-<use plot.png>
+LaTeX Warning: Reference `fig:plt' on page 20 undefined on input line 150.
+
+
+LaTeX Warning: Reference `fig:plot2' on page 20 undefined on input line 152.
+
+<plot.png, id=202, 556.32843pt x 473.51906pt>
+File: plot.png Graphic file (type png)
+ <use plot.png>
 Package pdftex.def Info: plot.png used on input line 154.
 (pdftex.def)             Requested size: 390.0pt x 331.9524pt.
- <plot2.png, id=209, 554.82281pt x 473.51906pt>
+
+<plot2.png, id=204, 554.82281pt x 473.51906pt>
 File: plot2.png Graphic file (type png)
  <use plot2.png>
 Package pdftex.def Info: plot2.png used on input line 159.
 (pdftex.def)             Requested size: 390.0pt x 332.84833pt.
-
-[20] [21pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.9}) has been already used, duplicate ignored
+ [20])
+(./Section Verbatim/results.tex [21pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.163 
-       <./plot.png>]) (./Section Verbatim/results.tex
-<stepresponse.jpg, id=223, 562.1pt x 421.575pt>
+l.3 
+     <./plot.png>] <stepresponse.jpg, id=217, 562.1pt x 421.575pt>
 File: stepresponse.jpg Graphic file (type jpg)
- <use stepresponse.jpg>
+
+<use stepresponse.jpg>
 Package pdftex.def Info: stepresponse.jpg used on input line 12.
 (pdftex.def)             Requested size: 281.04932pt x 210.78697pt.
 
@@ -652,14 +686,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.18 
-      <./plot2.png>] [23pdfTeX warning (ext4): destination with the same identi
-fier (name{figure.11}) has been already used, duplicate ignored
+      <./plot2.png>]
+
+LaTeX Warning: Reference `discussion:sim' on page 23 undefined on input line 19
+.
+
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.39 
       <./stepresponse.jpg>]
-<Motor_Characterization.jpg, id=241, 2569.6pt x 1503.6175pt>
+
+LaTeX Warning: Reference `fig:Motor_Char' on page 24 undefined on input line 48
+.
+
+<Motor_Characterization.jpg, id=233, 2569.6pt x 1503.6175pt>
 File: Motor_Characterization.jpg Graphic file (type jpg)
 
 <use Motor_Characterization.jpg>
@@ -671,15 +714,25 @@ re.12}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.60 
-      <./Motor_Characterization.jpg>] [26]) (./Section Verbatim/discussion.tex
-[27]) (./Section Verbatim/future_recommendations.tex
+      <./Motor_Characterization.jpg>] [26]
+
+LaTeX Warning: Reference `fig:plot2' on page 27 undefined on input line 78.
+
+) (./Section Verbatim/discussion.tex [27])
+(./Section Verbatim/future_recommendations.tex [28]
 Overfull \hbox (10.0631pt too wide) in paragraph at lines 12--13
 []\OT1/cmr/m/n/10.95 Better Fil-ter-ing of Al-ti-tude Mea-sure-ments In-cor-po-
 rate Ac-celerom-e-ter - Barom-
  []
 
-[28]) [29] (./Section Verbatim/appendix_simulink.tex
-<Dynamic_Simulation.pdf, id=285, page=1, 794.97pt x 614.295pt>
+) (./Section Verbatim/references.tex
+Overfull \hbox (65.89792pt too wide) in paragraph at lines 4--5
+\OT1/cmr/m/n/10.95 n.d. Web. 27 Mar. 2017. <http://raspberrypi.stackexchange.co
+m/questions/13425/server-
+ []
+
+) [29] (./Section Verbatim/appendix_simulink.tex
+<Dynamic_Simulation.pdf, id=279, page=1, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 1>
@@ -692,28 +745,28 @@ Overfull \vbox (12.71298pt too high) has occurred while \output is active []
 
 
 [31 <./Dynamic_Simulation.pdf>]
-<Input_Model.pdf, id=313, page=1, 794.97pt x 614.295pt>
+<Input_Model.pdf, id=307, page=1, 794.97pt x 614.295pt>
 File: Input_Model.pdf Graphic file (type pdf)
 
 <use Input_Model.pdf, page 1>
 Package pdftex.def Info: Input_Model.pdf, page1 used on input line 7.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
 
-<Dynamic_Simulation.pdf, id=314, page=2, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=308, page=2, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [32 <./Input_Model.pdf>]
-<Dynamic_Simulation.pdf, id=332, page=3, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=326, page=3, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [33 <./Dynamic_Simulation.pdf>]
-<motor_characterization.pdf, id=391, page=1, 794.97pt x 614.295pt>
+<motor_characterization.pdf, id=385, page=1, 794.97pt x 614.295pt>
 File: motor_characterization.pdf Graphic file (type pdf)
 
 <use motor_characterization.pdf, page 1>
@@ -721,14 +774,14 @@ Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 3.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [34 <./Dynamic_Simulation.pdf>]
-<Dynamic_Simulation.pdf, id=405, page=4, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=399, page=4, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
  [35 <./motor_characterization.pdf>]
-<Dynamic_Simulation.pdf, id=428, page=5, 794.97pt x 614.295pt>
+<Dynamic_Simulation.pdf, id=422, page=5, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
@@ -800,13 +853,13 @@ Overfull \hbox (14.79944pt too wide) in paragraph at lines 606--607
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) [49]
-[50] <OLDGUI1.png, id=1652, 296.60812pt x 227.34938pt>
+[50] <OLDGUI1.png, id=1646, 296.60812pt x 227.34938pt>
 File: OLDGUI1.png Graphic file (type png)
  <use OLDGUI1.png>
 Package pdftex.def Info: OLDGUI1.png used on input line 181.
 (pdftex.def)             Requested size: 390.0pt x 298.9469pt.
 
-<OLDGUI2.png, id=1653, 300.3722pt x 236.38312pt>
+<OLDGUI2.png, id=1647, 300.3722pt x 236.38312pt>
 File: OLDGUI2.png Graphic file (type png)
  <use OLDGUI2.png>
 Package pdftex.def Info: OLDGUI2.png used on input line 185.
@@ -817,20 +870,20 @@ Package pdftex.def Info: OLDGUI2.png used on input line 185.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.92 	\label{appendix:gui}
+l.94 	\label{appendix:gui}
                            <./OLDGUI1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
  [53pdfTeX warning (ext4): destination with the same identifier (name{figure.C.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.100 \end{document}
+l.102 \end{document}
                      <./OLDGUI2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./report2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 
 
 Package rerunfilecheck Warning: File `report2.out' has changed.
@@ -839,20 +892,20 @@ Package rerunfilecheck Warning: File `report2.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `report2.out':
 (rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  4652A4798507D9BBC2F0B1D87FC90903;4083.
+(rerunfilecheck)             After:  3845F6A49CDFB11E8B35F09049D4B1E9;4129.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 10446 strings out of 493014
- 150579 string characters out of 6133351
- 290574 words of memory out of 5000000
- 12922 multiletter control sequences out of 15000+600000
+ 10453 strings out of 493014
+ 150695 string characters out of 6133351
+ 290158 words of memory out of 5000000
+ 12924 multiletter control sequences out of 15000+600000
  12269 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,18n,51p,1136b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -871,10 +924,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on report2.pdf (58 pages, 778734 bytes).
+Output written on report2.pdf (58 pages, 780034 bytes).
 PDF statistics:
- 1933 PDF objects out of 2073 (max. 8388607)
- 1738 compressed objects within 18 object streams
- 905 named destinations out of 1000 (max. 500000)
+ 1928 PDF objects out of 2073 (max. 8388607)
+ 1733 compressed objects within 18 object streams
+ 907 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

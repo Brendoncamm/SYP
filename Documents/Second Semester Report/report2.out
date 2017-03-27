@@ -43,17 +43,18 @@
 \BOOKMARK [2][-]{subsection.7.1}{Simulations}{section.7}% 43
 \BOOKMARK [2][-]{subsection.7.2}{Physical Implementation}{section.7}% 44
 \BOOKMARK [2][-]{subsection.7.3}{Graphical User Interface}{section.7}% 45
-\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 46
-\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 47
-\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 48
-\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 49
-\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 50
-\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 51
-\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 52
-\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 53
-\BOOKMARK [1][-]{appendix.B}{Software Packages}{}% 54
-\BOOKMARK [2][-]{subsection.B.1}{Arduino Library}{appendix.B}% 55
-\BOOKMARK [2][-]{subsection.B.2}{Raspberry Pi Scripts}{appendix.B}% 56
-\BOOKMARK [2][-]{subsection.B.3}{Base Station Communication Script}{appendix.B}% 57
-\BOOKMARK [1][-]{appendix.C}{GUI}{}% 58
-\BOOKMARK [2][-]{subsection.C.1}{GUI Code}{appendix.C}% 59
+\BOOKMARK [1][-]{section.8}{References}{}% 46
+\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 47
+\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 48
+\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 49
+\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 50
+\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 51
+\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 52
+\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 53
+\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 54
+\BOOKMARK [1][-]{appendix.B}{Software Packages}{}% 55
+\BOOKMARK [2][-]{subsection.B.1}{Arduino Library}{appendix.B}% 56
+\BOOKMARK [2][-]{subsection.B.2}{Raspberry Pi Scripts}{appendix.B}% 57
+\BOOKMARK [2][-]{subsection.B.3}{Base Station Communication Script}{appendix.B}% 58
+\BOOKMARK [1][-]{appendix.C}{GUI}{}% 59
+\BOOKMARK [2][-]{subsection.C.1}{GUI Code}{appendix.C}% 60
