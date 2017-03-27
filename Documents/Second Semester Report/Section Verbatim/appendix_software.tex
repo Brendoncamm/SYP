@@ -57,7 +57,7 @@ class Drone
 
 
 /*
-  Drone.cpp - Library for Drone Controller.
+  Drone.h - Library for Drone Controller.
   Created by Lucas Doucette, February 17, 2017.
 */
 
@@ -71,6 +71,7 @@ class Drone
 #include <Adafruit_BMP085_U.h>
 #include <Adafruit_L3GD20_U.h>
 #include <Adafruit_10DOF.h>
+#include <LiquidCrystal.h>
 
 
   /* Assign a unique ID to the sensors */
@@ -80,46 +81,12 @@ Adafruit_LSM303_Mag_Unified   mag   = Adafruit_LSM303_Mag_Unified(30302);
 Adafruit_BMP085_Unified       bmp   = Adafruit_BMP085_Unified(18001);
 
 
-
-//Define Motors for Initialization
-Servo esc_1, esc_2, esc_3, esc_4;
-
-//Define PID Variables
-float Error, DError, IError, LastTime, NowTime, LastError, Output;
-
-//Smooting Constant
-const int numReadings=100;
-float SmoothingVariable=0;
-float NowPressure=0;
-
-//PS4 controller variables
-float PS4Yaw, PS4Pitch, PS4Roll, PS4Altitude;
-
-
-// kalman filtering variables
-
-float Variance=0.4;
-float varProcess = 1e-1;
-float Pc = 0.0;
-float G = 0.0;
-float P = 1.0;
-float Xp = 0.0;
-float Zp = 0.0;
-float Xe = 0.0;
-
-//Sensor Receive Variables
-
-float temperature;
-float sensorAltitude;
-float sensorYaw;
-float sensorPitch;
-float sensorRoll;
-float currentPressure;
-
 sensors_event_t accel_event;
 sensors_event_t mag_event;
 sensors_event_t bmp_event;
 sensors_vec_t   orientation;
+
+float temperature;
 
 Drone::Drone()
 {
@@ -128,6 +95,8 @@ Drone::Drone()
 
 float Drone::get_sensorRoll()
 {
+    
+    float sensorRoll;
 
 
   // Calculate pitch and roll from the raw accelerometer data
@@ -146,6 +115,8 @@ float Drone::get_sensorRoll()
 float Drone::get_sensorPitch()
 {
 
+  float sensorPitch;
+    
   // Calculate pitch and roll from the raw accelerometer data
 
   accel.getEvent(&accel_event);
@@ -161,6 +132,8 @@ float Drone::get_sensorPitch()
 
 float Drone::get_sensorYaw()
 {
+    
+  float sensorYaw;
 
   // Calculate the heading using the magnetometer
   mag.getEvent(&mag_event);
@@ -175,7 +148,21 @@ float Drone::get_sensorYaw()
 
 float Drone::get_sensorAltitude(float startingPressure)
 {
-  // Calculate the altitude using the barometric pressure sensor
+    
+    float sensorAltitude, NowPressure;
+    
+    // kalman filtering variables
+
+    float Variance=0.108923435;
+    float varProcess = 1e-12;
+    float Pc = 0.0;
+    float G = 0.0;
+    float P = 1.0;
+    float Xp = 0.0;
+    float Zp = 0.0;
+    float Xe = 0.0;
+   
+    // Calculate the altitude using the barometric pressure sensor
     bmp.getEvent(&bmp_event);
     NowPressure=bmp_event.pressure;
 
@@ -196,12 +183,12 @@ float Drone::get_sensorAltitude(float startingPressure)
     Xe=G*(sensorAltitude-Zp)+Xp;
 
 
-    //Cutoff useless info (Less than ground level)
+    //Create Deadzone (+/- 30cm)
 
-      if(Xe<0)
-    {
-        Xe=0;
-    }
+     // if(Xe<0.3 && Xe>-0.3)
+    //{
+      //  Xe=0;
+    //}
 
     return Xe;
 
@@ -212,7 +199,14 @@ float Drone::get_sensorAltitude(float startingPressure)
 
 float Drone::get_currentPressure()
 {
+    float currentPressure;
+    
    //Initializing Pressure, Filtered for accuracy
+   //Smooting Constant
+    
+   const int numReadings=100;
+   float SmoothingVariable=0;
+   float NowPressure=0;
 
     bmp.getEvent(&bmp_event);
     for(int i=0; i<numReadings; i++)
@@ -229,8 +223,10 @@ float Drone::get_currentPressure()
 
 }
 
-float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki )
+float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki)
 {
+    //Define PID Variables
+    float Error, DError, IError, LastTime, LastError, Output;
 
     //find current time
     unsigned long NowTime = millis();
@@ -247,7 +243,10 @@ float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, 
     LastTime=NowTime;
     LastError=Error;
 
-    Output=Output+1060;
+    
+    //Requirement based on Simulink
+    
+    Output=(Output/9000)*(1860-1127);
     
     if(Output>=1860){
         
@@ -259,42 +258,50 @@ float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, 
 }
 
 
-void Drone::read_PS4Setpoints()
+void Drone::read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude)
 
 {
+    
     //Write serially to Pi to begin transmission.
 
-    byte XMIT = 00000001
+    byte XMIT = 00000001;
 
     if (Serial.available())
     {
-        Serial.write(XMIT);
+       Serial.write(XMIT);
     }
 
 
+    
     while (Serial.available())
     {
         for(int i=0; i<4; i++)
         {
-            PS4Yaw=read_float();
+            *PS4Yaw=read_float();
+        
         }
 
         for(int i=4; i<8; i++)
         {
-            PS4Pitch=read_float();
+            *PS4Pitch=read_float();
+
         }
 
         for(int i=8; i<12; i++)
         {
-            PS4Roll=read_float();
+            *PS4Roll=read_float();
+            
         }
 
         for(int i=12; i<16; i++)
         {
-            PS4Altitude=read_float();
+           *PS4Altitude=read_float();
+            
         }
 
     }
+    
+    
 
 
 }
@@ -324,13 +331,9 @@ void Drone::initSensors()
 
 }
 
-void Drone::initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4)
+void Drone::initESCs(Servo esc_1, Servo esc_2, Servo esc_3, Servo esc_4)
 {
-
-  esc_1.attach(MotorPin1);  //set up motor connections
-  esc_2.attach(MotorPin2);
-  esc_3.attach(MotorPin3);
-  esc_4.attach(MotorPin4);
+    
 
   //Initialization of the ESCs
   esc_1.writeMicroseconds(1860);
@@ -365,7 +368,259 @@ float Drone::read_float () {
 }
 
 
+
 \end{lstlisting}
+
+\subsection{Raspberry Pi Scripts}
+\counterwithin{figure}{section}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[language=C,caption={Server.py Raspberry Pi Communication Server},label={lst:server.py}]
+
+
+import socketserver
+import sys
+import arduino
+import threading
+import queue
+from subprocess import check_output
+
+#TODO:
+#   Control Side
+#       Write Server w/ logging
+#       Test
+#   Backchannel
+#       Write Handler
+#       Test
+#   Read
+#       TCP Binding
+
+class SerialRequestHandler(threading.Thread):
+    def __init__(self, stateq):
+        super(self.__class__, self).__init__()
+        self.stateq = stateq
+
+    def run(self):
+        #TODO: Add poison pill to exit thread
+        sbus = arduino.Arduino_Controller(9600)
+        while True:
+            ready = sbus.ready()
+            if ready:
+                sbus.serial_bus.read(ready)
+                sbus.serial_bus.write(self.stateq.get())
+
+
+class QuadControlHandler(socketserver.BaseRequestHandler):
+    def __init__(self, request, client_address, server, stateq):
+        self.stateq = stateq
+        super(self.__class__, self).__init__(request, client_address, server)
+        return
+
+    def handle(self):
+        if self.stateq.full():
+            self.stateq.get() #Queue has size of 1, if full clear for new state
+        recv = self.request.recv(16)
+        self.stateq.put(recv)
+        print('Received: ' + str(recv))
+        return
+
+
+class QuadControlServer(socketserver.TCPServer):
+    def __init__(self, server_address, RequestHandlerClass):
+        super(self.__class__, self).__init__(server_address, RequestHandlerClass)
+        self.controller = arduino.Arduino_Controller(9600)
+        self.stateq = queue.Queue(1)
+        return
+
+    def serve_forever(self, poll_interval=0.5):
+        thread = SerialRequestHandler(self.stateq)
+        thread.start()
+        super(self.__class__, self).serve_forever(poll_interval)
+        return
+
+    def finish_request(self, request, client_address):
+        self.RequestHandlerClass(request, client_address, self, self.stateq)
+
+
+
+if __name__ == '__main__':
+    if sys.version_info[0] < 3:
+        raise Exception('Version Error', 'Not compatible with Python version 2')
+
+    HOST = check_output(['hostname', '-I']).strip()
+    CONTROL_PORT = 2222
+    COMMS_PORT = 4444
+
+    test_serv = QuadControlServer((HOST, CONTROL_PORT), QuadControlHandler)
+    test_serv.serve_forever()
+
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=C,caption={arduino.py Raspberry Pi Serial Communication Library},label={lst:arduino.py}]
+
+# 2017-01-13 Auth: Dylan
+
+import serial
+
+class Arduino_Controller(object):
+    #  Provides a wrapper for communicating with the Arduino over I2C/SMBUS.
+    def __init__(self, baud):
+        self.baudrate = baud
+        self.serial_bus = serial.Serial('/dev/ttyACM0', self.baudrate)
+
+    def write_axes(self, axes):
+        self.serial_bus.write(axes)
+
+    def ready(self):
+        return self.serial_bus.inWaiting()
+
+    def write_button(self, button):
+        pass
+
+\end{lstlisting}
+
+\subsection{Base Station Communication Script}
+\counterwithin{figure}{section}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[language=C,caption= {Control Signal and Client Script},label={lst:ps4_controller.py}]
+
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# This file presents an interface for interacting with the Playstation 4 Controller
+# in Python. Simply plug your PS4 controller into your computer using USB and run this
+# script!
+#
+# NOTE: I assume in this script that the only joystick plugged in is the PS4 controller.
+#       if this is not the case, you will need to change the class accordingly.
+#
+# Copyright © 2015 Clay L. McLeod <clay.l.mcleod@gmail.com>
+#
+# Distributed under terms of the MIT license.
+
+#TODO:
+#   rewrite connection for new server
+#   test
+
+# import os
+# import pprint
+import pygame
+import socket
+import struct
+import sys
+
+if sys.version_info[0] < 3:
+    raise Exception('Lucas', 'not compatible with Python version 2')
+
+
+class PS4Controller(object):
+    """Class representing the PS4 controller. Pretty straightforward functionality."""
+
+    controller = None
+    axis_data = None
+    button_data = None
+    hat_data = None
+
+    def __init__(self, axis_order=[1, 2, 3, 4], hostname='raspberrypi', port=2222):
+        """Initialize the joystick components"""
+
+        pygame.init()
+        pygame.joystick.init()
+        self.controller = pygame.joystick.Joystick(0)
+        self.controller.init()
+        self.hostname = hostname
+        self.port = port
+        if isinstance(axis_order, list):
+            self.axis_order = axis_order  # For changing how controller axes are bound
+        else:
+            raise Exception(TypeError, 'axis_order must be list.')
+
+    def update_axes(self, axis_order):
+        self.axis_order = axis_order
+
+    def listen(self):
+        """Listen for events to happen"""
+
+        if not self.axis_data:
+            self.axis_data = {0: float(0),
+                              1: float(0),
+                              2: float(0),
+                              3: float(0),
+                              4: float(-1),
+                              5: float(-1)}  # Added explicity number of axes to avoid waiting for input
+
+        if not self.button_data:
+            self.button_data = {}
+            for i in range(self.controller.get_numbuttons()):
+                self.button_data[i] = False
+
+        if not self.hat_data:
+            self.hat_data = {}
+            for i in range(self.controller.get_numhats()):
+                self.hat_data[i] = (0, 0)
+
+
+        # host = '192.168.2.19' #ip of Server (PI)
+        host = socket.gethostbyname(self.hostname)  # if fails install samba on pi and reboot
+
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.JOYAXISMOTION:
+                    self.axis_data[event.axis] = round(event.value, 2)
+                elif event.type == pygame.JOYBUTTONDOWN:
+                    self.button_data[event.button] = True
+                elif event.type == pygame.JOYBUTTONUP:
+                    self.button_data[event.button] = False
+                elif event.type == pygame.JOYHATMOTION:
+                    self.hat_data[event.hat] = event.value
+
+                # Insert your code on what you would like to happen for each event here!
+                # In the current setup, I have the state simply printing out to the screen.
+
+                # Defining Variables to send through the socket to the RPi, need to be strings
+
+                # axis_data=str(self.axis_data)
+                # button_data = str(self.button_data)
+                # hat_data = str(self.hat_data)
+
+                # Sending Data over a socket to the RPi
+                # print(str(self.axis_data))
+                # Isolate desired Axes
+
+                axes_data = [self.axis_data[self.axis_order[0]],
+                             self.axis_data[self.axis_order[1]],
+                             self.axis_data[self.axis_order[2]],
+                             self.axis_data[self.axis_order[3]]]
+                byte_data = []  # To hold the axes data serialized to bytes
+                for axis in axes_data:
+                    byte_data.append(struct.pack("f", axis))  # F for float
+
+                xmission_bytes = bytes().join(byte_data)
+                connection = socket.socket()
+                connection.connect((host, self.port))
+                connection.send(xmission_bytes)  # sending the controller data over the port
+                connection.close()
+                # print(xmission_bytes)
+
+                # os.system('cls')
+                # break
+                # s.send(button_data)
+                # s.send(hat_data)
+                # s.close()
+
+
+if __name__ == "__main__":
+    ps4 = PS4Controller()
+    # ps4.init()
+    ps4.listen()
+
+
+\end{lstlisting}
+
+
+
+\newpage
+
 
 
 

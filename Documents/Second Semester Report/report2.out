@@ -34,7 +34,6 @@
 \BOOKMARK [3][-]{subsubsection.5.3.5}{Inertial Measurement Unit Testing}{subsection.5.3}% 34
 \BOOKMARK [3][-]{subsubsection.5.3.6}{Miscellaneous Testing}{subsection.5.3}% 35
 \BOOKMARK [2][-]{subsection.5.4}{Graphical User Interface}{section.5}% 36
-<<<<<<< Updated upstream
 \BOOKMARK [3][-]{subsubsection.5.4.1}{Live Plotting Testing}{subsection.5.4}% 37
 \BOOKMARK [1][-]{section.6}{Discussion}{}% 38
 \BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 39
@@ -48,19 +47,7 @@
 \BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 47
 \BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 48
 \BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 49
-=======
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 37
-\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 38
-\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 39
-\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 40
-\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 41
-\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 42
-\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 43
-\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 44
-\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 45
-\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 46
-\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 47
-\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 48
-\BOOKMARK [1][-]{appendix.B}{Software Packages}{}% 49
-\BOOKMARK [2][-]{subsection.B.1}{Arduino Library}{appendix.B}% 50
->>>>>>> Stashed changes
+\BOOKMARK [1][-]{appendix.B}{Software Packages}{}% 50
+\BOOKMARK [2][-]{subsection.B.1}{Arduino Library}{appendix.B}% 51
+\BOOKMARK [2][-]{subsection.B.2}{Raspberry Pi Scripts}{appendix.B}% 52
+\BOOKMARK [2][-]{subsection.B.3}{Base Station Communication Script}{appendix.B}% 53
