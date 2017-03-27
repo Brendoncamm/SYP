@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAR 2017 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAR 2017 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,84 +573,17 @@ l.61 T
 File: control-loop.jpg Graphic file (type jpg)
  <use control-loop.jpg>
 Package pdftex.def Info: control-loop.jpg used on input line 65.
-(pdftex.def)             Requested size: 272.99881pt x 623.44595pt.
+(pdftex.def)             Requested size: 117.00119pt x 267.18134pt.
 
-[13]
-Overfull \vbox (101.77927pt too high) has occurred while \output is active []
-
-
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.69 
-      <./control-loop.jpg>]
-Runaway argument?
- \vspace *{0.2in} $h=\frac {(\frac {P_{0}}{P})^\frac {1}{5.257}-1)*(T\ETC.
-./Section Verbatim/proposed_solution.tex:75: Paragraph ended before \align was 
-complete.
-<to be read again> 
-                   \par 
-l.75 
-     
-? 
-./Section Verbatim/proposed_solution.tex:75: Missing $ inserted.
-<inserted text> 
-                $
-l.75 
-     
-? 
-./Section Verbatim/proposed_solution.tex:75: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.75 
-     
-? 
-./Section Verbatim/proposed_solution.tex:75: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.75 
-     
-? 
-./Section Verbatim/proposed_solution.tex:83: Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.83 \end{align}
-                
-? 
-./Section Verbatim/proposed_solution.tex:83: Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.83 \end{align}
-                
-? 
-./Section Verbatim/proposed_solution.tex:83: Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.83 \end{align}
-                
-? 
-./Section Verbatim/proposed_solution.tex:83: Extra }, or forgotten \endgroup.
-\endalign ->\math@cr \black@ \totwidth@ \egroup 
-                                                \ifingather@ \restorealignst...
-l.83 \end{align}
-                
-? 
-./Section Verbatim/proposed_solution.tex:83: Missing $ inserted.
-<inserted text> 
-                $
-l.83 \end{align}
-                
-? 
-./Section Verbatim/proposed_solution.tex:83: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.83 \end{align}
-                
-? 
-) (./Section Verbatim/results.tex
-<stepresponse.jpg, id=333, 562.1pt x 421.575pt>
+l.78 $
+      P_{0}$ = Initial Pressure at Starting Height <./control-loop.jpg>])
+(./Section Verbatim/results.tex
+<stepresponse.jpg, id=329, 562.1pt x 421.575pt>
 File: stepresponse.jpg Graphic file (type jpg)
  <use stepresponse.jpg>
 Package pdftex.def Info: stepresponse.jpg used on input line 12.
@@ -659,7 +592,7 @@ Package pdftex.def Info: stepresponse.jpg used on input line 12.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15]) (./Section Verbatim/discussion.tex) [16pdfTeX warning (ext4): destination
+[14]) (./Section Verbatim/discussion.tex) [15pdfTeX warning (ext4): destination
  with the same identifier (name{figure.6}) has been already used, duplicate ign
 ored
 
@@ -673,13 +606,13 @@ File: Dynamic_Simulation.pdf Graphic file (type pdf)
 <use Dynamic_Simulation.pdf, page 1>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [17
+ [16
 
 ]
 Overfull \vbox (12.71298pt too high) has occurred while \output is active []
 
 
-[18 <./Dynamic_Simulation.pdf>]
+[17 <./Dynamic_Simulation.pdf>]
 <Input_Model.pdf, id=371, page=1, 794.97pt x 614.295pt>
 File: Input_Model.pdf Graphic file (type pdf)
 
@@ -693,14 +626,14 @@ File: Dynamic_Simulation.pdf Graphic file (type pdf)
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [19 <./Input_Model.pdf>]
-<Dynamic_Simulation.pdf, id=389, page=3, 794.97pt x 614.295pt>
+ [18 <./Input_Model.pdf>]
+<Dynamic_Simulation.pdf, id=388, page=3, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [20 <./Dynamic_Simulation.pdf>]
+ [19 <./Dynamic_Simulation.pdf>]
 <motor_characterization.pdf, id=448, page=1, 794.97pt x 614.295pt>
 File: motor_characterization.pdf Graphic file (type pdf)
 
@@ -708,21 +641,21 @@ File: motor_characterization.pdf Graphic file (type pdf)
 Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 3.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [21 <./Dynamic_Simulation.pdf>]
+ [20 <./Dynamic_Simulation.pdf>]
 <Dynamic_Simulation.pdf, id=461, page=4, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [22 <./motor_characterization.pdf>]
+ [21 <./motor_characterization.pdf>]
 <Dynamic_Simulation.pdf, id=483, page=5, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 17.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [23 <./Dynamic_Simulation.pdf>] [24 <./Dynamic_Simulation.pdf>])
+ [22 <./Dynamic_Simulation.pdf>] [23 <./Dynamic_Simulation.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (./report2.aux)
@@ -737,8 +670,8 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 8367 strings out of 493014
- 123106 string characters out of 6133351
+ 8366 strings out of 493014
+ 123099 string characters out of 6133351
  220721 words of memory out of 5000000
  11683 multiletter control sequences out of 15000+600000
  11550 words of font info for 42 fonts, out of 8000000 for 9000
@@ -747,16 +680,20 @@ Here is how much of TeX's memory you used:
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report2.pdf (30 pages, 416125 bytes).
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report2.pdf (29 pages, 447755 bytes).
 PDF statistics:
- 960 PDF objects out of 1000 (max. 8388607)
- 819 compressed objects within 9 object streams
- 94 named destinations out of 1000 (max. 500000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 828 compressed objects within 9 object streams
+ 93 named destinations out of 1000 (max. 500000)
  390 words of extra memory for PDF output out of 10000 (max. 10000000)
 

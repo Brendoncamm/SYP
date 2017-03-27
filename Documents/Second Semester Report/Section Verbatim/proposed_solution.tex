@@ -62,7 +62,7 @@ The Arduino control loop is used to host the drone function library and main scr
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\textwidth]{control-loop.jpg}
+	\includegraphics[width=0.3\textwidth]{control-loop.jpg}
 	\caption{Arduino Control Loop}
 	\label{fig:ctl_loop}	
 \end{figure}
@@ -80,6 +80,8 @@ $P_{0}$ = Initial Pressure at Starting Height
 $P$= Current Pressure
 
 $T$ = Current Temperature
+
+\vspace*{0.2in}
 
 The barometric pressure sensor calculation was found to be highly susceptible to noise, several filtering techniques were attempted and a Kalman filter with a feedback comparison is currently in use. This filtering technique is subject to change. All written scripts for the Arduino, Raspberry Pi and the base station communication channel can be found in APPENDIX XXX. 
 
