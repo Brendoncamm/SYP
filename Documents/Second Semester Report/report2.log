@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  26 MAR 2017 22:30
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 MAR 2017 23:36
+>>>>>>> Stashed changes
 entering extended mode
 **./report2.tex
 (report2.tex
@@ -539,6 +543,7 @@ Package pdftex.def Info: control-loop.jpg used on input line 65.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+<<<<<<< Updated upstream
 l.87 
       <./control-loop.jpg>] [12]
 <Final_GUI_HOME.png, id=339, 550.30594pt x 426.84468pt>
@@ -606,75 +611,129 @@ sed, duplicate ignored
                                                   \fi \fi 
 l.9 
      <./GUIPopup.png>] <stepresponse.jpg, id=384, 562.1pt x 421.575pt>
+=======
+l.78 $
+      P_{0}$ = Initial Pressure at Starting Height <./control-loop.jpg>])
+(./Section Verbatim/results.tex [14]
+<stepresponse.jpg, id=338, 562.1pt x 421.575pt>
+>>>>>>> Stashed changes
 File: stepresponse.jpg Graphic file (type jpg)
 
 <use stepresponse.jpg>
 Package pdftex.def Info: stepresponse.jpg used on input line 12.
 (pdftex.def)             Requested size: 281.04932pt x 210.78697pt.
+<<<<<<< Updated upstream
 ) ("Section Verbatim/discussion.tex") [19pdfTeX warning (ext4): destination wit
 h the same identifier (name{figure.9}) has been already used, duplicate ignored
 
+=======
+)
+(./Section Verbatim/discussion.tex) [15pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.6}) has been already used, duplicate ignored
+>>>>>>> Stashed changes
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.76 
+<<<<<<< Updated upstream
       <./stepresponse.jpg>] [20] ("Section Verbatim/appendix_simulink.tex"
 <Dynamic_Simulation.pdf, id=396, page=1, 794.97pt x 614.295pt>
+=======
+      <./stepresponse.jpg>] [16] (./Section Verbatim/appendix_simulink.tex
+<Dynamic_Simulation.pdf, id=349, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 1>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [21
+=======
+ [17
+>>>>>>> Stashed changes
 
 ]
 Overfull \vbox (12.71298pt too high) has occurred while \output is active []
 
 
+<<<<<<< Updated upstream
 [22 <./Dynamic_Simulation.pdf>]
 <Input_Model.pdf, id=422, page=1, 794.97pt x 614.295pt>
+=======
+[18 <./Dynamic_Simulation.pdf>]
+<Input_Model.pdf, id=375, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Input_Model.pdf Graphic file (type pdf)
 
 <use Input_Model.pdf, page 1>
 Package pdftex.def Info: Input_Model.pdf, page1 used on input line 7.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
 
+<<<<<<< Updated upstream
 <Dynamic_Simulation.pdf, id=423, page=2, 794.97pt x 614.295pt>
+=======
+<Dynamic_Simulation.pdf, id=376, page=2, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [23 <./Input_Model.pdf>]
 <Dynamic_Simulation.pdf, id=439, page=3, 794.97pt x 614.295pt>
+=======
+ [19 <./Input_Model.pdf>]
+<Dynamic_Simulation.pdf, id=393, page=3, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [24 <./Dynamic_Simulation.pdf>]
 <motor_characterization.pdf, id=497, page=1, 794.97pt x 614.295pt>
+=======
+ [20 <./Dynamic_Simulation.pdf>]
+<motor_characterization.pdf, id=452, page=1, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: motor_characterization.pdf Graphic file (type pdf)
 
 <use motor_characterization.pdf, page 1>
 Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 3.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [25 <./Dynamic_Simulation.pdf>]
 <Dynamic_Simulation.pdf, id=511, page=4, 794.97pt x 614.295pt>
+=======
+ [21 <./Dynamic_Simulation.pdf>]
+<Dynamic_Simulation.pdf, id=465, page=4, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [26 <./motor_characterization.pdf>]
 <Dynamic_Simulation.pdf, id=533, page=5, 794.97pt x 614.295pt>
+=======
+ [22 <./motor_characterization.pdf>]
+<Dynamic_Simulation.pdf, id=487, page=5, 794.97pt x 614.295pt>
+>>>>>>> Stashed changes
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 17.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
+<<<<<<< Updated upstream
  [27 <./Dynamic_Simulation.pdf>] [28 <./Dynamic_Simulation.pdf>])
+=======
+ [23 <./Dynamic_Simulation.pdf>] [24 <./Dynamic_Simulation.pdf>])
+>>>>>>> Stashed changes
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (report2.aux)
@@ -686,9 +745,13 @@ Package rerunfilecheck Info: File `report2.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< Updated upstream
  8418 strings out of 493334
  122853 string characters out of 3139246
  221687 words of memory out of 3000000
@@ -712,4 +775,32 @@ PDF statistics:
  1015 PDF objects out of 1200 (max. 8388607)
  104 named destinations out of 1000 (max. 500000)
  434 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+ 8367 strings out of 493014
+ 123106 string characters out of 6133351
+ 220721 words of memory out of 5000000
+ 11683 multiletter control sequences out of 15000+600000
+ 11550 words of font info for 42 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,18n,43p,1136b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report2.pdf (30 pages, 448403 bytes).
+PDF statistics:
+ 976 PDF objects out of 1000 (max. 8388607)
+ 831 compressed objects within 9 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 
