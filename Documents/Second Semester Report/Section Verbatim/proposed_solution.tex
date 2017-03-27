@@ -58,7 +58,7 @@ A joystick controller was used as the control input for its non-spring loaded th
 
 The Raspberry Pi is used solely as a communication channel between the base station and the Arduino control loop. The RPi is the server while the base station is considered the client in the connection. The Raspberry Pi relays the received bytes to the Arduino control loop using a serial communication channel. 
 
-The Arduino control loop is used to host the drone function library and main script required for drone flight. The Arduino control loop outline is shown in Figure \ref{fig:ctl_loop}. The gain values for the PID loop is to be determined through simulations. The Arduino initializes all sensors, motors, and communications. The loop then gathers data from the inertial measurement unit and the serial connection to the Raspberry Pi, compares the data and performs a PID loop, finally outputting the results to the ESCs.
+The Arduino control loop is used to host the drone function library and main script required for drone flight. The Arduino control loop outline is shown in Figure \ref{fig:ctl_loop}. The gain values for the PID loop are to be determined through simulations. The Arduino initializes all sensors, motors, and communications. The loop then gathers data from the inertial measurement unit and the serial connection to the Raspberry Pi, compares the data and performs a PID loop, finally outputting the results to the ESCs.
 
 \begin{figure}[H]
 	\centering
