@@ -54,7 +54,34 @@ The system architecture is implemented as depicted in the block diagram shown in
 	\label{fig:sys_arch}	
 \end{figure}
 
-A joystick controller was used as the control input for its non-spring loaded throttle control. The drone requires an altitude set point from the control input, a spring loaded control input would make the implementation of a constant set point difficult. The base station laptop hosts the GUI and the communication channel software between the USB connected joystick control input and the Raspberry Pi Wi-Fi connection. The Python scripts that enable the communication channels use the sockets library for a server, client Wi-Fi channel and pygame library to acquire control set points from the joystick controller. 
+A joystick controller was used as the control input for its non-spring loaded throttle control. The drone requires an altitude set point from the control input, a spring loaded control input would make the implementation of a constant set point difficult. The base station laptop hosts the GUI and the communication channel software between the USB connected joystick control input and the Raspberry Pi Wi-Fi connection. The Python scripts that enable the communication channels use the sockets library for a server, client Wi-Fi channel and pygame library to acquire control set points from the joystick controller. The inputs from the controller are converted from floats to sets of four bytes for transmission.
+
+The Raspberry Pi is used solely as a communication channel between the base station and the Arduino control loop. The RPi is the server while the base station is considered the client in the connection. The Raspberry Pi relays the received bytes to the Arduino control loop using a serial communication channel. 
+
+The Arduino control loop is used to host the drone function library and main script required for drone flight. The Arduino control loop outline is shown in Figure \ref{fig:ctl_loop}. The gain values for the PID loop is to be determined through simulations. The Arduino initializes all sensors, motors, and communications. The loop then gathers data from the inertial measurement unit and the serial connection to the Raspberry Pi, compares the data and performs a PID loop, finally outputting the results to the ESCs.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{control-loop.jpg}
+	\caption{Arduino Control Loop}
+	\label{fig:ctl_loop}	
+\end{figure}
+
+Yaw, pitch, roll and altitude are calculated using the accelerometer, gyroscope, magnetometer, barometric pressure sensor and temperature sensor available on the inertial measurement unit. The altitude measurement is completed using the barometric pressure sensor and temperature sensor. The equation to calculate altitude is given as: 
+
+\vspace*{0.2in}
+$h=\frac{(\frac{P_{0}}{P})^\frac{1}{5.257}-1)*(T+273.15)}{0.0065}$
+\vspace*{0.2in}
+
+$h$ = Difference between Starting Height and Current Height
+
+$P_{0}$ = Initial Pressure at Starting Height
+
+$P$= Current Pressure
+
+$T$ = Current Temperature
+
+The barometric pressure sensor calculation was found to be highly susceptible to noise, several filtering techniques were attempted and a Kalman filter with a feedback comparison is currently in use. This filtering technique is subject to change. All written scripts for the Arduino, Raspberry Pi and the base station communication channel can be found in APPENDIX XXX. 
 
 
 \subsection{Graphical User Interface}

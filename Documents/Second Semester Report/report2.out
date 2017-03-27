@@ -21,17 +21,18 @@
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Framework Selection}{subsection.4.3}% 21
 \BOOKMARK [1][-]{section.5}{Project Results}{}% 22
 \BOOKMARK [2][-]{subsection.5.1}{Simulations}{section.5}% 23
-\BOOKMARK [2][-]{subsection.5.2}{Physical Implementation}{section.5}% 24
-\BOOKMARK [2][-]{subsection.5.3}{Graphical User Interface}{section.5}% 25
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 26
-\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 29
-\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 30
-\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 31
-\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 32
-\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 33
-\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 34
-\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 35
-\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 36
-\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 37
+\BOOKMARK [2][-]{subsection.5.2}{Hover Test}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.3}{Physical Implementation}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.4}{Graphical User Interface}{section.5}% 26
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 27
+\BOOKMARK [2][-]{subsection.6.1}{Simulations}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.2}{Physical Implementation}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.3}{Graphical User Interface}{section.6}% 30
+\BOOKMARK [1][-]{appendix.A}{SimuLink Models}{}% 31
+\BOOKMARK [2][-]{subsection.A.1}{Dynamic Simulation}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.2}{Input Model Subsystem}{appendix.A}% 33
+\BOOKMARK [2][-]{subsection.A.3}{Controller Subsystem}{appendix.A}% 34
+\BOOKMARK [2][-]{subsection.A.4}{Motor Subsystem}{appendix.A}% 35
+\BOOKMARK [2][-]{subsection.A.5}{Motor Characterization Model}{appendix.A}% 36
+\BOOKMARK [2][-]{subsection.A.6}{Physical Subsystem}{appendix.A}% 37
+\BOOKMARK [2][-]{subsection.A.7}{Pulsewidth Subsystem}{appendix.A}% 38
