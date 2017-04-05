@@ -35,7 +35,7 @@ class PS4Controller(object):
     button_data = None
     hat_data = None
 
-    def __init__(self, axis_order=[1, 2, 3, 4], hostname='raspberrypi', port=2222):
+    def __init__(self, axis_order=[1, 2, 3, 4], hostname='raspberrypi', port=2222, limits = [10, 10, 1, 10]):
         """Initialize the joystick components"""
 
         pygame.init()
@@ -44,6 +44,7 @@ class PS4Controller(object):
         self.controller.init()
         self.hostname = hostname
         self.port = port
+        self.limits = limits
         if isinstance(axis_order, list):
             self.axis_order = axis_order  # For changing how controller axes are bound
         else:
@@ -101,10 +102,10 @@ class PS4Controller(object):
                 # print(str(self.axis_data))
                 # Isolate desired Axes
 
-                axes_data = [self.axis_data[self.axis_order[0]],
-                             self.axis_data[self.axis_order[1]],
-                             self.axis_data[self.axis_order[2]],
-                             self.axis_data[self.axis_order[3]]]
+                axes_data = [self.axis_data[self.axis_order[0]] * self.limits[0],
+                             self.axis_data[self.axis_order[1]] * self.limits[1],
+                             self.axis_data[self.axis_order[2]] * self.limits[2],
+                             self.axis_data[self.axis_order[3]] * self.limits[3]]
                 byte_data = []  # To hold the axes data serialized to bytes
                 for axis in axes_data:
                     byte_data.append(struct.pack("f", axis))  # F for float
