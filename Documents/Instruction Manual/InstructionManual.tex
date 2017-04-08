@@ -1,1 +1,62 @@
 
+\documentclass[12pt,letterpaper,titlepage]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{chngcntr}
+\usepackage{titlepic}
+\usepackage{hyperref}
+\usepackage{lscape}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{float}
+
+\singlespacing
+\renewcommand{\baselinestretch}{1}
+\newcommand\immediateaddcontentsline[3]{%
+	\begingroup
+	\let\origwrite\write
+	\def\write{\immediate\origwrite}%
+	\addcontentsline{#1}{#2}{#3}%
+	\endgroup
+}
+% Title Page
+%Will need to add signature fields for Drs Jason & Jason
+\title{Instruction Manual\\ Programmable Flight Controller \\ Prepared for Reiland Systems \\ Internal Supervisor: Dr. Jason Gu \\ External Supervisor: Dr. Jason Rhinelander}
+
+\author{Brendon Camm \\ B00649176 \and Lucas Doucette \\ B00685962 \and Dylan Humber \\ B00695554}
+\date{Submitted: April 10, 2017}
+\titlepic{\includegraphics[width=0.9\textwidth]{logo.pdf}}
+
+\begin{document}
+	\maketitle
+	\newpage
+	\pagenumbering{gobble}
+	\vspace*{2in}
+	This document was written in \LaTeX.  It was compiled with pdflatex.  The source of the document may be viewed at: \newline\small	https://github.com/Brendoncamm/SYP/edit/master/Documents/Instruction\%20Manual/InstructionManual.tex
+	\vspace*{4in}
+	\pagebreak
+	
+	%Need TOC
+	\pagenumbering{roman}
+	\setcounter{tocdepth}{2}
+	\setcounter{tocdepth}{3}
+	\tableofcontents
+	\pagebreak
+	\pagenumbering{arabic}
+	
+	\begin{abstract} %Need abstract. Yes.
+		The following instruction manual provides information regarding the design and usage of the flight controller. The required packages, libraries, installation procedures are outlined in the documentation. The function libraries provided are discussed in detail to ensure clarification.
+		\vspace{0.2in}	
+		
+	
+%Please keep body of report seperated by section.  If you need to add a section create another .tex file for it and input it below.
+	
+	\input{"Section Verbatim/Base Station Communications"}
+	\input{"Section Verbatim/Raspberry Pi"}
+	\input{"Section Verbatim/Arduino"}
+	\input{"Section Verbatim/Graphical User Interface"}
+
+
+
+\end{document}  
