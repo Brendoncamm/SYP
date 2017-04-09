@@ -48,11 +48,18 @@ Once you have successfully installed QtCreator and Python3 you must install the 
 \end{itemize}
 
 \subsection{Basic Functionality}
-This section outlines the functionality of the Pushbutton's within the GUI
+This section outlines the functionality of the GUI. To switch pages simply click on the name of the page in the list on the right hand side of the GUI. The following sections outline the functionality of the pushbuttons on each of the two pages.
 
-\subsubsection{Home Page}
+\subsubsection{Home}
 \begin{itemize}
 	\item \textbf{Start}: Initializes communications between the Base Station and Raspberry Pi
 	\item \textbf{Finish}: Closes the GUI
 \end{itemize}
-
+\subsubsection{Controller}
+\begin{itemize}
+	\item \textbf{Update Axis}: Update the joystick Yaw, Pitch, Roll and Thrust inputs
+	\item \textbf{Update Host}: Update the Host PC Name
+	\item \textbf{Update Port}: Update the port number for the socket
+	\item \textbf{Manual Control}: Initialize the PS4 controller to send manual control inputs
+	\item \textbf{Update Connection}: Update the Host and Port at the same time, upon completing this a new connection will be established using the new information
+\end{itemize}

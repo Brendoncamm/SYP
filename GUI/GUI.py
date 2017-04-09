@@ -42,7 +42,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         #Controller Page
         self.axisVal.setText('1 2 3 4')
         self.hostVal.setText(self.getHost)
-        self.portVal.setText('2222')
+        self.portVal.setText(self.staticPort)
         self.axisMenu.clicked.connect(self.axisSettings)
         self.hostMenu.clicked.connect(self.hostSettings)
         self.portMenu.clicked.connect(self.portSettings)
