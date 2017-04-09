@@ -8,7 +8,7 @@ from PS4_Controller import PS4Controller as PS4
 import pyqtgraph as pg
 import pyqtgraph.exporters
 
-qtCreatorFile = "GUI.ui" # Enter file here.
+qtCreatorFile = "GUI.ui" # Enter QtDesigner file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 
