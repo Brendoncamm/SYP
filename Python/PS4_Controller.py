@@ -111,7 +111,7 @@ class PS4Controller(object):
                     byte_data.append(struct.pack("f", axis))  # F for float
 
                 xmission_bytes = bytes().join(byte_data)
-                connection = socket.socket()
+                connection = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
                 connection.connect((host, self.port))
                 connection.send(xmission_bytes)  # sending the controller data over the port
                 connection.close()

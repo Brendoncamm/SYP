@@ -3,17 +3,8 @@ import sys
 import arduino
 import threading
 import queue
+from pickle import dumps as serialize
 from subprocess import check_output
-
-#TODO:
-#   Control Side
-#       Write Server w/ logging
-#       Test
-#   Backchannel
-#       Write Handler
-#       Test
-#   Read
-#       TCP Binding
 
 class SerialRequestHandler(threading.Thread):
     def __init__(self, stateq):
@@ -44,8 +35,7 @@ class QuadControlHandler(socketserver.BaseRequestHandler):
         print('Received: ' + str(recv))
         return
 
-
-class QuadControlServer(socketserver.TCPServer):
+class QuadControlServer(socketserver.UDPServer):
     def __init__(self, server_address, RequestHandlerClass):
         super(self.__class__, self).__init__(server_address, RequestHandlerClass)
         self.controller = arduino.Arduino_Controller(9600)
@@ -60,6 +50,30 @@ class QuadControlServer(socketserver.TCPServer):
 
     def finish_request(self, request, client_address):
         self.RequestHandlerClass(request, client_address, self, self.stateq)
+
+class FeedbackCommHandler(socketserver.BaseRequestHandler):
+    def handle(self):
+        byte_string = serialize(self.DataDictionary)
+        self.request.send_all(byte_string)
+
+class CommunicationServer(socketserver.TCPServer):
+    def __init__(self, server_address, RequestHandlerClass, DataFuntions):
+        self.DataFunctions = DataFuntions
+        self.DataDictionary = {}
+        for x in self.DataFunctions:
+            self.DataDictionary[x[0]] = {'name' : x[0],
+                                         'function' : x[1],
+                                         'data' : []
+                                        }
+        super(self.__class__, self).__init__(server_address, RequestHandlerClass)
+
+    def service_actions(self):
+        for x in self.DataDictionary:
+            x['data'].append(x['function']())
+
+
+
+
 
 
 
