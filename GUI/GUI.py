@@ -1,18 +1,10 @@
 import sys
 from PyQt5 import QtCore, QtGui, uic, QtWidgets
-import matplotlib
-from matplotlib.backends.backend_qt5agg import (FigureCanvasQTAgg as FigureCanvas,
-                                                NavigationToolbar2QT as NavigationToolBar)
-from matplotlib.figure import Figure
 import numpy as np
 import time
 import struct
 import socket
-from timeit import default_timer as timer
 from PS4_Controller import PS4Controller as PS4
-import threading
-import logging
-import matplotlib.animation as animation
 import pyqtgraph as pg
 import pyqtgraph.exporters
 
@@ -37,6 +29,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         #Networking
         self.getHost = socket.gethostname()
         self.staticPort = '1247'
+        
         #Main Page buttons
         self.start.clicked.connect(self.connection)
         self.end.clicked.connect(self.stop)
@@ -55,12 +48,12 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         self.portMenu.clicked.connect(self.portSettings)
         self.updateConnect.clicked.connect(self.updateConnection)
         self.connectPS4.clicked.connect(self.connectController)
-
+        
+        #Live plotting Initializations
         self.initplt()
         self.plotcurve = pg.PlotDataItem()
         self.plotwidget.addItem(self.plotcurve)
         self.t = 0
-        self.amplitude = 10
         self.update1()
         self.timer = pg.QtCore.QTimer()
         self.timer.timeout.connect(self.move)
@@ -68,6 +61,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         
     def stop(self):
         sys.exit(app.exec_())
+        
     def connection(self):
         s = socket.socket()
         host = self.getHost
@@ -80,6 +74,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
             print(status)
             self.thisworks.setText("Connection Successful")
             self.connectionStat.setText("Communications are active")
+            
     def axisSettings(self):
         cont = PS4()
         text, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[0]', 'No Spaces')
@@ -90,11 +85,14 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         self.axisVal.setText(str(axis))
         cont.axis_order = axis
         return cont.axis_order
+    
     def display(self,i):
         self.home.setCurrentIndex(i)
+        
     def addData(self,name,fig):
         self.fig_duct[name] = fig
         self.list.addItem(name)
+        
     def hostSettings(self):
         text, ok = QtWidgets.QInputDialog.getText(self,'Host', 'Host name or IP address')
         newHost = str(text)
@@ -103,6 +101,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         else:
             self.hostVal.setText(newHost)
         return newHost
+    
     def portSettings(self):
         text, ok = QtWidgets.QInputDialog.getText(self,'Port','Port number')
         if ok:
@@ -116,11 +115,13 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
             self.display(1)
             
         return int(newPort)
+    
     def connectController(self):
         new = PS4()
         cont.axis_order = self.axisSettings()
         print(str(cont.axis_order))
         new.listen()
+        
     def updateConnection(self):
         host1 = self.hostSettings()
         port1 = self.portSettings()
@@ -130,7 +131,6 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         if status:
             self.connectionStat.setText("Update and Connection Unsuccessful")
             self.thisworks.setText("Update and Connection Unsuccessful")
-            #socket.send('Success')
         else:
             self.connectionStat.setText("Update and Connection Successful")
             self.thisworks.setText("Update and Connection Successful")
@@ -146,17 +146,18 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
                 xs.append(int(x))
                 ys.append(int(y))
         return xs,ys
-
-        
+    
     def initplt(self):
         self.plotwidget = pg.PlotWidget()
         self.mplvl.addWidget(self.plotwidget)
         self.plotwidget.setLabel('left', 'Altitude [m]')
         self.plotwidget.setLabel('bottom','Time[s]')
         self.show()
+        
     def update1(self):
         list1,list2 = self.liveData()
         self.plotcurve.setData(list1,list2)
+        
     def move(self):
         self.t+=1
         self.update1()
@@ -166,8 +167,6 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     main = GUI()
     main.show()
-    #cont = PS4()
-    #print(str(cont.axis_order))
     QtWidgets.QApplication.processEvents()
     sys.exit(app.exec_())
 
