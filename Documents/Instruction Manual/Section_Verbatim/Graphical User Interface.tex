@@ -8,7 +8,6 @@ The following is a list of the required software needed to run the GUI:
 	\item QtDesigner (Included in QtCreator5.6)
 	\item Python3
 \end{itemize}
-
 If your system does not have QtDesigner installed follow these steps:
 \begin{enumerate}
 	\item Open your preferred browser and navigate to: https://www.qt.io/qt5-6/ and click "Download"
@@ -28,3 +27,22 @@ If your system does not have QtDesigner installed follow these steps:
 	\item On the next page click "Next"
 	\item Finally, click "Install"
 \end{enumerate}
+If your system does not have Python3 installed follow these steps:
+
+\begin{enumerate}
+	\item Open your preferred browser and navigate to https://www.python.org/downloads/
+	\item Click on "Python 3.x" where x is the version number. The version number is irrelevant as long as the first number is 3. 
+	\item Scroll to the bottom of the page to "Files" and select the appropriate version for your operating system. For example, I am using a 64bit Windows OS I would click on "Windows x86-64 executable installer". Click on this to download the installer. Once it is downloaded run the installer
+	\item On the installer, click "Customize installation"
+	\item On the next page ensure every box is checked
+	\item On the next page ensure the following boxes are checked: "Associate files with Python", "Create shortcuts for installed applications", "Add Python to environment variables" and "Precompile standard library". Once this is done click "Install"
+\end{enumerate}
+
+Once you have successfully installed QtCreator and Python3 you must install the following libraries using the "pip" command. This is done through the command window, open the command window and type, for example: "pip install PyQt5", this will install the latest version of PyQt5. Follow this process for each of the libraties listed below.
+
+\begin{itemize}
+	\item PyQt5
+	\item pyqtgraph
+	\item numpy
+	\item sip
+\end{itemize}
