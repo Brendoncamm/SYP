@@ -1,1 +1,83 @@
+\section{GUI}
+This section gives the user instructions on how to make use of the functionalities the GUI has to offer as well as outlines how to add additional functionality if desired. It begins by explaining the required software and libraries the user must have installed in order to use the GUI. The functionality of the pushbuttons on the GUI will be explained, the section will finish off with where to find helpful resources for QtCreator, PyQt5 and the other libraries used.
 
+\subsection{Required Software}
+The following is a list of the required software needed to run the GUI:
+
+\begin{itemize}
+	\item QtDesigner (Included in QtCreator5.6)
+	\item Python3
+\end{itemize}
+If your system does not have QtDesigner installed follow these steps:
+\begin{enumerate}
+	\item Open your preferred browser and navigate to: https://www.qt.io/qt5-6/ and click "Download"
+	\item On the next page select "In-house deployment, private use, or student use" and click "Get Started"
+	\item On the next page select "No" and click "Get Started"
+	\item On the next page select "No" and click "Get Started"
+	\item On the next page select "Desktop/multiscreen application" and click "Get Started"
+	\item You should now be on a entirely different page outlining the Commerical and Open Source versions of Qt scroll down and select "Get your open source package"
+	\item On the next page click "Download Now" to download the installer
+	\item Once you have downloaded the installer run it
+	\item With the installer now running click "Next"
+	\item Enter your Qt account information, if you do not already have a Qt account you can make one within the installer enter this information and then click "Next"
+	\item You should now be on the Setup page on the installer click "Next"
+	\item Browse for an installation folder or click "Next" to use the default one provided, ensure the "Associate common file types with QtCreator" box is selected 
+	\item On the next page click "Deselect All" at the bottom of the page and then select "Qt5.6" and "Tools" from the list. then click "Next"
+	\item On the next page select "I agree" and then click "Next"
+	\item On the next page click "Next"
+	\item Finally, click "Install"
+\end{enumerate}
+If your system does not have Python3 installed follow these steps:
+
+\begin{enumerate}
+	\item Open your preferred browser and navigate to https://www.python.org/downloads/
+	\item Click on "Python 3.x" where x is the version number. The version number is irrelevant as long as the first number is 3. 
+	\item Scroll to the bottom of the page to "Files" and select the appropriate version for your operating system. For example, I am using a 64bit Windows OS I would click on "Windows x86-64 executable installer". Click on this to download the installer. Once it is downloaded run the installer
+	\item On the installer, click "Customize installation"
+	\item On the next page ensure every box is checked
+	\item On the next page ensure the following boxes are checked: "Associate files with Python", "Create shortcuts for installed applications", "Add Python to environment variables" and "Precompile standard library". Once this is done click "Install"
+\end{enumerate}
+
+Once you have successfully installed QtCreator and Python3 you must install the following libraries using the "pip" command. This is done through the command window, open the command window and type, for example: "pip install PyQt5", this will install the latest version of PyQt5. Follow this process for each of the libraties listed below.
+
+\begin{itemize}
+	\item PyQt5
+	\item pyqtgraph
+	\item numpy
+	\item sip
+\end{itemize}
+
+\subsection{Basic Functionality}
+This section outlines the functionality of the GUI. To switch pages simply click on the name of the page in the list on the right hand side of the GUI. The following sections outline the functionality of the pushbuttons on each of the two pages.
+
+\subsubsection{Home}
+\begin{itemize}
+	\item \textbf{Start}: Initializes communications between the Base Station and Raspberry Pi
+	\item \textbf{Finish}: Closes the GUI
+\end{itemize}
+\subsubsection{Controller}
+\begin{itemize}
+	\item \textbf{Update Axis}: Update the joystick Yaw, Pitch, Roll and Thrust inputs
+	\item \textbf{Update Host}: Update the Host PC Name
+	\item \textbf{Update Port}: Update the port number for the socket
+	\item \textbf{Manual Control}: Initialize the Joystick to send manual control inputs
+	\item \textbf{Update Connection}: Updates the Host and Port at the same time, upon completing this a new connection will be established using the new information
+\end{itemize}
+To see which definition is called when each of these buttons are clicked see the GUI code in Appendix \ref{appendix:GUICode}. How the Joystick initialization is coded can be viewed in Appendix \ref{appendix:controller}.
+\subsection{Additional Resources}
+If the user would like to add any additional functionality many excellent online resources exsist to aid them through the process. Below are some of the best that were used extensively when developing the GUI. They are broken down into QtCreator resources, PyQt5 Resources and Library resources. 
+
+\subsubsection{QtCreator Resources}
+\begin{itemize}
+	\item The best resource for QtDesigner is the one provided by Qt. This can be found at http://doc.qt.io/qt-5/qtdesigner-manual.html
+\end{itemize}
+\subsubsection{PyQt5 Resources}
+\begin{itemize}
+	\item A very nice video series describing many different aspects of PyQt is provided by sentdex on YouTube. The tutorial is based on PyQt4 but the principal is still valid, the only thing to remember is that when they use the "QtGui" class in PyQt4 we use "QtWidgets" in PyQt5. To find these videos go to YouTube and type in "sentdex PyQt".
+	\item The reference guide for PyQt5 can be found at http://pyqt.sourceforge.net/Docs/PyQt5/
+\end{itemize}
+\subsubsection{Library and general Python Resources}
+\begin{itemize}
+	\item For additional information regarding pygqtgraph (the library that allows for live plotting) visit http://www.pyqtgraph.org/documentation/
+	\item For additional information regarding anything else you're interested in for Python visit https://docs.python.org/3/library/index.html. 
+\end{itemize}

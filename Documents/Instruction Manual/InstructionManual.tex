@@ -1,5 +1,6 @@
 
 \documentclass[12pt,letterpaper,titlepage]{article}
+\usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{listings}
@@ -56,7 +57,16 @@
 	\input{"Section_Verbatim/Raspberry Pi"}
 	\input{"Section_Verbatim/Arduino"}
 	\input{"Section_Verbatim/Graphical User Interface"}
-
+	
+	\pagebreak
+	
+	\newpage
+	
+	\appendix
+	\input{"Section_Verbatim/appendix_GUI"}
+	\label{appendix:gui}
+	\input{"Section_Verbatim/appendix_RPi"}
+	\label{appendix:RPi}
 
 
 \end{document}  

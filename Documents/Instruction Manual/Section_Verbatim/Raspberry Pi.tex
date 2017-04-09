@@ -1,1 +1,11 @@
+\section{Raspberry Pi}
+This section details the server script for handling communications to the drone.
 
+\subsection{Required Software}
+The python programs outlined in this section should run natively within the Raspbian Operating system on the raspberry pi.  It is required that they are run in Python3 or higher as Python 2 standard library does not contain all of the pre-requisites for the servers.  Launching the server file in Python 2 will raise an exception.  The Python code for this section may be examined in Appendix \ref{appendix:RPi}.
+
+\subsection{Control Server}
+In this python file there are two servers based off of the \textit{socketserver} library.  The first handles the UDP packets that hold the controller signal from the GUI.  Running the server file from terminal will allow this server to run on port 2222.  The second server, for returning data from sensors is not enabled by default.
+
+\subsection{Communication Feedback Server}
+This server, included in the same file as the previous server, is a TCP server for responding to requests with a serialized dictionary containing data.  To make use of this server it is required to supply it a list of functions that the server will run.  Periodically it will iterate through this list and append the returned values of the function to the Data Dictionary.

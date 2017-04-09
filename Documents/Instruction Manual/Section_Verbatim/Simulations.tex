@@ -1,1 +1,10 @@
+\section{Simulink Simulation}
 
+This section details how to open the SimuLink Simulation and how to change the existing control signals.  The simulation still has a few issues which are discussed in detail within the report.
+
+\subsection{Opening the Simulation}
+To open the simulation, open the SimuLink project file.  Once that has opened within the MatLab environment, open the Dynamic Simulation diagram.  This sheet contains the entire simulation.
+
+\subsection{Running the Simulation}
+
+In its current state, the simulation is rendered through the Mechanics Explorer from Simscape.  It is recommended to define test signals in the labeled section.  From left to right the signals are Roll, Pitch, Yaw, and then altitude. The test signals should be normalized to between -1 and 1.  This is to reflect how controllers such as USB joysticks or PS4 controllers work.  Above this area is another highlighted area for limit values.  These allow for the user to limit the maximum values of the control signal.  For example if the altitude limit is set to 100 meters, and the control signal is at a value of 0.5, the controller will attempt to fly to 50 meters.
