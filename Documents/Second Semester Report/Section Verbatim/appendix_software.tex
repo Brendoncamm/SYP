@@ -23,7 +23,7 @@
 #include <Adafruit_LSM303_U.h>
 #include <Adafruit_BMP085_U.h>
 #include <Adafruit_L3GD20_U.h>
-#include <Adafruit_10DOF.h> 
+#include <Adafruit_10DOF.h>
 
 class Drone
 {
@@ -35,12 +35,15 @@ class Drone
     float get_sensorAltitude(float startingPressure);
     float get_currentPressure();
     float PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki );
-    void read_PS4Setpoints();
+    float PID_FWD_EULER_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki, float Ts, float N);
+    float Altitude_Calibration(float AltitudePID);
+    float PR_Calibration(float PR_PID);
+    void read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude);
     void initSensors();
-    void initESCs(int MotorPin1, int MotorPin2,int MotorPin3,int MotorPin4);
+    void initESCs(Servo esc_1, Servo esc_2, Servo esc_3, Servo esc_4);
     float read_float();
-    void send_float();
-
+    void send_float(float arg);
+    float ping_ultrasonic();
 };
 
 #endif
@@ -54,7 +57,6 @@ class Drone
 
 \counterwithin{figure}{section}
 \begin{lstlisting}[language=C,caption={Drone.cpp Arduino Library File},label={lst:Drone.cpp}]
-
 
 /*
   Drone.h - Library for Drone Controller.
@@ -73,13 +75,11 @@ class Drone
 #include <Adafruit_10DOF.h>
 #include <LiquidCrystal.h>
 
-
   /* Assign a unique ID to the sensors */
 Adafruit_10DOF dof   = Adafruit_10DOF();
 Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(30301);
 Adafruit_LSM303_Mag_Unified   mag   = Adafruit_LSM303_Mag_Unified(30302);
 Adafruit_BMP085_Unified       bmp   = Adafruit_BMP085_Unified(18001);
-
 
 sensors_event_t accel_event;
 sensors_event_t mag_event;
@@ -91,6 +91,45 @@ float temperature;
 Drone::Drone()
 {
 
+}
+
+float Drone::ping_ultrasonic()
+{
+    
+
+  long duration, m;
+
+    
+    
+    //send low high low to ensure a clean ping
+    
+  pinMode(7, OUTPUT);
+  digitalWrite(7, LOW);
+  delayMicroseconds(2);
+  digitalWrite(7, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(7, LOW);
+  
+    
+  pinMode(8, INPUT);
+  duration = pulseIn(8, HIGH);
+    
+  
+  //29 microseconds per cmeter, and round trip  
+  m=(duration/29)/2;
+    
+    if(m>1500)
+    {
+        
+        m=0;
+        
+    }
+    
+  return m;
+    
+
+    
+    
 }
 
 float Drone::get_sensorRoll()
@@ -146,8 +185,11 @@ float Drone::get_sensorYaw()
   }
 }
 
+
+
 float Drone::get_sensorAltitude(float startingPressure)
 {
+    
     
     float sensorAltitude, NowPressure;
     
@@ -161,6 +203,8 @@ float Drone::get_sensorAltitude(float startingPressure)
     float Xp = 0.0;
     float Zp = 0.0;
     float Xe = 0.0;
+    
+    
    
     // Calculate the altitude using the barometric pressure sensor
     bmp.getEvent(&bmp_event);
@@ -180,19 +224,19 @@ float Drone::get_sensorAltitude(float startingPressure)
     P=(1-G)*Pc;
     Xp=Xe;
     Zp=Xp;
-    Xe=G*(sensorAltitude-Zp)+Xp;
+    Xe=ping_ultrasonic()/100;
 
+    if (Xe >= 2.0)
+    {
+        //Enable barometric pressure above 2 meters
+        Xe=G*(sensorAltitude-Zp)+Xp;
+    }
 
-    //Create Deadzone (+/- 30cm)
-
-     // if(Xe<0.3 && Xe>-0.3)
-    //{
-      //  Xe=0;
-    //}
-
+       
     return Xe;
-
-
+        
+    
+        
 }
 
 //must be called after initSensors();
@@ -204,7 +248,7 @@ float Drone::get_currentPressure()
    //Initializing Pressure, Filtered for accuracy
    //Smooting Constant
     
-   const int numReadings=100;
+   const int numReadings=1;
    float SmoothingVariable=0;
    float NowPressure=0;
 
@@ -225,6 +269,7 @@ float Drone::get_currentPressure()
 
 float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki)
 {
+
     //Define PID Variables
     float Error, DError, IError, LastTime, LastError, Output;
 
@@ -248,15 +293,104 @@ float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, 
     
     Output=(Output/9000)*(1860-1127);
     
-    if(Output>=1860){
+    if(Output>=1200){
         
-        Output = 1860; 
+        Output = 1200; 
         
     }
     
+    if(Output<=1127)
+    {
+        Output=1127;
+    }
+    
     return Output;
+    
+    
 }
 
+
+float Drone::PID_FWD_EULER_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki, float Ts, float N)
+{
+    
+    float e2, e1, e0, u2, u1, u0; // Variables for PID computation
+    float a0, a1, a2, b0, b1, b2, ku1, ku2, ke0, ke1, ke2;
+    
+    
+    // hand calculated forward euler coefficients
+    a0 = (1 - N*Ts);
+    a1 = (N*Ts - 2);
+    a2 = (1);
+    b0 = (kp*(1 - N*Ts)+ki*(N*Ts-1)+kd*N);
+    b1 = (kp*(N*Ts-2)+ki*Ts-2*kd*N);
+    b2 = (kp+kd*N);
+    ku1 = a1/a0; ku2 = a2/a0; ke0 = b0/a0; ke1 = b1/a0; ke2 = b2/a0;
+    
+    /* Backward Euler for testing
+    a0 = (1+N*Ts);    
+    a1 = -(2 + N*Ts);
+    a2 = 1;
+    b0 = kp*(1+N*Ts) + ki*Ts*(1+N*Ts) + kd*N;
+    b1 = -(kp*(2+N*Ts) + ki*Ts + 2*kd*N);
+    b2 = kp + kd*N;
+    ku1 = a1/a0; ku2 = a2/a0; ke0 = b0/a0; ke1 = b1/a0; ke2 = b2/a0;
+    */
+
+    //update variables
+    e2=e1;
+    e1=e0;
+    u2=u1;
+    u1=u0;
+    
+    //calculate error and output
+    e0 = Setpoint - SenseRead;
+    u0 = - ku1*u1 - ku2*u2 + ke0*e0 + ke1*e1 + ke2*e2;
+    
+    
+    //return output
+    return u0;
+    
+}
+
+float Drone::Altitude_Calibration(float AltitudePID)
+    
+{
+    AltitudePID=(AltitudePID/9000)*(1860-1127);
+    
+    if (AltitudePID > 1860)
+    {
+        AltitudePID = 1860; 
+    }
+    
+    if (AltitudePID < 1127)
+    {
+        AltitudePID = 1127;
+    }
+    
+    return AltitudePID;
+ 
+}
+
+
+float Drone::PR_Calibration(float PR_PID)
+    
+{
+    if (PR_PID > 4500)
+    {
+        PR_PID = 4500;  
+    }
+    
+    if (PR_PID < -4500)
+    {
+        PR_PID = -4500;
+    }
+    
+    return (PR_PID/9000);
+    
+    
+}
+    
+    
 
 void Drone::read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude)
 
@@ -305,7 +439,6 @@ void Drone::read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, fl
 
 
 }
-
 
 void Drone::initSensors()
 {
@@ -501,7 +634,7 @@ class Arduino_Controller(object):
 # NOTE: I assume in this script that the only joystick plugged in is the PS4 controller.
 #       if this is not the case, you will need to change the class accordingly.
 #
-# Copyright © 2015 Clay L. McLeod <clay.l.mcleod@gmail.com>
+# Copyright Â© 2015 Clay L. McLeod <clay.l.mcleod@gmail.com>
 #
 # Distributed under terms of the MIT license.
 
