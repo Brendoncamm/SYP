@@ -116,11 +116,11 @@ class PS4Controller(object):
                 for axis in axes_data:
                     byte_data.append(struct.pack("f", axis))  # F for float
 
-                xmission_bytes = bytes().join(byte_data)
-                connection = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                connection.connect((host, self.port))
+                xmission_bytes = bytes().join(byte_data) # Send the control input data in byte form over the to be sent over the socket
+                connection = socket.socket()
+                connection.connect((host, self.port)) # Make the connection to the RPi
                 connection.send(xmission_bytes)  # sending the controller data over the port
-                connection.close()
+                connection.close() # Whenever no control inputs, close socket
                 # print(xmission_bytes)
 
                 # os.system('cls')
