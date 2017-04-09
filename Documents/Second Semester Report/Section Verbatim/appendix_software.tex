@@ -23,7 +23,7 @@
 #include <Adafruit_LSM303_U.h>
 #include <Adafruit_BMP085_U.h>
 #include <Adafruit_L3GD20_U.h>
-#include <Adafruit_10DOF.h>
+#include <Adafruit_10DOF.h> 
 
 class Drone
 {
@@ -374,6 +374,7 @@ float Drone::read_float () {
 \newpage
 
 \subsection{Raspberry Pi Scripts}
+\label{appendix:server}
 \counterwithin{figure}{section}
 \lstset{basicstyle=\tiny}
 \begin{lstlisting}[language=C,caption={Server.py Raspberry Pi Communication Server},label={lst:server.py}]
@@ -485,6 +486,7 @@ class Arduino_Controller(object):
 \newpage
 
 \subsection{Base Station Communication Script}
+\label{appendix:joystick}
 \counterwithin{figure}{section}
 \lstset{basicstyle=\tiny}
 \begin{lstlisting}[language=C,caption= {Control Signal and Client Script},label={lst:ps4_controller.py}]
