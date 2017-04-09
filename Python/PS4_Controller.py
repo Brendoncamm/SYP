@@ -36,7 +36,13 @@ class PS4Controller(object):
     hat_data = None
 
     def __init__(self, axis_order=[1, 2, 3, 4], hostname='raspberrypi', port=2222, limits = [10, 10, 1, 10]):
-        """Initialize the joystick components"""
+        """
+
+        :param axis_order: Represents binding of axis to pitch, roll, altitude, and yaw
+        :param hostname: of server to connect to
+        :param port: port for the server
+        :param limits: Limits for axis in [degrees, degrees, meters, degrees]
+        """
 
         pygame.init()
         pygame.joystick.init()
