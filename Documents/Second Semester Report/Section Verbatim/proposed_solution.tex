@@ -87,12 +87,24 @@ The barometric pressure sensor calculation was found to be highly susceptible to
 
 The hardware build of the drone requires mounting the Arduino and Raspberry Pi on the drone, connecting the 10 DOF IMU to the Arduino through an I2C connection, ESC connections through the available PWM pins on the Arduino, and a serial connection to the Raspberry Pi. The ESCs are to be powered by a lithium ion battery through a power distribution board. The power distribution board will also provide power supply to the Raspberry Pi, supplying power to the Arduino through the serial USB connection.
 
-The PID loop implementation utilizes the Forward Euler equation. The scripted solution to the PID loop can be seen in Appendix B and the mathematical breakdown is as follows.
+The PID loop implementation utilizes the Forward Euler equation. The scripted solution to the PID loop can be seen in Appendix B and the mathematical breakdown is as follows. Note, the forward Euler equation is manipulated algebraically to obtain the numerator and denominator coefficients. 
 
 \begin{align*}
-          \sin A \cos B &= \frac{1}{2}\left[ \sin(A-B)+\sin(A+B) \right] \\
-          \sin A \sin B &= \frac{1}{2}\left[ \sin(A-B)-\cos(A+B) \right] \\
-          \cos A \cos B &= \frac{1}{2}\left[ \cos(A-B)+\cos(A+B) \right] \\
+          Forward Euler &= k_P+k_I * T_s * \frac{1}{z-1} + k_D * \frac{N}{1+N*T_s*\frac{1}{z-1}} \\
+           C(z) & = \frac{U(z)}{E(z)} = \frac{b_0 +b_1z^{-1}+b_2z^{-2}}{a_0 +a_1z^{-1}+a_2z^{-2}}\\
+           \\
+          b_0 & = k_P(1-N*T_s) + k_I*T_s(N*T_s-1)+k_D*N \\
+          b_1 & = k_P(N*T_s-2) + k_I*T_s+2*k_D*N \\
+          b_2 & = k_P+k_D*N \\
+          a_0 & = 1-N*T_s \\
+          a_1 & = N*T_s-2 \\
+          a_2 & = 1 \\
+\end{align*}
+
+The implemented difference equation is denoted u[k].
+
+\begin{align*}
+u[k] & = -\frac{a_1}{a_0} u[k-1] - \frac{a_2}{a_0} u[k-2] + \frac{b_0}{a_0} e[k] +\frac{b_1}{a_0} e[k-1] +\frac{b_2}{a_0} e[k-2]  
 \end{align*}
 
 
