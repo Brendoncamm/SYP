@@ -66,11 +66,17 @@ The ESC testing was successful, the testing proved the Arduino's capability to c
 
 The IMU was implemented and tested thoroughly for yaw, pitch, roll and altitude values. Altitude calculations were determined to be approximately +/- 50 cm in error without any filtering implemented. With an averaging filter implemented for the initial barometric pressure reading and a Kalman filter with feedback, the error was reduced to +/- 30 cm. Further filtering and testing of the altitude readings is to be performed. At low altitudes, +/- 30 cm error is considered too large as the stabilization PID loop will have difficulties when attempting to take off and land. Other measurement devices for low altitudes are going to be implemented and tested.
 
+\subsubsection{Flight and PID Testing}
+
+The drone was built and prepared for a flight test in a controlled environment at St. Mary's University. The test was performed with only the Altitude PID loop in operation, the goal was to ensure the drone would have enough thrust to achieve liftoff. It was expected that flight without pitch and roll stabilization would be unstable.
+
+The results of testing proved that at 35 percent throttle the 470 gram drone achieves liftoff. The flight testing was considered a success and plans to perform a secondary flight test were made. The secondary test will incorporate the full control loop including the pitch and roll stabilization PID loops.
+
+The pitch and roll PID loops have been bench tested with a current limited supply. It is apparent from the bench testing that the motors attempt to correct for variations in pitch and roll by increasing and decreasing specific motor throttles. It is unclear whether the attempts at stabilization are sufficient for flight. A flight test is required to determine the capabilities of the drone.
+
 \subsubsection{Miscellaneous Testing}
 
 All functions and scripts were tested to ensure compilation was possible and the program behaves as expected. Several tests and adjustments will be performed to ensure the device operates as expected prior to the submission of the final report. 
-
-
 
 \subsection{Graphical User Interface}
 The main validation for the GUI was to ensure that each of the push buttons do the proper thing as well as when a page is selected from the list widget that the proper page is displayed. The testing involved with this was to select the desired push button or page and ensure the expected outcome happens. Along this process many software bugs were encountered and fixed, these included invalid syntax, improper use of libraries and just wrong implementation. Through these tests much was learned and the result was a GUI that provides all of the required functionality and is intuitive. After these were validated testing the live plotting capability was next. 

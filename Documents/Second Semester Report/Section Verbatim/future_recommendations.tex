@@ -2,11 +2,11 @@
 
 \subsection{Simulations}
 \label{recs:3d}
-The 3D rendering could be dramatically improved in two ways.  Firstly, a series of references could be added.  These would include a ground, and some mock buildings.  This would allow for a better senf of scale and movement during the simulation.  Should time allow this will be implemented by the submission of the final revision of the report.
+The 3D rendering could be dramatically improved in two ways.  Firstly, a series of references could be added.  These would include a ground, and some mock buildings.  This would allow for a better sense of scale and movement during the simulation.  Should time allow this will be implemented by the submission of the final revision of the report.
 
 The second improvement to the simulation would be a more realistic rendering of the quad-rotor drone.  As mentioned previously, the current rendering is rudimentary at best.  Improving this would be mostly cosmetic, but could be done to match the drone being used.  With the addition of disturbances a better physical model and rendering of the drone would be beneficial beyond the cosmetic, as it would allow for the effects of the disturbances to be more easily comprehended.
 
-Disturbances could be added to the simulation to represent wind, collisions, and failures.  This would allow fo the controller's to be tested in simulation to a more robust degree.  Additionally it would allow for the development of another controller layer that could alter the existing design based on sensor data or determined failures.
+Disturbances could be added to the simulation to represent wind, collisions, and failures.  This would allow for the controller's to be tested in simulation to a more robust degree.  Additionally it would allow for the development of another controller layer that could alter the existing design based on sensor data or determined failures.
 
 
 \subsection{Physical Implementation}
@@ -14,12 +14,12 @@ Disturbances could be added to the simulation to represent wind, collisions, and
 Future recommendations for the physical implementation of the drone include:
 
 \begin{itemize}
-\item Ultrasonic Sensor for Low Altitude Measurements (Take-Off / Landing)
 \item Camera Implementation (Raspberry Pi Camera V2 Recommended)
 \item Better Filtering of Altitude Measurements Incorporate Accelerometer - Barometer Kalman Filter
 \item Design Mounting Case for Arduino, RPi and Required Sensors on Drone
 \item Implement Condition Monitoring (Temperature, Battery Level, etc.)
 \item Monitor I2C Bus with RPi to Gather IMU Data and Send to GUI
+\item Implement Interrupt for PID Loop Timing
 \item Test Flight in Controlled Environment
 \end{itemize}
 
@@ -34,7 +34,7 @@ Some future recommendations for the GUI have been mentioned throughout the repor
 	\item Display Sensor Status
 	\item Display Flight Time
 	\item Display GPS Coordinates
-	\item Display Battery Level of the drone
+	\item Display Battery Level of the Drone
 \end{itemize}
 
 A GUI including the features listed above on top our the features our GUI has would make for a very strong and informative GUI. Given more time these areas could have been explored and potentially included in our design, but our GUI includes the key features for our clients purposes.

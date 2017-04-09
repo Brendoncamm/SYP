@@ -58,7 +58,7 @@ A joystick controller was used as the control input for its non-spring loaded th
 
 The Raspberry Pi is used solely as a communication channel between the base station and the Arduino control loop. The RPi is the server while the base station is considered the client in the connection. The Raspberry Pi relays the received bytes to the Arduino control loop using a serial communication channel. 
 
-The Arduino control loop is used to host the drone function library and main script required for drone flight. The Arduino control loop outline is shown in Figure \ref{fig:ctl_loop}. The gain values for the PID loop are to be determined through simulations. The Arduino initializes all sensors, motors, and communications. The loop then gathers data from the inertial measurement unit and the serial connection to the Raspberry Pi, compares the data and performs a PID loop, finally outputting the results to the ESCs.
+The Arduino control loop is used to host the drone function library and main script required for drone flight. The Arduino control loop outline is shown in Figure \ref{fig:ctl_loop}. The gain values for the PID loop are to be determined through simulations. The Arduino initializes all sensors, motors, and communications. The loop then gathers data from the inertial measurement unit and the serial connection to the Raspberry Pi, compares the data and performs PID loops, finally outputting the results to the ESCs.
 
 \begin{figure}[H]
 	\centering
@@ -86,6 +86,14 @@ $T$ = Current Temperature
 The barometric pressure sensor calculation was found to be highly susceptible to noise, several filtering techniques were attempted and a Kalman filter with a feedback comparison is currently in use. This filtering technique is subject to change. All written scripts for the Arduino, Raspberry Pi and the base station communication channel can be found in Appendix B. 
 
 The hardware build of the drone requires mounting the Arduino and Raspberry Pi on the drone, connecting the 10 DOF IMU to the Arduino through an I2C connection, ESC connections through the available PWM pins on the Arduino, and a serial connection to the Raspberry Pi. The ESCs are to be powered by a lithium ion battery through a power distribution board. The power distribution board will also provide power supply to the Raspberry Pi, supplying power to the Arduino through the serial USB connection.
+
+The PID loop implementation utilizes the Forward Euler equation. The scripted solution to the PID loop can be seen in Appendix B and the mathematical breakdown is as follows.
+
+\begin{align*}
+          \sin A \cos B &= \frac{1}{2}\left[ \sin(A-B)+\sin(A+B) \right] \\
+          \sin A \sin B &= \frac{1}{2}\left[ \sin(A-B)-\cos(A+B) \right] \\
+          \cos A \cos B &= \frac{1}{2}\left[ \cos(A-B)+\cos(A+B) \right] \\
+\end{align*}
 
 
 \subsection{Graphical User Interface}
