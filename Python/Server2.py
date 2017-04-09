@@ -44,8 +44,12 @@ class QuadControlHandler(socketserver.BaseRequestHandler):
         print('Received: ' + str(recv))
         return
 
+class FeedbackCommHandler(socketserver.BaseRequestHandler):
+    def handle(self):
 
-class QuadControlServer(socketserver.TCPServer):
+
+
+class QuadControlServer(socketserver.UDPServer):
     def __init__(self, server_address, RequestHandlerClass):
         super(self.__class__, self).__init__(server_address, RequestHandlerClass)
         self.controller = arduino.Arduino_Controller(9600)
@@ -61,6 +65,7 @@ class QuadControlServer(socketserver.TCPServer):
     def finish_request(self, request, client_address):
         self.RequestHandlerClass(request, client_address, self, self.stateq)
 
+class
 
 
 if __name__ == '__main__':
