@@ -112,7 +112,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         new = PS4()
         cont.axis_order = self.axisSettings()
         print(str(cont.axis_order))
-        new.listen() #Accept data from the manual controller
+        new.listen() #Accept data from the manual controller, calls the listen definition from PS4Controller.py
         
     def updateConnection(self):
         host1 = self.hostSettings()
