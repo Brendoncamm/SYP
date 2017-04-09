@@ -504,6 +504,128 @@ float Drone::read_float () {
 
 \end{lstlisting}
 
+
+
+\newpage
+
+\subsection{Arduino Main File}
+\counterwithin{figure}{section}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[language=C,caption={Main.ino Drone Flight Program},label={lst:main.ino}]
+
+#include <Drone.h>
+#include "TimerOne.h"
+
+Drone drone;
+Servo esc_1, esc_2, esc_3, esc_4;
+int MotorPin1=6, MotorPin2=9, MotorPin3=5, MotorPin4=3;
+float Yaw_Setpoint, Pitch_Setpoint, Roll_Setpoint, Altitude_Setpoint;
+float Current_Yaw, Current_Pitch, Current_Roll, Current_Altitude;
+float initial_pressure;
+float kp_alt=17257.712, ki_alt=2752.7, kd_alt=12500, N_alt=20;
+float kp_PR=-24.3498729396233, ki_PR=-15.1642535450127, kd_PR=-7.30148358076729, N_PR=44.9852981416911;
+float AltitudePID, PitchPID, RollPID;
+float Ts = 0.0001;
+float Alt_Out, Pitch_Out, Roll_Out;
+float Motor1_Output, Motor2_Output, Motor3_Output, Motor4_Output;
+
+
+void setup() {
+
+  esc_1.attach(MotorPin1);  //set up motor connections & Initialize
+  esc_2.attach(MotorPin2);
+  esc_3.attach(MotorPin3);
+  esc_4.attach(MotorPin4);
+  drone.initESCs(esc_1, esc_2, esc_3, esc_4);
+
+  //Initialize Serial Bus and IMU Sensors
+
+  Serial.begin(9600);
+  drone.initSensors();
+  initial_pressure=drone.get_currentPressure();
+
+   //initialize timer and interrupt callback
+  //Timer1.initialize(100);                      
+  //Timer1.attachInterrupt(PID_Interrupt);
+   
+   
+  
+}
+
+
+//Commented until troublshooting is complete
+/*void PID_Interrupt(){
+
+AltitudePID = drone.PID_FWD_EULER_Calculate(Altitude_Setpoint, Current_Altitude, kp, kd, ki, Ts);
+
+ esc_1.writeMicroseconds(AltitudePID);
+ esc_2.writeMicroseconds(AltitudePID);
+ esc_3.writeMicroseconds(AltitudePID);
+ esc_4.writeMicroseconds(AltitudePID);
+  
+}
+
+*/
+void loop() {
+
+
+//Get Control Setpoints
+if (Serial.available()==0)
+{
+  Serial.print('c');
+}
+
+while (Serial.available()>0)
+  {
+    Yaw_Setpoint = drone.read_float();
+    Pitch_Setpoint = drone.read_float();
+    Altitude_Setpoint = drone.read_float();
+    Roll_Setpoint = drone.read_float(); 
+  }
+  
+
+Altitude_Setpoint = 0.50;
+Pitch_Setpoint=0;
+Roll_Setpoint=0;
+
+//Gather IMU Data
+Current_Yaw = drone.get_sensorYaw();
+Current_Pitch = drone.get_sensorPitch();
+Current_Altitude = drone.get_sensorAltitude(initial_pressure);
+Current_Roll = drone.get_sensorRoll();
+
+//Calculate PID's and calibrate outputs based on simulink requirements.
+
+AltitudePID = drone.PID_FWD_EULER_Calculate(Altitude_Setpoint, Current_Altitude, kp_alt, kd_alt, ki_alt, Ts, N_alt);
+Alt_Out = drone.Altitude_Calibration(AltitudePID);
+
+PitchPID = drone.PID_FWD_EULER_Calculate(Pitch_Setpoint, Current_Pitch, kp_PR, kd_PR, ki_PR, Ts, N_PR);
+Pitch_Out=drone.PR_Calibration(PitchPID);
+
+RollPID = drone.PID_FWD_EULER_Calculate(Roll_Setpoint, Current_Roll, kp_PR, kd_PR, ki_PR, Ts, N_PR);
+Roll_Out = drone.PR_Calibration(RollPID);
+
+
+//PID Combination as required by simulink
+
+Motor1_Output = Alt_Out + Pitch_Out - Roll_Out;
+Motor2_Output = Alt_Out - Pitch_Out - Roll_Out;
+Motor3_Output = Alt_Out + Pitch_Out + Roll_Out;
+Motor4_Output = Alt_Out - Pitch_Out + Roll_Out;
+
+
+//Output PID Results to motors
+
+ esc_1.writeMicroseconds(Motor1_Output);
+ esc_2.writeMicroseconds(Motor2_Output);
+ esc_3.writeMicroseconds(Motor3_Output);
+ esc_4.writeMicroseconds(Motor4_Output);
+
+
+}
+
+\end{lstlisting}
+
 \newpage
 
 \subsection{Raspberry Pi Scripts}
