@@ -34,20 +34,20 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         self.start.clicked.connect(self.connection)
         self.end.clicked.connect(self.stop)
 
-        #Listing widget
+        #Listing widget, allows for the user to select a certain page
         self.list.insertItem(0, 'Home')
         self.list.insertItem(1, 'Controller')
-        self.list.currentRowChanged.connect(self.display)
+        self.list.currentRowChanged.connect(self.display) #Changes widget index to appropriate page
 
         #Controller Page
         self.axisVal.setText('1 2 3 4')
         self.hostVal.setText(self.getHost)
         self.portVal.setText(self.staticPort)
-        self.axisMenu.clicked.connect(self.axisSettings)
-        self.hostMenu.clicked.connect(self.hostSettings)
-        self.portMenu.clicked.connect(self.portSettings)
-        self.updateConnect.clicked.connect(self.updateConnection)
-        self.connectPS4.clicked.connect(self.connectController)
+        self.axisMenu.clicked.connect(self.axisSettings) #When "Update Axis" is clicked call definition axisSettings
+        self.hostMenu.clicked.connect(self.hostSettings) #When "Update host" is clicked call definition hostSettings
+        self.portMenu.clicked.connect(self.portSettings) #When "Update Port" is clicked call definition portSettings
+        self.updateConnect.clicked.connect(self.updateConnection) #When "Update Connection" is clicked call definition updateConnection
+        self.connectPS4.clicked.connect(self.connectController) #When "Manual Control" is clicked call definition connectController
         
         #Live plotting Initializations
         self.initplt()
@@ -56,8 +56,8 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         self.t = 0
         self.update1()
         self.timer = pg.QtCore.QTimer()
-        self.timer.timeout.connect(self.move)
-        self.timer.start(1000)
+        self.timer.timeout.connect(self.move)# Connects a timer to the "move" definition that allows for live plotting
+        self.timer.start(1000) # Poll for updates of new data ever 1000miliseconds (1 second)
         
     def stop(self):
         sys.exit(app.exec_())
@@ -66,7 +66,7 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         s = socket.socket()
         host = self.getHost
         port = int(self.staticPort)
-        status = s.connect_ex((host,port)) #Returns 0 if true
+        status = s.connect_ex((host,port)) #Returns 0 if connect is successful, returns errno if not
         if status: # Status = errno
             self.thisworks.setText("Connection Unsuccessful")
             self.connectionStat.setText("Communications have not been established")
@@ -77,24 +77,19 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
             
     def axisSettings(self):
         cont = PS4()
-        text, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[0]', 'No Spaces')
+        text, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[0]', 'No Spaces') # Input boxes when "Update Axis" is clicked
         text1, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[1]', 'No Spaces')
         text2, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[2]', 'No Spaces')
         text3, ok = QtWidgets.QInputDialog.getText(self, 'Axis Value[3]', 'No Spaces')
-        axis = [int(text), int(text1), int(text2), int(text3)]
-        self.axisVal.setText(str(axis))
-        cont.axis_order = axis
-        return cont.axis_order
+        axis = [int(text), int(text1), int(text2), int(text3)] # Make an array of the values from the input dialogs
+        self.axisVal.setText(str(axis)) 
+        cont.axis_order = axis # Set the axis order for the controller equal to the new settings
     
     def display(self,i):
         self.home.setCurrentIndex(i)
         
-    def addData(self,name,fig):
-        self.fig_duct[name] = fig
-        self.list.addItem(name)
-        
     def hostSettings(self):
-        text, ok = QtWidgets.QInputDialog.getText(self,'Host', 'Host name or IP address')
+        text, ok = QtWidgets.QInputDialog.getText(self,'Host', 'Host name or IP address') #Input box when "Update Host" is clicked
         newHost = str(text)
         if newHost == '':
             self.hostVal.setText(self.getHost)
@@ -103,64 +98,61 @@ class GUI(QtWidgets.QMainWindow, Ui_MainWindow, QtWidgets.QMenu):
         return newHost
     
     def portSettings(self):
-        text, ok = QtWidgets.QInputDialog.getText(self,'Port','Port number')
+        text, ok = QtWidgets.QInputDialog.getText(self,'Port','Port number') #Input box when "Update Port" is clicked
         if ok:
             print('success')
             newPort = str(text)
             if newPort == '':
                 self.portVal.setText(self.staticPort)
             else:
-                self.portVal.setText(newPort)
-        else:
-            self.display(1)
-            
+                self.portVal.setText(newPort)     
         return int(newPort)
     
     def connectController(self):
         new = PS4()
         cont.axis_order = self.axisSettings()
         print(str(cont.axis_order))
-        new.listen()
+        new.listen() #Accept data from the manual controller
         
     def updateConnection(self):
         host1 = self.hostSettings()
         port1 = self.portSettings()
         s = socket.socket()
-        status = s.connect_ex((host1,port1))
+        status = s.connect_ex((host1,port1)) #Returns 0 if connect is successful, returns errno if not
             
-        if status:
+        if status: #status = errno
             self.connectionStat.setText("Update and Connection Unsuccessful")
             self.thisworks.setText("Update and Connection Unsuccessful")
-        else:
+        else: #status = 0
             self.connectionStat.setText("Update and Connection Successful")
             self.thisworks.setText("Update and Connection Successful")
 
     def liveData(self):
-        graph_data = open('test.txt', 'r').read()
-        lines = graph_data.split('\n')
-        xs = []
-        ys = []
+        graph_data = open('test.txt', 'r').read() # Open the text file to read in data
+        lines = graph_data.split('\n') # Read in data from different lines
+        xs = [] #Empty list
+        ys = [] #Empty List
         for line in lines:
             if len(line)>1:
-                x, y = line.split(' ,')
+                x, y = line.split(' ,') #Read in data in the form of (x ,y)
                 xs.append(int(x))
                 ys.append(int(y))
         return xs,ys
     
     def initplt(self):
-        self.plotwidget = pg.PlotWidget()
-        self.mplvl.addWidget(self.plotwidget)
-        self.plotwidget.setLabel('left', 'Altitude [m]')
-        self.plotwidget.setLabel('bottom','Time[s]')
+        self.plotwidget = pg.PlotWidget() #Initate the plotting widget field
+        self.mplvl.addWidget(self.plotwidget) #Set the plotting widget field to populate the QVBoxLayout widget field
+        self.plotwidget.setLabel('left', 'Altitude [m]') # Y-Axis name
+        self.plotwidget.setLabel('bottom','Time[s]') #X-Axis name
         self.show()
         
     def update1(self):
-        list1,list2 = self.liveData()
-        self.plotcurve.setData(list1,list2)
+        list1,list2 = self.liveData() #read in the data from the liveData definition in the form of two separate lists. list1 = x-values, list2 = y-values
+        self.plotcurve.setData(list1,list2) # Plot the data
         
     def move(self):
-        self.t+=1
-        self.update1()
+        self.t+=1 #Move the data 1 spot to the right
+        self.update1() # Call update1 definition to get the new data
     
         
 if __name__ == '__main__':
