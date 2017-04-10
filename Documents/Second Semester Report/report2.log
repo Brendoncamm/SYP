@@ -1,16 +1,15 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 APR 2017 18:00
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.4)  9 APR 2017 12:43
->>>>>>> origin/master
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 APR 2017 00:06
 entering extended mode
-**./report2.tex
-(report2.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**report2.tex
+(./report2.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,31 +24,31 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -57,24 +56,24 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/06/28 v2.15d AMS math features
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen106
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
@@ -115,7 +114,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count100
 \lst@gtempboxa=\box28
 \lst@token=\toks20
@@ -129,32 +128,32 @@ LaTeX Info: Redefining \] on input line 2740.
 \lst@lineno=\count105
 \lst@maxwidth=\dimen117
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count106
 \lst@skipnumbers=\count107
 \lst@framebox=\box29
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\chngcntr\chngcntr.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2009/09/02 v1.0a change counter resetting
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\titlepic\titlepic.sty"
-Package: titlepic 2017/03/14 1.2 Package to display a picture on the title page
+(/usr/local/texlive/2016/texmf-dist/tex/latex/titlepic/titlepic.sty
+Package: titlepic 2009/08/03 1.1 Package to display a picture on the title page
 
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -172,7 +171,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -190,58 +189,58 @@ Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen118
 \Hy@linkcounter=\count108
 \Hy@pagecounter=\count109
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count110
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4486.
-Package hyperref Info: Link nesting OFF on input line 4491.
-Package hyperref Info: Hyper index ON on input line 4494.
-Package hyperref Info: Plain pages OFF on input line 4501.
-Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
+Package hyperref Info: Bookmarks ON on input line 4691.
 \c@Hy@tempcnt=\count111
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5088.
+LaTeX Info: Redefining \url on input line 5044.
 \XeTeXLinkMargin=\dimen119
 \Fld@menulength=\count112
 \Field@Width=\dimen120
 \Fld@charsize=\dimen121
-Package hyperref Info: Hyper figures OFF on input line 6342.
-Package hyperref Info: Link nesting OFF on input line 6347.
-Package hyperref Info: Hyper index ON on input line 6350.
-Package hyperref Info: backreferencing OFF on input line 6357.
-Package hyperref Info: Link coloring OFF on input line 6362.
-Package hyperref Info: Link coloring with OCG OFF on input line 6367.
-Package hyperref Info: PDF/A mode OFF on input line 6372.
-LaTeX Info: Redefining \ref on input line 6412.
-LaTeX Info: Redefining \pageref on input line 6416.
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring OFF on input line 6318.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
 \Hy@abspage=\count113
 \c@Item=\count114
 \c@Hfootnote=\count115
@@ -249,31 +248,31 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
 \Fld@listcount=\count116
 \c@bookmark@seq@number=\count117
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip46
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pdfpages.sty"
-Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2016/04/19 v0.5f Insert pages of external PDF documents (AM)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count118
 \calc@Bcount=\count119
@@ -286,13 +285,13 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count120
 \calc@Cskip=\skip49
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -309,8 +308,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 \AM@pagewidth=\dimen124
 \AM@pageheight=\dimen125
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdfpages\pppdftex.def"
-File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2016/04/19 v0.5f Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box30
 \AM@global@opts=\toks21
@@ -318,14 +317,14 @@ File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count121
 \AM@templatesizebox=\box31
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count122
 \float@exts=\toks23
 \float@box=\box32
 \@float@everytoks=\toks24
 \@floatcapt=\box33
-) (report2.aux)
+) (./report2.aux)
 \openout1 = `report2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
@@ -343,7 +342,7 @@ LaTeX Font Info:    ... okay on input line 30.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
 LaTeX Font Info:    ... okay on input line 30.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
 \scratchdimen=\dimen126
@@ -356,27 +355,29 @@ LaTeX Font Info:    ... okay on input line 30.
 \MPnumerator=\count127
 \makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks26
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \c@lstlisting=\count129
 \AtBeginShipoutBox=\box35
 Package hyperref Info: Link coloring OFF on input line 30.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count130
@@ -385,134 +386,118 @@ LaTeX Info: Redefining \ref on input line 30.
 LaTeX Info: Redefining \pageref on input line 30.
 LaTeX Info: Redefining \nameref on input line 30.
 
-(report2.out) (report2.out)
+(./report2.out) (./report2.out)
 \@outlinefile=\write3
 \openout3 = `report2.out'.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\pdflscape.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<<<<<<< HEAD
-<logo.pdf, id=277, 653.91501pt x 217.01276pt>
-=======
-<logo.pdf, id=275, 653.91501pt x 217.01276pt>
->>>>>>> origin/master
+<logo.pdf, id=285, 653.91501pt x 217.01276pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 32.
 (pdftex.def)             Requested size: 350.99762pt x 116.48312pt.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo.pdf>]
-Overfull \hbox (79.42102pt too wide) in paragraph at lines 35--38
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo.
+pdf>]
+Overfull \hbox (79.42102pt too wide) in paragraph at lines 36--39
 \OT1/cmr/m/n/10.95 https://github.com/Brendoncamm/SYP/tree/master/Documents/Sec
 ond%20Semester%20Report
  []
 
 [1]
-<<<<<<< HEAD
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=294, 614.29
-=======
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=292, 614.29
->>>>>>> origin/master
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=302, 614.29
 5pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf used on input line 39.
+ent".pdf used on input line 40.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf used on input line 39.
+ent".pdf used on input line 40.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
-<<<<<<< HEAD
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=297, page=1
-=======
-<"../Second Semester Report/Letter of Transmittal/document".pdf, id=295, page=1
->>>>>>> origin/master
+<"../Second Semester Report/Letter of Transmittal/document".pdf, id=305, page=1
 , 614.295pt x 794.97pt>
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf, page1 used on input line 39.
+ent".pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf, page1 used on input line 39.
+ent".pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf, page1 used on input line 39.
+ent".pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf, page1 used on input line 39.
+ent".pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 ...er Report/Letter of Transmittal/document"}
+l.40 ...er Report/Letter of Transmittal/document"}
                                                   
 File: "../Second Semester Report/Letter of Transmittal/document".pdf Graphic fi
 le (type pdf)
 
 <use "../Second Semester Report/Letter of Transmittal/document".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Letter of Transmittal/docum
-ent".pdf, page1 used on input line 39.
+ent".pdf, page1 used on input line 40.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 
-[2 <../Second Semester Report/Letter of Transmittal/document.pdf>] (report2.toc
-[1])
+[2 <../Second Semester Report/Letter of Transmittal/document.pdf>]
+(./report2.toc [1])
 \tf@toc=\write4
 \openout4 = `report2.toc'.
 
- [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 57.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.66 	\end{abstract}
-                     [1] ("Section Verbatim/list_of_acronyms.tex")
-("Section Verbatim/Introduction.tex"pdfTeX warning (ext4): destination with the
+l.73 	\end{abstract}
+                     [1] (./Section Verbatim/list_of_acronyms.tex)
+(./Section Verbatim/Introduction.texpdfTeX warning (ext4): destination with the
  same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.12 
-<<<<<<< HEAD
       [1] [2] [3]) (./Section Verbatim/methods.tex [4] [5] [6])
 (./Section Verbatim/proposed_solution.tex [7]
-<system_arch.jpg, id=438, 776.9025pt x 182.18062pt>
-=======
-      [1] [2] [3]) ("Section Verbatim/methods.tex" [4] [5] [6])
-("Section Verbatim/proposed_solution.tex" [7]
-<system_arch.jpg, id=435, 776.9025pt x 182.18062pt>
->>>>>>> origin/master
+<system_arch.jpg, id=452, 776.9025pt x 182.18062pt>
 File: system_arch.jpg Graphic file (type jpg)
  <use system_arch.jpg>
 Package pdftex.def Info: system_arch.jpg used on input line 14.
@@ -525,31 +510,23 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.27 
       <./system_arch.jpg>]
-<<<<<<< HEAD
-<flowchart-architecture.jpg, id=448, 449.42906pt x 490.08093pt>
-=======
-<flowchart-architecture.jpg, id=445, 449.42906pt x 490.08093pt>
->>>>>>> origin/master
+<flowchart-architecture.jpg, id=463, 449.42906pt x 490.08093pt>
 File: flowchart-architecture.jpg Graphic file (type jpg)
 
 <use flowchart-architecture.jpg>
-Package pdftex.def Info: flowchart-architecture.jpg used on input line 52.
+Package pdftex.def Info: flowchart-architecture.jpg used on input line 53.
 (pdftex.def)             Requested size: 272.99881pt x 297.7001pt.
  [9] [10pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.62 
+l.65 
       <./flowchart-architecture.jpg>]
-<<<<<<< HEAD
-<control-loop.jpg, id=464, 196.48407pt x 448.67625pt>
-=======
-<control-loop.jpg, id=460, 196.48407pt x 448.67625pt>
->>>>>>> origin/master
+<control-loop.jpg, id=478, 196.48407pt x 448.67625pt>
 File: control-loop.jpg Graphic file (type jpg)
  <use control-loop.jpg>
-Package pdftex.def Info: control-loop.jpg used on input line 65.
+Package pdftex.def Info: control-loop.jpg used on input line 68.
 (pdftex.def)             Requested size: 117.00119pt x 267.18134pt.
 
 [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
@@ -557,137 +534,109 @@ Package pdftex.def Info: control-loop.jpg used on input line 65.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.87 
-      <./control-loop.jpg>]
-Overfull \hbox (2.19513pt too wide) in paragraph at lines 90--91
+l.90 
+      <./control-loop.jpg>] <drone.jpg, id=490, 4939.45375pt x 3293.30376pt>
+File: drone.jpg Graphic file (type jpg)
+
+<use drone.jpg>
+Package pdftex.def Info: drone.jpg used on input line 97.
+(pdftex.def)             Requested size: 272.99881pt x 182.01167pt.
+
+Overfull \hbox (2.19513pt too wide) in paragraph at lines 104--105
 []\OT1/cmr/m/n/10.95 The PID loop im-ple-men-ta-tion uti-lizes the For-ward Eu-
 ler equa-tion. The scripted
  []
 
-<<<<<<< HEAD
-[12]
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
 
-LaTeX Warning: Reference `fig:oldgui1' on page 13 undefined on input line 129.
-
-
-LaTeX Warning: Reference `fig:oldgui2' on page 13 undefined on input line 129.
-
-<Final_GUI_HOME.png, id=483, 550.30594pt x 426.84468pt>
-=======
-[12] <Final_GUI_HOME.png, id=479, 550.30594pt x 426.84468pt>
->>>>>>> origin/master
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.116 \end{align*}
+                   <./drone.jpg>] [13]
+<Final_GUI_HOME.png, id=505, 550.30594pt x 426.84468pt>
 File: Final_GUI_HOME.png Graphic file (type png)
 
 <use Final_GUI_HOME.png>
-Package pdftex.def Info: Final_GUI_HOME.png used on input line 131.
+Package pdftex.def Info: Final_GUI_HOME.png used on input line 145.
 (pdftex.def)             Requested size: 390.0pt x 302.51474pt.
-<<<<<<< HEAD
- [13]
-<Final_GUI_CTRL.png, id=489, 547.2947pt x 430.60875pt>
-=======
 
-<Final_GUI_CTRL.png, id=480, 547.2947pt x 430.60875pt>
->>>>>>> origin/master
+<Final_GUI_CTRL.png, id=506, 547.2947pt x 430.60875pt>
 File: Final_GUI_CTRL.png Graphic file (type png)
 
 <use Final_GUI_CTRL.png>
-Package pdftex.def Info: Final_GUI_CTRL.png used on input line 136.
+Package pdftex.def Info: Final_GUI_CTRL.png used on input line 150.
 (pdftex.def)             Requested size: 390.0pt x 306.85133pt.
- [14pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
-) has been already used, duplicate ignored
+ [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.140 T
+l.154 T
        he red outlined box is the field that the live plot will populate whe...
-<<<<<<< HEAD
- <./Final_GUI_HOME.png>] <listWidget.png, id=501, 72.27pt x 54.2025pt>
-=======
- <./Final_GUI_HOME.png>] <listWidget.png, id=496, 72.27pt x 54.2025pt>
->>>>>>> origin/master
+ <./Final_GUI_HOME.png>] <listWidget.png, id=521, 72.27pt x 54.2025pt>
 File: listWidget.png Graphic file (type png)
 
 <use listWidget.png>
-Package pdftex.def Info: listWidget.png used on input line 143.
+Package pdftex.def Info: listWidget.png used on input line 157.
 (pdftex.def)             Requested size: 117.00119pt x 87.75545pt.
- [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.147 \subsubsection
-                    {Initializing Communications and Manual Control} <./Final_G
-<<<<<<< HEAD
-UI_CTRL.png>] <GUICtrlPop.png, id=514, 557.83406pt x 475.7775pt>
-=======
-UI_CTRL.png>] <GUICtrlPop.png, id=512, 557.83406pt x 475.7775pt>
->>>>>>> origin/master
-File: GUICtrlPop.png Graphic file (type png)
-
-<use GUICtrlPop.png>
-Package pdftex.def Info: GUICtrlPop.png used on input line 155.
-(pdftex.def)             Requested size: 390.0pt x 332.64268pt.
  [16pdfTeX warning (ext4): destination with the same identifier (name{figure.6}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.158 \end{figure}
-                   <./listWidget.png>]
-<<<<<<< HEAD
-<GUIPopup.png, id=520, 556.32843pt x 472.76625pt>
-=======
-<GUIPopup.png, id=518, 556.32843pt x 472.76625pt>
->>>>>>> origin/master
-File: GUIPopup.png Graphic file (type png)
- <use GUIPopup.png>
-Package pdftex.def Info: GUIPopup.png used on input line 161.
-(pdftex.def)             Requested size: 390.0pt x 331.42465pt.
+l.161 \subsubsection
+                    {Initializing Communications and Manual Control} <./Final_G
+UI_CTRL.png>] <GUICtrlPop.png, id=537, 557.83406pt x 475.7775pt>
+File: GUICtrlPop.png Graphic file (type png)
+
+<use GUICtrlPop.png>
+Package pdftex.def Info: GUICtrlPop.png used on input line 169.
+(pdftex.def)             Requested size: 390.0pt x 332.64268pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.165 
-       <./GUICtrlPop.png>] [18pdfTeX warning (ext4): destination with the same 
-identifier (name{figure.8}) has been already used, duplicate ignored
+l.172 \end{figure}
+                   <./listWidget.png>]
+<GUIPopup.png, id=543, 556.32843pt x 472.76625pt>
+File: GUIPopup.png Graphic file (type png)
+ <use GUIPopup.png>
+Package pdftex.def Info: GUIPopup.png used on input line 175.
+(pdftex.def)             Requested size: 390.0pt x 331.42465pt.
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.8}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-<<<<<<< HEAD
-l.170 
-       <./GUIPopup.png>] <plot.png, id=533, 556.32843pt x 473.51906pt>
-=======
-l.158 
-       <./GUIPopup.png>] <plot.png, id=534, 556.32843pt x 473.51906pt>
->>>>>>> origin/master
+l.179 
+       <./GUICtrlPop.png>] [19pdfTeX warning (ext4): destination with the same 
+identifier (name{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.184 
+       <./GUIPopup.png>] <plot.png, id=560, 556.32843pt x 473.51906pt>
 File: plot.png Graphic file (type png)
 
 <use plot.png>
-Package pdftex.def Info: plot.png used on input line 175.
+Package pdftex.def Info: plot.png used on input line 189.
 (pdftex.def)             Requested size: 390.0pt x 331.9524pt.
-<<<<<<< HEAD
- <plot2.png, id=535, 554.82281pt x 473.51906pt>
-=======
- <plot2.png, id=536, 554.82281pt x 473.51906pt>
->>>>>>> origin/master
+ <plot2.png, id=562, 554.82281pt x 473.51906pt>
 File: plot2.png Graphic file (type png)
  <use plot2.png>
-Package pdftex.def Info: plot2.png used on input line 180.
+Package pdftex.def Info: plot2.png used on input line 194.
 (pdftex.def)             Requested size: 390.0pt x 332.84833pt.
 
-[19]) ("Section Verbatim/results.tex" [20pdfTeX warning (ext4): destination wit
-h the same identifier (name{figure.9}) has been already used, duplicate ignored
-
+[20]) (./Section Verbatim/results.tex [21pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.10}) has been already used, duplicate ignore
+d
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.3 
-<<<<<<< HEAD
-     <./plot.png>] <stepresponse.jpg, id=547, 562.1pt x 421.575pt>
-=======
-     <./plot.png>] <stepresponse.jpg, id=548, 562.1pt x 421.575pt>
->>>>>>> origin/master
+     <./plot.png>] <stepresponse.jpg, id=573, 562.1pt x 421.575pt>
 File: stepresponse.jpg Graphic file (type jpg)
 
 <use stepresponse.jpg>
@@ -697,54 +646,67 @@ Package pdftex.def Info: stepresponse.jpg used on input line 12.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.18 
-      <./plot2.png>] [22pdfTeX warning (ext4): destination with the same identi
-fier (name{figure.11}) has been already used, duplicate ignored
+      <./plot2.png>]
+
+LaTeX Warning: File `translation.jpg' not found on input line 24.
+
+
+./Section Verbatim/results.tex:24: Package pdftex.def Error: File `translation.
+jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 	\includegraphics[scale=0.5]{translation.jpg}
+                                                  
+? 
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.39 
-      <./stepresponse.jpg>]
-<<<<<<< HEAD
-<Motor_Characterization.jpg, id=560, 2569.6pt x 1503.6175pt>
-=======
-<Motor_Characterization.jpg, id=561, 2569.6pt x 1503.6175pt>
->>>>>>> origin/master
-File: Motor_Characterization.jpg Graphic file (type jpg)
-
-<use Motor_Characterization.jpg>
-Package pdftex.def Info: Motor_Characterization.jpg used on input line 52.
-(pdftex.def)             Requested size: 390.0pt x 228.19432pt.
- [23] [24pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.60 
-      <./Motor_Characterization.jpg>] [25] [26])
-<<<<<<< HEAD
-(./Section Verbatim/discussion.tex [27] [28pdfTeX warning (ext4): destination w
-=======
-("Section Verbatim/discussion.tex" [27] [28pdfTeX warning (ext4): destination w
->>>>>>> origin/master
-ith the same identifier (name{table.1}) has been already used, duplicate ignore
+l.36   \item{
+             Electronic Speed Controller}pdfTeX warning (ext4): destination wit
+h the same identifier (name{figure.13}) has been already used, duplicate ignore
 d
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.39 
-     ]) ("Section Verbatim/future_recommendations.tex" [29]
+l.36   \item{
+             Electronic Speed Controller} <./stepresponse.jpg>] [24]
+<Motor_Characterization.jpg, id=594, 2569.6pt x 1503.6175pt>
+File: Motor_Characterization.jpg Graphic file (type jpg)
+
+<use Motor_Characterization.jpg>
+Package pdftex.def Info: Motor_Characterization.jpg used on input line 60.
+(pdftex.def)             Requested size: 390.0pt x 228.19432pt.
+ [25pdfTeX warning (ext4): destination with the same identifier (name{figure.14
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.68 
+      <./Motor_Characterization.jpg>] [26]) (./Section Verbatim/discussion.tex
+[27] [28pdfTeX warning (ext4): destination with the same identifier (name{table
+.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.31 
+     ] [29]) (./Section Verbatim/future_recommendations.tex [30]
 Overfull \hbox (10.0631pt too wide) in paragraph at lines 18--19
 []\OT1/cmr/m/n/10.95 Better Fil-ter-ing of Al-ti-tude Mea-sure-ments In-cor-po-
 rate Ac-celerom-e-ter - Barom-
  []
 
-[30]) [31] ("Section Verbatim/references.tex"
+) [31] [32] (./Section Verbatim/references.tex
 Overfull \hbox (65.89792pt too wide) in paragraph at lines 5--6
 \OT1/cmr/m/n/10.95 n.d. Web. 27 Mar. 2017. <http://raspberrypi.stackexchange.co
 m/questions/13425/server-
@@ -785,147 +747,166 @@ Overfull \hbox (90.2009pt too wide) in paragraph at lines 21--22
 /rzab6/howdosockets.htm>. 
  []
 
-<<<<<<< HEAD
-) (./Section Verbatim/appendix_simulink.tex [32]
-<Dynamic_Simulation.pdf, id=617, page=1, 794.97pt x 614.295pt>
-=======
-) ("Section Verbatim/appendix_simulink.tex" [32]
-<Dynamic_Simulation.pdf, id=618, page=1, 794.97pt x 614.295pt>
->>>>>>> origin/master
+) (./Section Verbatim/appendix_simulink.tex [33]
+<Dynamic_Simulation.pdf, id=646, page=1, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 1>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page1 used on input line 5.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [33
+ [34
 
 ]
 Overfull \vbox (12.71298pt too high) has occurred while \output is active []
 
 
-[34 <./Dynamic_Simulation.pdf>]
-<<<<<<< HEAD
-<Input_Model.pdf, id=643, page=1, 794.97pt x 614.295pt>
-=======
-<Input_Model.pdf, id=644, page=1, 794.97pt x 614.295pt>
->>>>>>> origin/master
+[35 <./Dynamic_Simulation.pdf>]
+<Input_Model.pdf, id=672, page=1, 794.97pt x 614.295pt>
 File: Input_Model.pdf Graphic file (type pdf)
 
 <use Input_Model.pdf, page 1>
 Package pdftex.def Info: Input_Model.pdf, page1 used on input line 7.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
 
-<<<<<<< HEAD
-<Dynamic_Simulation.pdf, id=644, page=2, 794.97pt x 614.295pt>
-=======
-<Dynamic_Simulation.pdf, id=645, page=2, 794.97pt x 614.295pt>
->>>>>>> origin/master
+<Dynamic_Simulation.pdf, id=673, page=2, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 2>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page2 used on input line 9.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [35 <./Input_Model.pdf>]
-<<<<<<< HEAD
-<Dynamic_Simulation.pdf, id=660, page=3, 794.97pt x 614.295pt>
-=======
-<Dynamic_Simulation.pdf, id=661, page=3, 794.97pt x 614.295pt>
->>>>>>> origin/master
+ [36 <./Input_Model.pdf>]
+<Dynamic_Simulation.pdf, id=691, page=3, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 3>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page3 used on input line 11.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [36 <./Dynamic_Simulation.pdf>]
-<motor_characterization.pdf, id=743, page=1, 794.97pt x 614.295pt>
+ [37 <./Dynamic_Simulation.pdf>]
+<motor_characterization.pdf, id=773, page=1, 794.97pt x 614.295pt>
 File: motor_characterization.pdf Graphic file (type pdf)
 
 <use motor_characterization.pdf, page 1>
 Package pdftex.def Info: motor_characterization.pdf, page1 used on input line 1
 3.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [37 <./Dynamic_Simulation.pdf>]
-<Dynamic_Simulation.pdf, id=767, page=4, 794.97pt x 614.295pt>
+ [38 <./Dynamic_Simulation.pdf>]
+<Dynamic_Simulation.pdf, id=796, page=4, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 4>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page4 used on input line 15.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [38 <./motor_characterization.pdf>]
-<Dynamic_Simulation.pdf, id=789, page=5, 794.97pt x 614.295pt>
+ [39 <./motor_characterization.pdf>]
+<Dynamic_Simulation.pdf, id=818, page=5, 794.97pt x 614.295pt>
 File: Dynamic_Simulation.pdf Graphic file (type pdf)
 
 <use Dynamic_Simulation.pdf, page 5>
 Package pdftex.def Info: Dynamic_Simulation.pdf, page5 used on input line 17.
 (pdftex.def)             Requested size: 454.22934pt x 350.99762pt.
- [39 <./Dynamic_Simulation.pdf>] [40 <./Dynamic_Simulation.pdf>]) ("Section Ver
-batim/appendix_software.tex"
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+ [40 <./Dynamic_Simulation.pdf>] [41 <./Dynamic_Simulation.pdf>]) (./Section Ve
+rbatim/appendix_software.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <6> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 20.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <6> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 20.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 29.
- [41
 
-] [42]
-LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <6> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 188.
- [43]
-Overfull \hbox (1.59946pt too wide) in paragraph at lines 226--227
+Overfull \hbox (120.39929pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][] 
+ []
+
+
+Overfull \hbox (27.99942pt too wide) in paragraph at lines 41--42
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[42
+
+] [43] [44]
+Overfull \hbox (1.59946pt too wide) in paragraph at lines 270--271
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
+[45]
+Overfull \hbox (129.19928pt too wide) in paragraph at lines 313--314
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][] 
+ []
 
-Overfull \hbox (36.79941pt too wide) in paragraph at lines 261--263
+[46]
+Overfull \hbox (36.79941pt too wide) in paragraph at lines 395--397
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[44] [45] [46] [47] [48] [49]
+[47] [48]
+Overfull \hbox (63.19937pt too wide) in paragraph at lines 526--527
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (36.79941pt too wide) in paragraph at lines 559--561
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[49]
+Overfull \hbox (120.39929pt too wide) in paragraph at lines 599--600
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (63.19937pt too wide) in paragraph at lines 602--603
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (49.99939pt too wide) in paragraph at lines 605--606
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[50] [51] [52] [53]
+Missing character: There is no Â in font cmr6!
 Missing character: There is no © in font cmr6!
 
-Overfull \hbox (67.59937pt too wide) in paragraph at lines 557--559
+Overfull \hbox (67.59937pt too wide) in paragraph at lines 812--814
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[50]
-Overfull \hbox (19.19943pt too wide) in paragraph at lines 571--573
+[54]
+Overfull \hbox (19.19943pt too wide) in paragraph at lines 826--828
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (10.39944pt too wide) in paragraph at lines 585--587
+Overfull \hbox (10.39944pt too wide) in paragraph at lines 840--842
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (23.59943pt too wide) in paragraph at lines 587--589
+Overfull \hbox (23.59943pt too wide) in paragraph at lines 842--844
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (14.79944pt too wide) in paragraph at lines 608--609
+Overfull \hbox (14.79944pt too wide) in paragraph at lines 863--864
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[51]) ("Section Verbatim/appendix_GUI.tex"
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+[55]) (./Section Verbatim/appendix_GUI.tex
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-<<<<<<< HEAD
-) [52]
-[53] <OLDGUI1.png, id=2046, 296.60812pt x 227.34938pt>
-=======
 )
 Overfull \hbox (10.39944pt too wide) in paragraph at lines 49--51
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
@@ -962,7 +943,7 @@ Overfull \hbox (93.99933pt too wide) in paragraph at lines 68--69
 ][][] 
  []
 
-[52]
+[56]
 Overfull \hbox (14.79944pt too wide) in paragraph at lines 78--79
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -983,173 +964,151 @@ Overfull \hbox (23.59943pt too wide) in paragraph at lines 133--135
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[53]
+[57]
 Overfull \hbox (89.59933pt too wide) in paragraph at lines 156--157
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<OLDGUI1.png, id=2034, 296.60812pt x 227.34938pt>
->>>>>>> origin/master
+<OLDGUI1.png, id=2336, 296.60812pt x 227.34938pt>
 File: OLDGUI1.png Graphic file (type png)
  <use OLDGUI1.png>
 Package pdftex.def Info: OLDGUI1.png used on input line 181.
 (pdftex.def)             Requested size: 390.0pt x 298.9469pt.
 
-<<<<<<< HEAD
-<OLDGUI2.png, id=2047, 300.3722pt x 236.38312pt>
-=======
-<OLDGUI2.png, id=2035, 300.3722pt x 236.38312pt>
->>>>>>> origin/master
+<OLDGUI2.png, id=2337, 300.3722pt x 236.38312pt>
 File: OLDGUI2.png Graphic file (type png)
  <use OLDGUI2.png>
 Package pdftex.def Info: OLDGUI2.png used on input line 186.
 (pdftex.def)             Requested size: 390.0pt x 306.94453pt.
-) [54pdfTeX warning (ext4): destination with the same identifier (name{figure.D
+) [58pdfTeX warning (ext4): destination with the same identifier (name{figure.D
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.99 	\label{appendix:gui}
-                           <./OLDGUI1.png>] [55pdfTeX warning (ext4): destinati
-on with the same identifier (name{figure.D.2}) has been already used, duplicate
- ignored
+l.106 	\label{appendix:gui}
+                            <./OLDGUI1.png>] [59pdfTeX warning (ext4): destinat
+ion with the same identifier (name{figure.D.2}) has been already used, duplicat
+e ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.102 	\begin{landscape}
+l.109 	\begin{landscape}
                          <./OLDGUI2.png>]
-<<<<<<< HEAD
-<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2092, 3071.475
-=======
-<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2073, 3071.475
->>>>>>> origin/master
+<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2374, 3071.475
 pt x 614.295pt>
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf used on input line 103.
+".pdf used on input line 110.
 (pdftex.def)             Requested size: 3071.46754pt x 614.29349pt.
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf used on input line 103.
+".pdf used on input line 110.
 (pdftex.def)             Requested size: 3071.46754pt x 614.29349pt.
 
-<<<<<<< HEAD
-<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2095, page=1, 
-=======
-<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2076, page=1, 
->>>>>>> origin/master
+<"../Second Semester Report/Second Semester Gantt Chart".pdf, id=2377, page=1, 
 3071.475pt x 614.295pt>
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf, page1 used on input line 103.
+".pdf, page1 used on input line 110.
 (pdftex.def)             Requested size: 3071.46754pt x 614.29349pt.
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf, page1 used on input line 103.
+".pdf, page1 used on input line 110.
 (pdftex.def)             Requested size: 3071.88934pt x 614.37784pt.
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf, page1 used on input line 103.
+".pdf, page1 used on input line 110.
 (pdftex.def)             Requested size: 3071.88934pt x 614.37784pt.
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf, page1 used on input line 103.
+".pdf, page1 used on input line 110.
 (pdftex.def)             Requested size: 3071.88934pt x 614.37784pt.
 File: "../Second Semester Report/Second Semester Gantt Chart".pdf Graphic file 
 (type pdf)
 
 <use "../Second Semester Report/Second Semester Gantt Chart".pdf, page 1>
 Package pdftex.def Info: "../Second Semester Report/Second Semester Gantt Chart
-".pdf, page1 used on input line 103.
+".pdf, page1 used on input line 110.
 (pdftex.def)             Requested size: 3071.88934pt x 614.37784pt.
 
-[56
+[60
 
  <../Second Semester Report/Second Semester Gantt Chart.pdf>]
-<<<<<<< HEAD
-<"../Memo/gantt".pdf, id=2133, 614.295pt x 794.97pt>
-=======
-<"../Memo/gantt".pdf, id=2114, 614.295pt x 794.97pt>
->>>>>>> origin/master
+<"../Memo/gantt".pdf, id=2416, 614.295pt x 794.97pt>
 File: "../Memo/gantt".pdf Graphic file (type pdf)
  <use "../Memo/gantt".pdf>
-Package pdftex.def Info: "../Memo/gantt".pdf used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf used on input line 112.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: "../Memo/gantt".pdf Graphic file (type pdf)
 
 <use "../Memo/gantt".pdf>
-Package pdftex.def Info: "../Memo/gantt".pdf used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf used on input line 112.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
-<<<<<<< HEAD
-<"../Memo/gantt".pdf, id=2136, page=1, 614.295pt x 794.97pt>
-=======
-<"../Memo/gantt".pdf, id=2117, page=1, 614.295pt x 794.97pt>
->>>>>>> origin/master
+<"../Memo/gantt".pdf, id=2419, page=1, 614.295pt x 794.97pt>
 File: "../Memo/gantt".pdf Graphic file (type pdf)
 
 <use "../Memo/gantt".pdf, page 1>
-Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 112.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: "../Memo/gantt".pdf Graphic file (type pdf)
  <use "../Memo/gantt".pdf, page 1>
-Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 112.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: "../Memo/gantt".pdf Graphic file (type pdf)
 
 <use "../Memo/gantt".pdf, page 1>
-Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 112.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: "../Memo/gantt".pdf Graphic file (type pdf)
  <use "../Memo/gantt".pdf, page 1>
-Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 112.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: "../Memo/gantt".pdf Graphic file (type pdf)
 
 <use "../Memo/gantt".pdf, page 1>
-Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 105.
+Package pdftex.def Info: "../Memo/gantt".pdf, page1 used on input line 112.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
- [57
+ [61
 
  <../Memo/gantt.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
- (report2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
+ (./report2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `report2.out' has not changed.
-<<<<<<< HEAD
-(rerunfilecheck)             Checksum: 0BE917E250CDCBC93339D12979AF5F82;4676.
+(rerunfilecheck)             Checksum: E52B6E9A10103283EEA4A3EA95D9C8D1;4832.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
  ) 
 Here is how much of TeX's memory you used:
- 10566 strings out of 493014
- 152816 string characters out of 6133351
- 291412 words of memory out of 5000000
- 13010 multiletter control sequences out of 15000+600000
- 12269 words of font info for 44 fonts, out of 8000000 for 9000
+ 10928 strings out of 493014
+ 157772 string characters out of 6133351
+ 299937 words of memory out of 5000000
+ 13119 multiletter control sequences out of 15000+600000
+ 12438 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,18n,51p,1136b,1868s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -1166,42 +1125,12 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on report2.pdf (64 pages, 1129365 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on report2.pdf (68 pages, 12885544 bytes).
 PDF statistics:
- 2396 PDF objects out of 2487 (max. 8388607)
- 2151 compressed objects within 22 object streams
- 930 named destinations out of 1000 (max. 500000)
-=======
-(rerunfilecheck)             Checksum: C338E813A63176C94EAFB7F6DA817899;4744.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
- ) 
-Here is how much of TeX's memory you used:
- 10552 strings out of 493334
- 151521 string characters out of 3139246
- 300538 words of memory out of 3000000
- 12990 multiletter control sequences out of 15000+200000
- 12269 words of font info for 44 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 37i,18n,51p,1139b,1868s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmti7.pfb>
-Output written on report2.pdf (63 pages, 1349505 bytes).
-PDF statistics:
- 2373 PDF objects out of 2487 (max. 8388607)
- 926 named destinations out of 1000 (max. 500000)
->>>>>>> origin/master
- 715 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2733 PDF objects out of 2984 (max. 8388607)
+ 2479 compressed objects within 25 object streams
+ 1180 named destinations out of 1200 (max. 500000)
+ 736 words of extra memory for PDF output out of 10000 (max. 10000000)
 

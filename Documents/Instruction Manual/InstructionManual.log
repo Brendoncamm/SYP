@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 APR 2017 23:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 APR 2017 00:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -474,7 +474,7 @@ truction%20Manual/InstructionManual.tex
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 	\end{abstract}
+l.52 	\end{abstract}
                      [1] (./Section_Verbatim/Procedure.tex
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
 
@@ -622,21 +622,21 @@ Overfull \hbox (40.64427pt too wide) in paragraph at lines 595--596
  []
 
 [19])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
  (./InstructionManual.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `InstructionManual.out' has not changed.
 (rerunfilecheck)             Checksum: E1C044594615270BBF2DA9C0FA2BACF6;1860.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 10637 strings out of 493014
- 154392 string characters out of 6133351
- 316196 words of memory out of 5000000
- 12893 multiletter control sequences out of 15000+600000
+ 10638 strings out of 493014
+ 154409 string characters out of 6133351
+ 316235 words of memory out of 5000000
+ 12894 multiletter control sequences out of 15000+600000
  12615 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,7n,51p,730b,1883s stack positions out of 5000i,500n,10000p,200000b,80000s
