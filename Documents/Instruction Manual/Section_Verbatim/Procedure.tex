@@ -1,0 +1,16 @@
+\section{Procedure}
+This section outlines the procedure of initializing the system as it currently stands. It is recommended that the connection to the Raspberry Pi to begin enabling the server script is done by use of Remote Desktop or an SSH connection through a terminal or PuTTY.
+\begin{itemize}
+
+
+\item Ensure Server.py and arduino.py scripts are located in the same folder on the RPi.
+\item Flash arduino with main.ino script.
+\item Connect controller to the base station computer.
+\item Ensure PS4Controller.py script uses the correct IP address correlating to the RPi to connect via Wi-Fi
+\item Provide power to the power distribution board on the drone and connect the RPi to the Arduino using a serial connection. At this time, motor initialization will begin.
+\item Run Server.py script to initialize the server followed by running PS4Controller.py on the base station to begin control signalling. The Arduino must be connected to the RPi before the Server.py script will run, PS4Controller.py requires the Server.py script to be running before it will run.
+
+
+\end{itemize}
+
+Please note as mentioned in the Arduino section of this manual, the drone's flight can be tested by hard coding set points instead of using a control input over the network. This is useful for quick performance testing.

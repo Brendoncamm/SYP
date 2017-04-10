@@ -1,0 +1,623 @@
+\section{Arduino Library}
+\counterwithin{figure}{section}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[language=C,caption={Drone.h Arduino Header File},label={lst:Drone.h}]
+
+
+/*
+  Drone.h - Library for Drone Controller.
+  Created by Lucas Doucette, February 17, 2017.
+*/
+#ifndef Drone_h
+#define Drone_h
+
+#include "Arduino.h"
+#include <Wire.h>
+#include <Servo.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_LSM303_U.h>
+#include <Adafruit_BMP085_U.h>
+#include <Adafruit_L3GD20_U.h>
+#include <Adafruit_10DOF.h>
+
+class Drone
+{
+  public:
+    Drone();
+    float get_sensorRoll();
+    float get_sensorPitch();
+    float get_sensorYaw();
+    float get_sensorAltitude(float startingPressure);
+    float get_currentPressure();
+    float PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki );
+    float PID_FWD_EULER_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki, float Ts, float N);
+    float Altitude_Calibration(float AltitudePID);
+    float PR_Calibration(float PR_PID);
+    void read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude);
+    void initSensors();
+    void initESCs(Servo esc_1, Servo esc_2, Servo esc_3, Servo esc_4);
+    float read_float();
+    void send_float(float arg);
+    float ping_ultrasonic();
+};
+
+#endif
+
+\end{lstlisting}
+
+
+
+\newpage
+
+
+\counterwithin{figure}{section}
+\begin{lstlisting}[language=C,caption={Drone.cpp Arduino Library File},label={lst:Drone.cpp}]
+
+/*
+  Drone.h - Library for Drone Controller.
+  Created by Lucas Doucette, February 17, 2017.
+*/
+
+#include "Arduino.h"
+#include "Drone.h"
+#include <Wire.h>
+#include <Servo.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_LSM303_U.h>
+#include <Adafruit_LSM303.h>
+#include <Adafruit_BMP085_U.h>
+#include <Adafruit_L3GD20_U.h>
+#include <Adafruit_10DOF.h>
+#include <LiquidCrystal.h>
+
+  /* Assign a unique ID to the sensors */
+Adafruit_10DOF dof   = Adafruit_10DOF();
+Adafruit_LSM303_Accel_Unified accel = Adafruit_LSM303_Accel_Unified(30301);
+Adafruit_LSM303_Mag_Unified   mag   = Adafruit_LSM303_Mag_Unified(30302);
+Adafruit_BMP085_Unified       bmp   = Adafruit_BMP085_Unified(18001);
+
+sensors_event_t accel_event;
+sensors_event_t mag_event;
+sensors_event_t bmp_event;
+sensors_vec_t   orientation;
+
+float temperature;
+
+Drone::Drone()
+{
+
+}
+
+float Drone::ping_ultrasonic()
+{
+    
+
+  long duration, m;
+
+    
+    
+    //send low high low to ensure a clean ping
+    
+  pinMode(7, OUTPUT);
+  digitalWrite(7, LOW);
+  delayMicroseconds(2);
+  digitalWrite(7, HIGH);
+  delayMicroseconds(5);
+  digitalWrite(7, LOW);
+  
+    
+  pinMode(8, INPUT);
+  duration = pulseIn(8, HIGH);
+    
+  
+  //29 microseconds per cmeter, and round trip  
+  m=(duration/29)/2;
+    
+    if(m>1500)
+    {
+        
+        m=0;
+        
+    }
+    
+  return m;
+    
+
+    
+    
+}
+
+float Drone::get_sensorRoll()
+{
+    
+    float sensorRoll;
+
+
+  // Calculate pitch and roll from the raw accelerometer data
+
+  accel.getEvent(&accel_event);
+  if (dof.accelGetOrientation(&accel_event, &orientation))
+  {
+    // 'orientation' should have valid .roll and .pitch fields
+    sensorRoll=orientation.roll;
+    return sensorRoll;
+
+
+  }
+}
+
+float Drone::get_sensorPitch()
+{
+
+  float sensorPitch;
+    
+  // Calculate pitch and roll from the raw accelerometer data
+
+  accel.getEvent(&accel_event);
+  if (dof.accelGetOrientation(&accel_event, &orientation))
+  {
+    // 'orientation' should have valid .roll and .pitch fields
+
+     sensorPitch=orientation.pitch;
+     return sensorPitch;
+
+  }
+}
+
+float Drone::get_sensorYaw()
+{
+    
+  float sensorYaw;
+
+  // Calculate the heading using the magnetometer
+  mag.getEvent(&mag_event);
+  if (dof.magGetOrientation(SENSOR_AXIS_Z, &mag_event, &orientation))
+  {
+    // 'orientation' should have valid .heading data now
+    sensorYaw=orientation.heading;
+    return sensorYaw;
+
+  }
+}
+
+
+
+float Drone::get_sensorAltitude(float startingPressure)
+{
+    
+    
+    float sensorAltitude, NowPressure;
+    
+    // kalman filtering variables
+
+    float Variance=0.108923435;
+    float varProcess = 1e-12;
+    float Pc = 0.0;
+    float G = 0.0;
+    float P = 1.0;
+    float Xp = 0.0;
+    float Zp = 0.0;
+    float Xe = 0.0;
+    
+    
+   
+    // Calculate the altitude using the barometric pressure sensor
+    bmp.getEvent(&bmp_event);
+    NowPressure=bmp_event.pressure;
+
+    // Get ambient temperature in C
+    bmp.getTemperature(&temperature);
+
+
+    // Convert atmospheric pressure, SLP and temp to altitude
+    sensorAltitude=bmp.pressureToAltitude(startingPressure,NowPressure,temperature);
+
+
+    // kalman filter;
+    Pc=P+varProcess;
+    G=Pc/(Pc+Variance);
+    P=(1-G)*Pc;
+    Xp=Xe;
+    Zp=Xp;
+    Xe=ping_ultrasonic()/100;
+
+    if (Xe >= 2.0)
+    {
+        //Enable barometric pressure above 2 meters
+        Xe=G*(sensorAltitude-Zp)+Xp;
+    }
+
+       
+    return Xe;
+        
+    
+        
+}
+
+//must be called after initSensors();
+
+float Drone::get_currentPressure()
+{
+    float currentPressure;
+    
+   //Initializing Pressure, Filtered for accuracy
+   //Smooting Constant
+    
+   const int numReadings=1;
+   float SmoothingVariable=0;
+   float NowPressure=0;
+
+    bmp.getEvent(&bmp_event);
+    for(int i=0; i<numReadings; i++)
+    {
+        SmoothingVariable+=bmp_event.pressure;
+        //delay(1);
+
+    }
+
+    currentPressure = SmoothingVariable/numReadings;
+    SmoothingVariable=0;
+
+    return currentPressure;
+
+}
+
+float Drone::PID_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki)
+{
+
+    //Define PID Variables
+    float Error, DError, IError, LastTime, LastError, Output;
+
+    //find current time
+    unsigned long NowTime = millis();
+
+    //calculate PID Error values
+    Error = Setpoint-SenseRead;
+    DError = (Error-LastError)/(NowTime-LastTime);
+    IError += (Error*(NowTime-LastTime));
+
+    //Calculate Output
+    Output = kp*Error+ki*IError+kd*DError;
+
+    //Save LastTime and LastError
+    LastTime=NowTime;
+    LastError=Error;
+
+    
+    //Requirement based on Simulink
+    
+    Output=(Output/9000)*(1860-1127);
+    
+    if(Output>=1200){
+        
+        Output = 1200; 
+        
+    }
+    
+    if(Output<=1127)
+    {
+        Output=1127;
+    }
+    
+    return Output;
+    
+    
+}
+
+
+float Drone::PID_FWD_EULER_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki, float Ts, float N)
+{
+    
+    float e2, e1, e0, u2, u1, u0; // Variables for PID computation
+    float a0, a1, a2, b0, b1, b2, ku1, ku2, ke0, ke1, ke2;
+    
+    
+    // hand calculated forward euler coefficients
+    a0 = (1 - N*Ts);
+    a1 = (N*Ts - 2);
+    a2 = (1);
+    b0 = (kp*(1 - N*Ts)+ki*(N*Ts-1)+kd*N);
+    b1 = (kp*(N*Ts-2)+ki*Ts-2*kd*N);
+    b2 = (kp+kd*N);
+    ku1 = a1/a0; ku2 = a2/a0; ke0 = b0/a0; ke1 = b1/a0; ke2 = b2/a0;
+    
+    /* Backward Euler for testing
+    a0 = (1+N*Ts);    
+    a1 = -(2 + N*Ts);
+    a2 = 1;
+    b0 = kp*(1+N*Ts) + ki*Ts*(1+N*Ts) + kd*N;
+    b1 = -(kp*(2+N*Ts) + ki*Ts + 2*kd*N);
+    b2 = kp + kd*N;
+    ku1 = a1/a0; ku2 = a2/a0; ke0 = b0/a0; ke1 = b1/a0; ke2 = b2/a0;
+    */
+
+    //update variables
+    e2=e1;
+    e1=e0;
+    u2=u1;
+    u1=u0;
+    
+    //calculate error and output
+    e0 = Setpoint - SenseRead;
+    u0 = - ku1*u1 - ku2*u2 + ke0*e0 + ke1*e1 + ke2*e2;
+    
+    
+    //return output
+    return u0;
+    
+}
+
+float Drone::Altitude_Calibration(float AltitudePID)
+    
+{
+    AltitudePID=(AltitudePID/9000)*(1860-1127);
+    
+    if (AltitudePID > 1860)
+    {
+        AltitudePID = 1860; 
+    }
+    
+    if (AltitudePID < 1127)
+    {
+        AltitudePID = 1127;
+    }
+    
+    return AltitudePID;
+ 
+}
+
+
+float Drone::PR_Calibration(float PR_PID)
+    
+{
+    if (PR_PID > 4500)
+    {
+        PR_PID = 4500;  
+    }
+    
+    if (PR_PID < -4500)
+    {
+        PR_PID = -4500;
+    }
+    
+    return (PR_PID/9000);
+    
+    
+}
+    
+    
+
+void Drone::read_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude)
+
+{
+    
+    //Write serially to Pi to begin transmission.
+
+    byte XMIT = 00000001;
+
+    if (Serial.available())
+    {
+       Serial.write(XMIT);
+    }
+
+
+    
+    while (Serial.available())
+    {
+        for(int i=0; i<4; i++)
+        {
+            *PS4Yaw=read_float();
+        
+        }
+
+        for(int i=4; i<8; i++)
+        {
+            *PS4Pitch=read_float();
+
+        }
+
+        for(int i=8; i<12; i++)
+        {
+            *PS4Roll=read_float();
+            
+        }
+
+        for(int i=12; i<16; i++)
+        {
+           *PS4Altitude=read_float();
+            
+        }
+
+    }
+    
+    
+
+
+}
+
+void Drone::initSensors()
+{
+
+  if(!accel.begin())
+  {
+    /* There was a problem detecting the LSM303 ... check your connections */
+    Serial.println(F("Ooops, no LSM303 detected ... Check your wiring!"));
+    while(1);
+  }
+  if(!mag.begin())
+  {
+    /* There was a problem detecting the LSM303 ... check your connections */
+    Serial.println("Ooops, no LSM303 detected ... Check your wiring!");
+    while(1);
+  }
+  if(!bmp.begin())
+  {
+    /* There was a problem detecting the BMP180 ... check your connections */
+    Serial.println("Ooops, no BMP180 detected ... Check your wiring!");
+    while(1);
+  }
+
+}
+
+void Drone::initESCs(Servo esc_1, Servo esc_2, Servo esc_3, Servo esc_4)
+{
+    
+
+  //Initialization of the ESCs
+  esc_1.writeMicroseconds(1860);
+  esc_2.writeMicroseconds(1860);
+  esc_3.writeMicroseconds(1860);
+  esc_4.writeMicroseconds(1860);
+  delay(3000);
+  esc_1.writeMicroseconds(1060);
+  esc_2.writeMicroseconds(1060);
+  esc_3.writeMicroseconds(1060);
+  esc_4.writeMicroseconds(1060);
+  delay(3000);
+
+
+}
+
+void Drone::send_float (float arg) {
+  byte * data = (byte *) &arg;
+  Serial.write(data, sizeof(arg));
+}
+
+float Drone::read_float () {
+ union{
+   float a;
+   unsigned char bytes[4];
+ } data;
+ for (int i=0; i<4; i++) {
+   data.bytes[i] = Serial.read();
+ }
+ float test = data.a;
+ return(test);
+}
+
+
+
+\end{lstlisting}
+
+
+
+\newpage
+
+\subsection{Arduino Main File}
+\counterwithin{figure}{section}
+\lstset{basicstyle=\tiny}
+\begin{lstlisting}[language=C,caption={Main.ino Drone Flight Program},label={lst:main.ino}]
+
+#include <Drone.h>
+#include "TimerOne.h"
+
+Drone drone;
+Servo esc_1, esc_2, esc_3, esc_4;
+int MotorPin1=6, MotorPin2=9, MotorPin3=5, MotorPin4=3;
+float Yaw_Setpoint, Pitch_Setpoint, Roll_Setpoint, Altitude_Setpoint;
+float Current_Yaw, Current_Pitch, Current_Roll, Current_Altitude;
+float initial_pressure;
+float kp_alt=17257.712, ki_alt=2752.7, kd_alt=12500, N_alt=20;
+float kp_PR=-24.3498729396233, ki_PR=-15.1642535450127, kd_PR=-7.30148358076729, N_PR=44.9852981416911;
+float AltitudePID, PitchPID, RollPID;
+float Ts = 0.0001;
+float Alt_Out, Pitch_Out, Roll_Out;
+float Motor1_Output, Motor2_Output, Motor3_Output, Motor4_Output;
+
+
+void setup() {
+
+  esc_1.attach(MotorPin1);  //set up motor connections & Initialize
+  esc_2.attach(MotorPin2);
+  esc_3.attach(MotorPin3);
+  esc_4.attach(MotorPin4);
+  drone.initESCs(esc_1, esc_2, esc_3, esc_4);
+
+  //Initialize Serial Bus and IMU Sensors
+
+  Serial.begin(9600);
+  drone.initSensors();
+  initial_pressure=drone.get_currentPressure();
+
+   //initialize timer and interrupt callback
+  //Timer1.initialize(100);                      
+  //Timer1.attachInterrupt(PID_Interrupt);
+   
+   
+  
+}
+
+
+//Commented until troubleshooting is complete
+/*void PID_Interrupt(){
+
+AltitudePID = drone.PID_FWD_EULER_Calculate(Altitude_Setpoint, Current_Altitude, kp, kd, ki, Ts);
+
+ esc_1.writeMicroseconds(AltitudePID);
+ esc_2.writeMicroseconds(AltitudePID);
+ esc_3.writeMicroseconds(AltitudePID);
+ esc_4.writeMicroseconds(AltitudePID);
+  
+}
+
+*/
+void loop() {
+
+
+//Get Control Setpoints
+if (Serial.available()==0)
+{
+  Serial.print('c');
+}
+
+while (Serial.available()>0)
+  {
+    Yaw_Setpoint = drone.read_float();
+    Pitch_Setpoint = drone.read_float();
+    Altitude_Setpoint = drone.read_float();
+    Roll_Setpoint = drone.read_float(); 
+  }
+  
+/*
+Altitude_Setpoint = 0.50;
+Pitch_Setpoint=0;
+Roll_Setpoint=0;
+*/
+
+//Gather IMU Data
+Current_Yaw = drone.get_sensorYaw();
+Current_Pitch = drone.get_sensorPitch();
+Current_Altitude = drone.get_sensorAltitude(initial_pressure);
+Current_Roll = drone.get_sensorRoll();
+
+//Calculate PID's and calibrate outputs based on simulink requirements.
+
+AltitudePID = drone.PID_FWD_EULER_Calculate(Altitude_Setpoint, Current_Altitude, kp_alt, kd_alt, ki_alt, Ts, N_alt);
+Alt_Out = drone.Altitude_Calibration(AltitudePID);
+
+PitchPID = drone.PID_FWD_EULER_Calculate(Pitch_Setpoint, Current_Pitch, kp_PR, kd_PR, ki_PR, Ts, N_PR);
+Pitch_Out=drone.PR_Calibration(PitchPID);
+
+RollPID = drone.PID_FWD_EULER_Calculate(Roll_Setpoint, Current_Roll, kp_PR, kd_PR, ki_PR, Ts, N_PR);
+Roll_Out = drone.PR_Calibration(RollPID);
+
+
+//PID Combination as required by simulink
+
+Motor1_Output = Alt_Out + Pitch_Out - Roll_Out;
+Motor2_Output = Alt_Out - Pitch_Out - Roll_Out;
+Motor3_Output = Alt_Out + Pitch_Out + Roll_Out;
+Motor4_Output = Alt_Out - Pitch_Out + Roll_Out;
+
+
+//Output PID Results to motors
+
+ esc_1.writeMicroseconds(Motor1_Output);
+ esc_2.writeMicroseconds(Motor2_Output);
+ esc_3.writeMicroseconds(Motor3_Output);
+ esc_4.writeMicroseconds(Motor4_Output);
+
+
+}
+
+\end{lstlisting}
