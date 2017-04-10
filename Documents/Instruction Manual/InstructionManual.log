@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 APR 2017 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 APR 2017 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -452,7 +452,7 @@ LaTeX Info: Redefining \nameref on input line 32.
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-<logo.pdf, id=84, 653.91501pt x 217.01276pt>
+<logo.pdf, id=4, 653.91501pt x 217.01276pt>
 File: logo.pdf Graphic file (type pdf)
  <use logo.pdf>
 Package pdftex.def Info: logo.pdf used on input line 34.
@@ -466,38 +466,57 @@ Overfull \hbox (70.71945pt too wide) in paragraph at lines 37--40
 truction%20Manual/InstructionManual.tex
  []
 
-[1] (./InstructionManual.toc)
+[1]
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write4
 \openout4 = `InstructionManual.toc'.
 
- [1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) 
-has been already used, duplicate ignored
+[1]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
+as been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.51 	\end{abstract}
                      [1] (./Section_Verbatim/Simulations.tex)
-(./Section_Verbatim/Raspberry Pi.tex) (./Section_Verbatim/Arduino.tex)
-(./Section_Verbatim/Graphical User Interface.texpdfTeX warning (ext4): destinat
-ion with the same identifier (name{page.1}) has been already used, duplicate ig
-nored
+(./Section_Verbatim/Raspberry Pi.tex
+
+LaTeX Warning: Reference `appendix:RPi' on page 1 undefined on input line 5.
+
+) (./Section_Verbatim/Arduino.texpdfTeX warning (ext4): destination with the sa
+me identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.3 
      [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
  [2]
-[3]
+Overfull \hbox (27.42403pt too wide) in paragraph at lines 61--62
+[]\OT1/cmr/m/n/10.95 https://cdn-learn.adafruit.com/downloads/pdf/adafruit-10-d
+of-imu-breakout-lsm303-l3gd20-
+ []
+
+) (./Section_Verbatim/Graphical User Interface.tex [3] [4] [5]
+
+LaTeX Warning: Reference `appendix:GUICode' on page 6 undefined on input line 6
+6.
+
+
+LaTeX Warning: Reference `appendix:controller' on page 6 undefined on input lin
+e 66.
+
+
 Overfull \hbox (34.01888pt too wide) in paragraph at lines 72--73
 []\OT1/cmr/m/n/10.95 The best re-source for Qt-De-signer is the one pro-vided b
 y Qt. This can be found at http://doc.qt.io/qt-
  []
 
-) [4] (./Section_Verbatim/appendix_GUI.tex
+) [6] (./Section_Verbatim/appendix_GUI.tex
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -531,7 +550,7 @@ Overfull \hbox (14.24431pt too wide) in paragraph at lines 65--66
 ][][] 
  []
 
-[5]
+[7]
 Overfull \hbox (1.04433pt too wide) in paragraph at lines 91--92
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] 
@@ -551,14 +570,14 @@ Overfull \hbox (9.84431pt too wide) in paragraph at lines 153--154
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[6]
+[8]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <6> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 184.
 Missing character: There is no Â in font cmti7!
 Missing character: There is no © in font cmti7!
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <6> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 193.
- [7]) (./Section_Verbatim/appendix_RPi.tex (../../Python/Server2.py
+ [9]) (./Section_Verbatim/appendix_RPi.tex (../../Python/Server2.py
 Overfull \hbox (31.84428pt too wide) in paragraph at lines 11--12
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
@@ -576,7 +595,7 @@ Overfull \hbox (31.84428pt too wide) in paragraph at lines 15--16
 ][][][][][][][][][][][] 
  []
 
-[8]
+[10]
 Overfull \hbox (9.84431pt too wide) in paragraph at lines 56--57
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
@@ -588,28 +607,41 @@ Overfull \hbox (45.04427pt too wide) in paragraph at lines 115--116
 
  []
 
-[9]
+[11]
 Overfull \hbox (58.24425pt too wide) in paragraph at lines 137--138
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 ))
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [10]
+ [12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
  (./InstructionManual.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
-Package rerunfilecheck Info: File `InstructionManual.out' has not changed.
-(rerunfilecheck)             Checksum: E8DB3DE9744F80781F13A48A3D73FE67;1288.
+
+
+Package rerunfilecheck Warning: File `InstructionManual.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `InstructionManual.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  998D2357777904BE797FF92384CA8747;1695.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 9575 strings out of 493014
- 139315 string characters out of 6133351
- 312697 words of memory out of 5000000
- 12460 multiletter control sequences out of 15000+600000
- 12615 words of font info for 45 fonts, out of 8000000 for 9000
+ 9558 strings out of 493014
+ 139014 string characters out of 6133351
+ 312530 words of memory out of 5000000
+ 12437 multiletter control sequences out of 15000+600000
+ 12032 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,7n,42p,730b,1883s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -625,10 +657,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on InstructionManual.pdf (14 pages, 240033 bytes).
+Output written on InstructionManual.pdf (16 pages, 240928 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 782 compressed objects within 8 object streams
- 516 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 752 PDF objects out of 1000 (max. 8388607)
+ 712 compressed objects within 8 object streams
+ 524 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

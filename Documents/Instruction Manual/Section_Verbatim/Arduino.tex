@@ -1,1 +1,64 @@
+\section{Arduino}
+This section outlines the functionality of the Arduino software package and provides details with regards to minor customizability. The section also provides a list of additional requirements and references.
 
+\subsection{Required Software}
+The following is a list of the required library packages to use the Drone.cpp, Drone.h software. To install a library simply find the libraries folder located within the Arduino folder and unzip the downloaded libraries to that location.
+
+\begin{itemize}
+	
+	\item Drone library package (https://github.com/Brendoncamm/SYP/tree/master/Arduino)
+	\item Adafruit 10 DOF library (https://github.com/adafruit/Adafruit10DOF)
+	\item TimerOne library (https://github.com/PaulStoffregen/TimerOne)
+	\item Arduino IDE (https://www.arduino.cc/en/main/software)
+
+\end{itemize}
+	
+\subsection{Software Breakdown}
+
+All discussed software can be found in Appendix C.
+
+\subsubsection{Main.ino Description}
+
+Currently, the main.ino file provided performs initializations of ESCs, the serial bus and the 10DOF IMU. The file then writes a byte to the serial bus which acts as a request to the Raspberry Pi to begin set point transmission. The file then collects current values from the IMU in terms of Yaw, Pitch, Roll and Altitude. PID values are calculated and combined as laid out in Simulink. The values returned from the combination are written to the motors.
+
+The main file also includes sections currently commented out referring to interrupts. Ideally, an interrupt will be called to begin a PID calculation to ensure consistent sampling times. At this time this procedure has been unsuccessful. For testing purposes, set points can be hard coded instead of acquired from the serial connection, this is also shown as a commented section of the script.
+
+Gain values for PID can be changed in the variable declaration section, in the future this is planned to be modifiable through the GUI. Due to time constraints and testing, several actions that would ideally be functions are directly coded in the main file such as writing values to the motors. Again, as a future recommendation functions for these actions should be created in the Drone.h and Drone.cpp files.
+
+\subsubsection{Functions Breakdown}
+
+Outlining the functions provided in the Drone library.
+
+\begin{itemize}
+\item Drone( ): Used to initialize all sensors, motors and communications (future).
+\item initSensors(): Initialize Inertial Measurement Unit.
+\item initESCs(Servo esc\textunderscore1, Servo esc\textunderscore2, Servo esc\textunderscore3, Servo esc\textunderscore4): Writes upper and lower control values to the ESCs for initialization.
+\item read\_float(): Used to read bytes from the serial bus and package them as floating point values.
+\item send\_float(); Used for testing, echoes values read from the serial bus back to the RPi.
+\item read\_PS4Setpoints(float *PS4Yaw, float *PS4Pitch, float *PS4Roll, float *PS4Altitude): Utilizes read\_float() to gather all set points available from the serial bus. This function requires further testing.
+\item ping\_ultrasonic(): Uses ultrasonic sensor to determine altitude.
+\item get\_currentPressure(): Takes barometric pressure readings and uses an averaging filter on the results.
+\item get\_sensorAltitude(float startingPressure): Utilizes ping\_ultrasonic() to determine altitude for altitudes less than 2.5m. Uses the startingPressure variable to compare to current barometric pressure reading and calculates relative altitude. In the future, a Kalman filter is recommended to combine the barometric pressure and accelerometer readings for a more accurate altitude.
+\item get\_sensorRoll(): Acquires current roll reading from the IMU.
+\item get\_sensorPitch(): Acquires current pitch reading from the IMU.
+\item get\_sensorYaw(): Acquires current yaw reading from the IMU.
+\item PID\_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki ): Original PID loop, does not use Forward Euler, therefore not calibrated through Simulink.
+\item PID\_FWD\_EULER\_Calculate(float Setpoint, float SenseRead, float kp, float kd, float ki, float Ts, float N): Forward Euler PID loop implementation.
+\item PR\_Calibration(float PR\_PID): Saturation limit requirements for pitch and roll PID loops as determined through simulations.
+\item Altitude\_Calibration(float AltitudePID): Altitude saturation limits based upon Simulink requirements.
+
+\subsection{Additional Resources}
+
+For PID implementation, the following resources were extremely useful.
+\begin{itemize}
+\item http://www.controlsystemslab.com/doc/b4/pid.pdf
+\item http://controlsystemslab.com/discrete-time-pid-controller-implementation/ 
+\end{itemize}
+
+ The 10 DOF IMU was learned through reading the following documentation.
+ 
+\begin{itemize}
+\item https://cdn-learn.adafruit.com/downloads/pdf/adafruit-10-dof-imu-breakout-lsm303-l3gd20-bmp180.pdf. 
+\end{itemize}
+
+\end{itemize}
